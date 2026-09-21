@@ -1,0 +1,662 @@
+<html style="margin:0;padding:0;">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+(function(){
+  var s = document.createElement('style');
+  s.textContent = ':root{--bg:#faf9f4;--card:#ffffff;--text:#0f172a;--muted:#64748b;--accent:#297a2e;--accent-soft:rgba(41,122,46,.14);--accent2:#d97706;--accent2-soft:rgba(217,119,6,.14);--border:rgba(15,23,42,.08);--deep:#1e3a5f;--deep-soft:rgba(30,58,95,.1)}';
+  s.textContent += '.tab-btn{transition:all .2s ease}.tab-btn.active{background:var(--accent-soft);color:var(--text);border-bottom:2px solid var(--accent)}.day-card{transition:all .2s ease}.day-card:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.06)}';
+  document.head.appendChild(s);
+})();
+</script>
+<div style="background-color:transparent;box-sizing:border-box;">
+  <div style="color:var(--text);font-family:'Fredoka',sans-serif;background:var(--bg)">
+    <div class="max-w-5xl mx-auto px-6 py-12">
+
+      <!-- HERO -->
+      <div class="mb-12">
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:16px;">
+          <div style="width:44px;height:44px;border-radius:12px;background:var(--deep-soft);display:flex;align-items:center;justify-content:center;color:var(--deep);flex-shrink:0;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          </div>
+          <div>
+            <p style="font-family:monospace;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted)">Triết lý · Học bản chất</p>
+            <h1 class="text-3xl font-bold" style="color:var(--text);line-height:1.2">
+              Hiểu sâu <span style="color:var(--deep)">→</span> Vận dụng thuần thục <span style="color:var(--deep)">→</span> <span style="background:linear-gradient(100deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent">IELTS 7.0 tự nhiên</span>
+            </h1>
+          </div>
+        </div>
+        <div class="p-5 rounded-2xl mt-6" style="background:var(--deep-soft);border-left:4px solid var(--deep);">
+          <p class="text-sm font-semibold mb-2" style="color:var(--deep)">Nguyên tắc vàng của lộ trình này:</p>
+          <ul class="text-sm space-y-1.5" style="color:var(--text);line-height:1.6">
+            <li><span style="color:var(--deep);font-weight:700">●</span> Không học mẹo "tìm đáp án trong 3 giây" — học để hiểu <strong>tại sao</strong> đáp án đó đúng</li>
+            <li><span style="color:var(--deep);font-weight:700">●</span> Không học từ lẻ — học từ trong <strong>cụm, câu, ngữ cảnh</strong> thực tế</li>
+            <li><span style="color:var(--deep);font-weight:700">●</span> Không nhớ mẫu viết — học <strong>cấu trúc tư duy</strong>, cách diễn đạt ý tưởng logic</li>
+            <li><span style="color:var(--deep);font-weight:700">●</span> Không chỉ luyện đề — <strong>đắm chìm</strong> trong ngôn ngữ qua sách, phim, podcast, nhật ký</li>
+            <li><span style="color:var(--deep);font-weight:700">●</span> IELTS 7.0 là <strong>kết quả phụ</strong>, mục tiêu chính là <strong>sử dụng tiếng Anh như người bản xứ thứ hai</strong></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- PHASE TABS -->
+      <div class="mb-8" style="border-bottom:1px solid var(--border);">
+        <div class="flex flex-wrap gap-1">
+          <button class="tab-btn active px-5 py-3 text-sm font-semibold rounded-t-lg" onclick="showPhase(1)" id="tab1">
+            Giai đoạn 1 · Nền tảng sâu sắc<br/><span class="text-xs font-normal" style="color:var(--muted)">Tuần 1-8 · Hiểu cốt lõi</span>
+          </button>
+          <button class="tab-btn px-5 py-3 text-sm font-semibold rounded-t-lg" style="color:var(--muted)" onclick="showPhase(2)" id="tab2">
+            Giai đoạn 2 · Vận dụng thông minh<br/><span class="text-xs font-normal" style="color:var(--muted)">Tuần 9-20 · Hiểu sâu & dùng</span>
+          </button>
+          <button class="tab-btn px-5 py-3 text-sm font-semibold rounded-t-lg" style="color:var(--muted)" onclick="showPhase(3)" id="tab3">
+            Giai đoạn 3 · Thông thạo & Tinh tế<br/><span class="text-xs font-normal" style="color:var(--muted)">Tuần 21-32 · Sư phạm & tinh tế</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- PHASE 1 CONTENT -->
+      <div id="phase1">
+        <div class="rounded-2xl p-6 mb-6" style="background:var(--card);border:1px solid var(--border);">
+          <div class="flex flex-wrap items-start gap-6">
+            <div style="flex:1;min-width:250px;">
+              <span style="display:inline-block;padding:3px 10px;border-radius:12px;background:var(--accent2-soft);color:var(--accent2);font-size:11px;font-weight:600;margin-bottom:10px;">GIAI ĐOẠN 1 · 8 TUẦN</span>
+              <h2 class="text-xl font-bold mb-3" style="color:var(--text)">Xây dựng nền tảng sâu sắc</h2>
+              <p class="text-sm" style="color:var(--muted);line-height:1.7">
+                Mục tiêu không phải "biết" ngữ pháp và từ vựng, mà là <strong>hiểu bản chất</strong> của chúng: tại sao có thì này, nó diễn đạt ý nghĩa gì, dùng trong hoàn cảnh nào. Hết giai đoạn này, bạn sẽ "cảm nhận" được ngôn ngữ thay vì chỉ nhớ quy tắc.
+              </p>
+            </div>
+            <div class="grid grid-cols-3 gap-4 text-center" style="min-width:300px;">
+              <div class="p-3 rounded-xl" style="background:var(--accent-soft);">
+                <div class="text-2xl font-bold" style="color:var(--accent)">5.0</div>
+                <div class="text-xs" style="color:var(--muted)">Điểm đầu vào</div>
+              </div>
+              <div class="p-3 rounded-xl" style="background:var(--accent2-soft);">
+                <div class="text-2xl font-bold" style="color:var(--accent2)">5.5</div>
+                <div class="text-xs" style="color:var(--muted)">Điểm cuối giai đoạn</div>
+              </div>
+              <div class="p-3 rounded-xl" style="background:var(--deep-soft);">
+                <div class="text-2xl font-bold" style="color:var(--deep)">2.5h</div>
+                <div class="text-xs" style="color:var(--muted)">Mỗi ngày</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Weekly Schedule Phase 1 -->
+        <h3 class="text-lg font-bold mb-4" style="color:var(--text)">Lịch tuần mẫu · Giai đoạn 1</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+          
+          <div class="day-card rounded-2xl p-5" style="background:var(--card);border:1px solid var(--border);">
+            <div class="flex items-center gap-3 mb-4">
+              <div style="width:36px;height:36px;border-radius:10px;background:var(--accent-soft);display:flex;align-items:center;justify-content:center;color:var(--accent);font-weight:700;font-size:14px;">T2</div>
+              <div>
+                <div class="font-semibold" style="color:var(--text)">Thứ Hai · Ngữ pháp & Cấu trúc tư duy</div>
+                <div class="text-xs" style="color:var(--muted)">Hiểu "tại sao" chứ không phải "như thế nào"</div>
+              </div>
+            </div>
+            <div class="space-y-3 text-sm">
+              <div class="p-3 rounded-lg" style="background:rgba(15,23,42,.03);">
+                <p class="font-semibold mb-1" style="color:var(--accent);font-size:12px;">Sáng · 45 phút · Ngữ pháp sâu</p>
+                <p style="color:var(--text);line-height:1.6">Học 1 chủ đề ngữ pháp (ví dụ: <strong>Present Perfect</strong>). Không chỉ nhớ công thức — hãy hỏi: <em>Tại sao người Anh dùng thì này? Nó diễn đạt sự liên kết nào giữa quá khứ và hiện tại?</em> Tự viết 5 câu về cuộc sống mình dùng thì đó.</p>
+              </div>
+              <div class="p-3 rounded-lg" style="background:rgba(15,23,42,.03);">
+                <p class="font-semibold mb-1" style="color:var(--accent2);font-size:12px;">Trưa · 45 phút · Nghe hiểu sâu</p>
+                <p style="color:var(--text);line-height:1.6">Nghe 1 đoạn BBC 6 Minute English. <strong>Lần 1</strong>: nghe hiểu nội dung chính. <strong>Lần 2</strong>: nghe và viết transcript. <strong>Lần 3</strong>: nghe và chú ý <em>ngữ điệu, cách nối từ, từ nào được nhấn mạnh</em> và tại sao.</p>
+              </div>
+              <div class="p-3 rounded-lg" style="background:rgba(15,23,42,.03);">
+                <p class="font-semibold mb-1" style="color:var(--deep);font-size:12px;">Tối · 30 phút · Từ vựng theo cụm</p>
+                <p style="color:var(--text);line-height:1.6">Từ đoạn nghe trên, chọn <strong>10 cụm từ/collocation</strong> (không phải từ lẻ). Tìm nghĩa, xem thêm ví dụ trên Oxford Learner's Dictionary, tự viết câu của mình. Ghi vào sổ tay theo chủ đề.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="day-card rounded-2xl p-5" style="background:var(--card);border:1px solid var(--border);">
+            <div class="flex items-center gap-3 mb-4">
+              <div style="width:36px;height:36px;border-radius:10px;background:var(--accent-soft);display:flex;align-items:center;justify-content:center;color:var(--accent);font-weight:700;font-size:14px;">T3</div>
+              <div>
+                <div class="font-semibold" style="color:var(--text)">Thứ Ba · Đọc hiểu & Tư duy phản biện</div>
+                <div class="text-xs" style="color:var(--muted)">Đọc để hiểu ý đồ tác giả</div>
+              </div>
+            </div>
+            <div class="space-y-3 text-sm">
+              <div class="p-3 rounded-lg" style="background:rgba(15,23,42,.03);">
+                <p class="font-semibold mb-1" style="color:var(--accent);font-size:12px;">Sáng · 45 phút · Đọc hiểu sâu</p>
+                <p style="color:var(--text);line-height:1.6">Đọc 1 bài ngắn từ <strong>BBC Learning English</strong> hoặc <strong>The Guardian</strong> (chủ đề quen thuộc). Đọc 3 lần: (1) hiểu ý chính, (2) xác định cấu trúc bài: <em>mở bài ở đâu, lập luận ở đâu, kết luận ở đâu</em>, (3) tra từ và hiểu sâu từng câu.</p>
+              </div>
+              <div class="p-3 rounded-lg" style="background:rgba(15,23,42,.03);">
+                <p class="font-semibold mb-1" style="color:var(--accent2);font-size:12px;">Trưa · 45 phút · Phân tích ngôn ngữ</p>
+                <p style="color:var(--text);line-height:1.6">Từ bài đọc, phân tích: <em>Tại sao tác giả dùng từ này mà không dùng từ đồng nghĩa? Câu bị động ở đây có tác dụng gì? Từ nối nào tạo sự liên kết logic?</em> Đây là bước học "bản chất" quan trọng nhất.</p>
+              </div>
+              <div class="p-3 rounded-lg" style="background:rgba(15,23,42,.03);">
+                <p class="font-semibold mb-1" style="color:var(--deep);font-size:12px;">Tối · 30 phút · Viết tóm tắt</p>
+                <p style="color:var(--text);line-height:1.6">Viết tóm tắt bài đọc <strong>bằng lời của mình</strong> (không chép lại câu gốc). Tập diễn đạt lại ý tưởng — đây là nền tảng cho paraphrase và viết bài sau này.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="day-card rounded-2xl p-5" style="background:var(--card);border:1px solid var(--border);">
+            <div class="flex items-center gap-3 mb-4">
+              <div style="width:36px;height:36px;border-radius:10px;background:var(--accent-soft);display:flex;align-items:center;justify-content:center;color:var(--accent);font-weight:700;font-size:14px;">T4</div>
+              <div>
+                <div class="font-semibold" style="color:var(--text)">Thứ Tư · Nói & Phát âm bản chất</div>
+                <div class="text-xs" style="color:var(--muted)">Cơm miệng chứ không phải học thuộc lòng</div>
+              </div>
+            </div>
+            <div class="space-y-3 text-sm">
+              <div class="p-3 rounded-lg" style="background:rgba(15,23,42,.03);">
+                <p class="font-semibold mb-1" style="color:var(--accent);font-size:12px;">Sáng · 45 phút · Shadowing & Phát âm</p>
+                <p style="color:var(--text);line-height:1.6">Luyện shadowing với đoạn nghe đã học hôm T2: nghe 1 câu, tạm dừng, nhắc lại <strong>chính xác ngữ điệu, tốc độ, sự nhấn nhá</strong>. Ghi âm lại mình nói và so sánh. Chú ý: <em>người bản xứ không nói từng từ riêng lẻ, họ nối từ thành một dòng âm thanh liên tục</em>.</p>
+              </div>
+              <div class="p-3 rounded-lg" style="background:rgba(15,23,42,.03);">
+                <p class="font-semibold mb-1" style="color:var(--accent2);font-size:12px;">Trưa · 45 phút · Tự nói về bản thân</p>
+                <p style="color:var(--text);line-height:1.6">Chọn 1 chủ đề đơn giản (gia đình, sở thích, công việc). <strong>Không viết bài trước</strong>, nói trực tiếp 2-3 phút. Ghi âm. Nghe lại và tự hỏi: <em>Người nghe có hiểu tôi không? Tôi có nói dứt khoát không? Còn từ nào phát âm chưa chuẩn?</em></p>
+              </div>
+              <div class="p-3 rounded-lg" style="background:rgba(15,23,42,.03);">
+                <p class="font-semibold mb-1" style="color:var(--deep);font-size:12px;">Tối · 30 phút · Ôn tập chủ động</p>
+                <p style="color:var(--text);line-height:1.6">Nhìn vào sổ tay từ vựng, <strong>không nhìn nghĩa</strong>, tự đặt câu với mỗi cụm từ. Ôn ngữ pháp đã học: tự giải thích "tại sao" quy tắc đó tồn tại như thể bạn đang dạy cho người khác.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="day-card rounded-2xl p-5" style="background:var(--card);border:1px solid var(--border);">
+            <div class="flex items-center gap-3 mb-4">
+              <div style="width:36px;height:36px;border-radius:10px;background:var(--accent-soft);display:flex;align-items:center;justify-content:center;color:var(--accent);font-weight:700;font-size:14px;">T5</div>
+              <div>
+                <div class="font-semibold" style="color:var(--text)">Thứ Năm · Viết & Tư duy logic</div>
+                <div class="text-xs" style="color:var(--muted)">Viết để suy nghĩ, không phải để điền vào chỗ trống</div>
+              </div>
+            </div>
+            <div class="space-y-3 text-sm">
+              <div class="p-3 rounded-lg" style="background:rgba(15,23,42,.03);">
+                <p class="font-semibold mb-1" style="color:var(--accent);font-size:12px;">Sáng · 45 phút · Viết nhật ký tiếng Anh</p>
+                <p style="color:var(--text);line-height:1.6">Viết 150-200 từ về ngày hôm qua, suy nghĩ của mình. <strong>Đừng lo lỗi</strong> — cứ viết. Mục tiêu: diễn đạt suy nghĩ ra tiếng Anh. Sau đó, tự sửa: tìm lỗi ngữ pháp, tìm cách diễn đạt tự nhiên hơn dùng từ đã học.</p>
+              </div>
+              <div class="p-3 rounded-lg" style="background:rgba(15,23,42,.03);">
+                <p class="font-semibold mb-1" style="color:var(--accent2);font-size:12px;">Trưa · 45 phút · Phân tích cấu trúc câu</p>
+                <p style="color:var(--text);line-height:1.6">Lấy 5 câu hay từ bài đọc hôm T3. Phân tích: <em>Đâu là chủ ngữ, vị ngữ? Tại sao tác giả sắp xếp từ theo thứ tự này? Nếu đổi vị trí, ý nghĩa thay đổi thế nào?</em> Hiểu cấu trúc câu = hiểu cách người Anh tổ chức tư duy.</p>
+              </div>
+              <div class="p-3 rounded-lg" style="background:rgba(15,23,42,.03);">
+                <p class="font-semibold mb-1" style="color:var(--deep);font-size:12px;">Tối · 30 phút · Học từ vựng mới</p>
+                <p style="color:var(--text);line-height:1.6">Học 15 từ/cụm từ mới theo chủ đề (ví dụ: giáo dục, môi trường). Với mỗi từ: tra (1) nghĩa, (2) từ loại, (3) collocation, (4) ví dụ thực tế. <strong>Không dịch sang tiếng Việt</strong> — hiểu nghĩa qua định nghĩa và ví dụ tiếng Anh.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="day-card rounded-2xl p-5" style="background:var(--card);border:1px solid var(--border);">
+            <div class="flex items-center gap-3 mb-4">
+              <div style="width:36px;height:36px;border-radius:10px;background:var(--accent-soft);display:flex;align-items:center;justify-content:center;color:var(--accent);font-weight:700;font-size:14px;">T6</div>
+              <div>
+                <div class="font-semibold" style="color:var(--text)">Thứ Sáu · Nghe & Đọc mở rộng</div>
+                <div class="text-xs" style="color:var(--muted)">Đắm chìm trong ngôn ngữ</div>
+              </div>
+            </div>
+            <div class="space-y-3 text-sm">
+              <div class="p-3 rounded-lg" style="background:rgba(15,23,42,.03);">
+                <p class="font-semibold mb-1" style="color:var(--accent);font-size:12px;">Sáng · 45 phút · Nghe TED-Ed / Podcast</p>
+                <p style="color:var(--text);line-height:1.6">Chọn 1 TED-Ed ngắn (5 phút) về chủ đề thú vị. Nghe không phụ đề → nghe có phụ đề Anh → nghe lại không phụ đề. Chú ý: <em>ý tưởng chính là gì? Người nói dùng ví dụ nào để minh họa?</em></p>
+              </div>
+              <div class="p-3 rounded-lg" style="background:rgba(15,23,42,.03);">
+                <p class="font-semibold mb-1" style="color:var(--accent2);font-size:12px;">Trưa · 45 phút · Đọc sách分级 hoặc tin tức</p>
+                <p style="color:var(--text);line-height:1.6">Đọc sách tiếng Anh đơn giản (Oxford Bookworms level 3-4) hoặc bài tin tức ngắn. <strong>Đừng tra từ liên tục</strong> — đoán nghĩa qua ngữ cảnh. Tra chỉ những từ xuất hiện nhiều lần và cản trở hiểu nội dung. Mục tiêu: đọc để hưởng thụ nội dung.</p>
+              </div>
+              <div class="p-3 rounded-lg" style="background:rgba(15,23,42,.03);">
+                <p class="font-semibold mb-1" style="color:var(--deep);font-size:12px;">Tối · 30 phút · Tổng kết tuần</p>
+                <p style="color:var(--text);line-height:1.6">Xem lại sổ tay cả tuần. Tự kiểm tra: (1) Tôi hiểu sâu chủ đề ngữ pháp nào rồi? (2) Tôi có thể dùng tự nhiên bao nhiêu cụm từ mới? (3) Điểm nào còn mơ hồ cần ôn lại? Lập kế hoạch cho tuần sau.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="day-card rounded-2xl p-5" style="background:var(--card);border:1px solid var(--border);">
+            <div class="flex items-center gap-3 mb-4">
+              <div style="width:36px;height:36px;border-radius:10px;background:var(--accent2-soft);display:flex;align-items:center;justify-content:center;color:var(--accent2);font-weight:700;font-size:14px;">T7</div>
+              <div>
+                <div class="font-semibold" style="color:var(--text)">Thứ Bảy · Luyện đề nhẹ nhàng</div>
+                <div class="text-xs" style="color:var(--muted)">Áp dụng kiến thức đã hiểu sâu</div>
+              </div>
+            </div>
+            <div class="space-y-3 text-sm">
+              <div class="p-3 rounded-lg" style="background:rgba(15,23,42,.03);">
+                <p class="font-semibold mb-1" style="color:var(--accent);font-size:12px;">Buổi sáng · 90 phút · Luyện 2 kỹ năng</p>
+                <p style="color:var(--text);line-height:1.6">Luyện Listening Section 1-2 + Reading Passage 1 từ Cambridge. <strong>Không chạy theo đáp án</strong>. Sau khi làm, phân tích kỹ: <em>Tại sao tôi chọn đáp án này? Tại sao đáp án đúng lại đúng? Tôi đã hiểu sai ở đâu?</em> Ghi lỗi vào sổ tay.</p>
+              </div>
+              <div class="p-3 rounded-lg" style="background:rgba(15,23,42,.03);">
+                <p class="font-semibold mb-1" style="color:var(--accent2);font-size:12px;">Buổi chiều · Tự do đắm chìm</p>
+                <p style="color:var(--text);line-height:1.6">Xem 1 bộ phim tiếng Anh có phụ đề Anh, hoặc nghe album nhạc tiếng Anh và đọc lời bài hát, hoặc chơi game tiếng Anh. <strong>Không coi đây là "học" — coi đây là hưởng thụ</strong>. Ngôn ngữ thấm vào một cách tự nhiên.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="p-5 rounded-2xl mb-10" style="background:var(--accent-soft);border-left:4px solid var(--accent);">
+          <p class="text-sm font-semibold mb-2" style="color:var(--accent)">Điểm cốt lõi Giai đoạn 1:</p>
+          <p class="text-sm" style="color:var(--text);line-height:1.7">
+            Mỗi lần học, hãy hỏi: <strong>"Tôi có thực sự hiểu tại sao không?"</strong> chứ không phải "Tôi có nhớ không?". Ngôn ngữ không phải là tập hợp quy tắc tùy tiện — nó phản ánh cách người Anh nhìn và tổ chức thế giới. Hiểu "tại sao" = bạn đang học tư duy của người bản xứ.
+          </p>
+        </div>
+      </div>
+
+      <!-- PHASE 2 CONTENT -->
+      <div id="phase2" style="display:none;">
+        <div class="rounded-2xl p-6 mb-6" style="background:var(--card);border:1px solid var(--border);">
+          <div class="flex flex-wrap items-start gap-6">
+            <div style="flex:1;min-width:250px;">
+              <span style="display:inline-block;padding:3px 10px;border-radius:12px;background:var(--accent-soft);color:var(--accent);font-size:11px;font-weight:600;margin-bottom:10px;">GIAI ĐOẠN 2 · 12 TUẦN</span>
+              <h2 class="text-xl font-bold mb-3" style="color:var(--text)">Vận dụng thông minh & Hiểu sâu sắc</h2>
+              <p class="text-sm" style="color:var(--muted);line-height:1.7">
+                Giai đoạn này, bạn chuyển từ "hiểu" sang "dùng tự nhiên". Mục tiêu: tiếng Anh trở thành <strong>công cụ diễn đạt tư duy</strong> thay vì một môn học. Bạn sẽ học cách người bản xứ <em>thực sự</em> dùng ngôn ngữ trong giao tiếp, viết lách, suy nghĩ.
+              </p>
+            </div>
+            <div class="grid grid-cols-3 gap-4 text-center" style="min-width:300px;">
+              <div class="p-3 rounded-xl" style="background:var(--accent2-soft);">
+                <div class="text-2xl font-bold" style="color:var(--accent2)">5.5</div>
+                <div class="text-xs" style="color:var(--muted)">Điểm đầu giai đoạn</div>
+              </div>
+              <div class="p-3 rounded-xl" style="background:var(--accent-soft);">
+                <div class="text-2xl font-bold" style="color:var(--accent)">6.5</div>
+                <div class="text-xs" style="color:var(--muted)">Điểm cuối giai đoạn</div>
+              </div>
+              <div class="p-3 rounded-xl" style="background:var(--deep-soft);">
+                <div class="text-2xl font-bold" style="color:var(--deep)">3h</div>
+                <div class="text-xs" style="color:var(--muted)">Mỗi ngày</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="text-lg font-bold mb-4" style="color:var(--text)">Lịch tuần mẫu · Giai đoạn 2</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+          
+          <div class="day-card rounded-2xl p-5" style="background:var(--card);border:1px solid var(--border);">
+            <div class="flex items-center gap-3 mb-4">
+              <div style="width:36px;height:36px;border-radius:10px;background:var(--accent-soft);display:flex;align-items:center;justify-content:center;color:var(--accent);font-weight:700;font-size:14px;">T2</div>
+              <div>
+                <div class="font-semibold" style="color:var(--text)">Thứ Hai · Nghe hiểu tinh tế</div>
+                <div class="text-xs" style="color:var(--muted)">Hiểu cả "điều không nói ra"</div>
+              </div>
+            </div>
+            <div class="space-y-3 text-sm">
+              <div class="p-3 rounded-lg" style="background:rgba(15,23,42,.03);">
+                <p class="font-semibold mb-1" style="color:var(--accent);font-size:12px;">Sáng · 60 phút · Nghe sâu & Phân tích</p>
+                <p style="color:var(--text);line-height:1.6">Nghe Cambridge Listening Section 3-4. Không chỉ tìm đáp án — hãy phân tích: <em>Người nói thể hiện thái độ gì (đồng ý/hoài nghi/hứng thú) qua ngữ điệu? Từ nào cho thấy sự chuyển đổi ý tưởng? Tại sao họ nói câu này?</em> Hiểu lớp nghĩa ẩn bên dưới.</p>
+              </div>
+              <div class="p-3 rounded-lg" style="background:rgba(15,23,42,.03);">
+                <p class="font-semibold mb-1" style="color:var(--accent2);font-size:12px;">Chiều · 60 phút · Shadowing nâng cao</p>
+                <p style="color:var(--text);line-height:1.6">Shadowing cùng lúc với băng (không tạm dừng). Cố gắng bắt kịp tốc độ và ngữ điệu. Mục tiêu: <strong>cơ miệng quen với chuyển động của tiếng Anh</strong>, nói trở thành phản xạ tự nhiên chứ không phải dịch từ tiếng Việt.</p>
+              </div>
+              <div class="p-3 rounded-lg" style="background:rgba(15,23,42,.03);">
+                <p class="font-semibold mb-1" style="color:var(--deep);font-size:12px;">Tối · 30 phút · Ghi chú từ vựng nghe</p>
+                <p style="color:var(--text);line-height:1.6">Tập hợp các cụm từ <strong>thường nghe trong hội thoại</strong> (ví dụ: "the thing is...", "what I'm getting at is...", "having said that..."). Đây là những cụm từ tự nhiên, người bản xứ dùng hàng ngày — không học trong sách giáo khoa thông thường.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="day-card rounded-2xl p-5" style="background:var(--card);border:1px solid var(--border);">
+            <div class="flex items-center gap-3 mb-4">
+              <div style="width:36px;height:36px;border-radius:10px;background:var(--accent-soft);display:flex;align-items:center;justify-content:center;color:var(--accent);font-weight:700;font-size:14px;">T3</div>
+              <div>
+                <div class="font-semibold" style="color:var(--text)">Thứ Ba · Đọc hiểu & Tư duy phê phán</div>
+                <div class="text-xs" style="color:var(--muted)">Đọc giữa các dòng chữ</div>
+              </div>
+            </div>
+            <div class="space-y-3 text-sm">
+              <div class="p-3 rounded-lg" style="background:rgba(15,23,42,.03);">
+                <p class="font-semibold mb-1" style="color:var(--accent);font-size:12px;">Sáng · 60 phút · Đọc sâu & Phân tích</p>
+                <p style="color:var(--text);line-height:1.6">Đọc 1 bài academic (từ Cambridge Reading Passage 2-3 hoặc The Economist). Hỏi: <em>Quan điểm chính của tác giả là gì? Ông ấy dùng bằng chứng nào? Có chỗ nào ông ấy thể hiện sự đánh giá? Cấu trúc lập luận hoạt động thế nào?</em></p>
+              </div>
+              <div class="p-3 rounded-lg" style="background:rgba(15,23,42,.03);">
+                <p class="font-semibold mb-1" style="color:var(--accent2);font-size:12px;">Chiều · 60 phút · Paraphrase & Diễn đạt lại</p>
+                <p style="color:var(--text);line-height:1.6">Lấy 1 đoạn trong bài đọc, diễn đạt lại <strong>bằng lời của mình, giữ nguyên ý nghĩa</strong>. Thực hành này rèn luyện tư duy linh hoạt trong tiếng Anh — bạn không còn phụ thuộc vào từ ngữ cụ thể, bạn nắm bắt bản chất ý nghĩa.</p>
+              </div>
+              <div class="p-3 rounded-lg" style="background:rgba(15,23,42,.03);">
+                <p class="font-semibold mb-1" style="color:var(--deep);font-size:12px;">Tối · 30 phút · Từ vựng học thuật</p>
+                <p style="color:var(--text);line-height:1.6">Học từ vựng học thuật (Academic Word List). Với mỗi từ, tìm hiểu: <em>Từ này thường dùng trong lĩnh vực nào? Nó khác từ đồng nghĩa thông thường ở sắc thái nào?</em> Ví dụ: "conduct" khác "do" như thế nào?</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="day-card rounded-2xl p-5" style="background:var(--card);border:1px solid var(--border);">
+            <div class="flex items-center gap-3 mb-4">
+              <div style="width:36px;height:36px;border-radius:10px;background:var(--accent-soft);display:flex;align-items:center;justify-content:center;color:var(--accent);font-weight:700;font-size:14px;">T4</div>
+              <div>
+                <div class="font-semibold" style="color:var(--text)">Thứ Tư · Nói tự nhiên & Giao tiếp thực</div>
+                <div class="text-xs" style="color:var(--muted)">Nói để kết nối, không phải để trình diễn</div>
+              </div>
+            </div>
+            <div class="space-y-3 text-sm">
+              <div class="p-3 rounded-lg" style="background:rgba(15,23,42,.03);">
+                <p class="font-semibold mb-1" style="color:var(--accent);font-size:12px;">Sáng · 60 phút · Nói mở rộng & Phát triển ý</p>
+                <p style="color:var(--text);line-height:1.6">Chọn 1 chủ đề IELTS Speaking Part 2. Nói 2 phút <strong>không viết bài trước</strong>. Tập phát triển ý: <em>ý chính → giải thích → ví dụ cụ thể → cảm nhận cá nhân</em>. Ghi âm. Nghe lại: tôi có nói logic, có ý, có cảm xúc không?</p>
+              </div>
+              <div class="p-3 rounded-lg" style="background:rgba(15,23,42,.03);">
+                <p class="font-semibold mb-1" style="color:var(--accent2);font-size:12px;">Chiều · 60 phút · Nói với người khác / AI</p>
+                <p style="color:var(--text);line-height:1.6">Nói chuyện với bạn bè, giáo viên, hoặc dùng AI (ChatGPT voice, ELSA Speak). <strong>Đừng chuẩn bị trước</strong> — hãy nói tự nhiên như giao tiếp thực tế. Học cách xử lý khi không biết từ: diễn đạt vòng vo, dùng từ thay thế, hỏi lại. Đây là kỹ năng giao tiếp thực sự.</p>
+              </div>
+              <div class="p-3 rounded-lg" style="background:rgba(15,23,42,.03);">
+                <p class="font-semibold mb-1" style="color:var(--deep);font-size:12px;">Tối · 30 phút · Phân tích phát âm</p>
+                <p style="color:var(--text);line-height:1.6">Nghe lại ghi âm hôm nay. Chú ý: <em>Những âm nào người Việt thường phát âm sai tôi còn mắc? Tôi có nhấn đúng trọng âm không? Tôi có nói các từ tách rời hay nối chúng lại?</em> Chọn 1 điểm để cải thiện trong tuần tới.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="day-card rounded-2xl p-5" style="background:var(--card);border:1px solid var(--border);">
+            <div class="flex items-center gap-3 mb-4">
+              <div style="width:36px;height:36px;border-radius:10px;background:var(--accent-soft);display:flex;align-items:center;justify-content:center;color:var(--accent);font-weight:700;font-size:14px;">T5</div>
+              <div>
+                <div class="font-semibold" style="color:var(--text)">Thứ Năm · Viết & Tư duy học thuật</div>
+                <div class="text-xs" style="color:var(--muted)">Viết để thuyết phục, không phải để điền từ</div>
+              </div>
+            </div>
+            <div class="space-y-3 text-sm">
+              <div class="p-3 rounded-lg" style="background:rgba(15,23,42,.03);">
+                <p class="font-semibold mb-1" style="color:var(--accent);font-size:12px;">Sáng · 60 phút · Lập dàn ý & Tư duy</p>
+                <p style="color:var(--text);line-height:1.6">Nhận 1 đề bài Writing Task 2. <strong>Không viết ngay</strong>. Dành 30 phút để <em>suy nghĩ</em>: Vấn đề này có các khía cạnh nào? Tôi đứng ở quan điểm nào? Lập luận nào ủng hộ? Ví dụ nào minh họa? Cấu trúc bài sẽ ra sao? Viết dàn ý chi tiết.</p>
+              </div>
+              <div class="p-3 rounded-lg" style="background:rgba(15,23,42,.03);">
+                <p class="font-semibold mb-1" style="color:var(--accent2);font-size:12px;">Chiều · 60 phút · Viết bài hoàn chỉnh</p>
+                <p style="color:var(--text);line-height:1.6">Dựa trên dàn ý, viết bài hoàn chỉnh. Tập trung vào: <em>mỗi đoạn có 1 ý chính, các câu liên kết logic với nhau, dùng từ nối phù hợp</em>. Sau khi viết, tự sửa: tôi có trả lời đúng câu hỏi không? Lập luận có thuyết phục không? Ngôn ngữ có chính xác và tự nhiên không?</p>
+              </div>
+              <div class="p-3 rounded-lg" style="background:rgba(15,23,42,.03);">
+                <p class="font-semibold mb-1" style="color:var(--deep);font-size:12px;">Tối · 30 phút · Học cấu trúc câu hay</p>
+                <p style="color:var(--text);line-height:1.6">Từ bài mẫu band 8-9 (đánh giá từ nguồn đáng tin cậy), phân tích: <em>Câu hay ở đâu? Tại sao hay? Tác giả dùng cấu trúc ngữ pháp nào để diễn đạt ý phức tạp một cách rõ ràng?</em> Không chép lại — học <strong>cấu trúc tư duy</strong> đằng sau câu đó.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="day-card rounded-2xl p-5" style="background:var(--card);border:1px solid var(--border);">
+            <div class="flex items-center gap-3 mb-4">
+              <div style="width:36px;height:36px;border-radius:10px;background:var(--accent-soft);display:flex;align-items:center;justify-content:center;color:var(--accent);font-weight:700;font-size:14px;">T6</div>
+              <div>
+                <div class="font-semibold" style="color:var(--text)">Thứ Sáu · Đọc sách & Ngôn ngữ tự nhiên</div>
+                <div class="text-xs" style="color:var(--muted)">Học qua ngữ cảnh thực tế phong phú</div>
+              </div>
+            </div>
+            <div class="space-y-3 text-sm">
+              <div class="p-3 rounded-lg" style="background:rgba(15,23,42,.03);">
+                <p class="font-semibold mb-1" style="color:var(--accent);font-size:12px;">Sáng · 60 phút · Đọc sách tiếng Anh</p>
+                <p style="color:var(--text);line-height:1.6">Đọc sách tiếng Anh (tiểu thuyết, sách phi hư cấu). Chọn sách bạn thực sự <em>muốn đọc</em>, không phải sách "dành cho người học tiếng Anh". Đọc để hưởng thụ câu chuyện và nội dung. Ngôn ngữ sẽ thấm vào một cách tự nhiên qua hàng nghìn ngữ cảnh khác nhau.</p>
+              </div>
+              <div class="p-3 rounded-lg" style="background:rgba(15,23,42,.03);">
+                <p class="font-semibold mb-1" style="color:var(--accent2);font-size:12px;">Chiều · 60 phút · Xem phim / Series</p>
+                <p style="color:var(--text);line-height:1.6">Xem 1 tập phim tiếng Anh. <strong>Lần 1</strong>: phụ đề Anh, hưởng thụ nội dung. <strong>Lần 2</strong>: tắt phụ đề, tập nghe. <strong>Lần 3</strong>: bật phụ đề Anh, chú ý những cụm từ tự nhiên, cách người nói diễn đạt cảm xúc, thái độ. Ghi lại những gì hay.</p>
+              </div>
+              <div class="p-3 rounded-lg" style="background:rgba(15,23,42,.03);">
+                <p class="font-semibold mb-1" style="color:var(--deep);font-size:12px;">Tối · 30 phút · Viết nhật ký nâng cao</p>
+                <p style="color:var(--text);line-height:1.6">Viết nhật ký tiếng Anh 250-300 từ. Thử dùng những cấu trúc và cụm từ mới học trong tuần. Tập diễn đạt những suy nghĩ phức tạp hơn: cảm xúc, đánh giá, suy ngẫm về cuộc sống.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="day-card rounded-2xl p-5" style="background:var(--card);border:1px solid var(--border);">
+            <div class="flex items-center gap-3 mb-4">
+              <div style="width:36px;height:36px;border-radius:10px;background:var(--accent2-soft);display:flex;align-items:center;justify-content:center;color:var(--accent2);font-weight:700;font-size:14px;">T7</div>
+              <div>
+                <div class="font-semibold" style="color:var(--text)">Thứ Bảy · Luyện đề & Phân tích sâu</div>
+                <div class="text-xs" style="color:var(--muted)">Đề thi là công cụ kiểm tra, không phải mục tiêu</div>
+              </div>
+            </div>
+            <div class="space-y-3 text-sm">
+              <div class="p-3 rounded-lg" style="background:rgba(15,23,42,.03);">
+                <p class="font-semibold mb-1" style="color:var(--accent);font-size:12px;">Buổi sáng · 2 giờ · Luyện 1 kỹ năng đầy đủ</p>
+                <p style="color:var(--text);line-height:1.6">Đúng thời gian thi thật: 60 phút Reading HOẶC 60 phút Writing. Sau khi làm, <strong>phân tích sâu 2-3 lần thời gian làm bài</strong>: Tại sao đúng? Tại sao sai? Lỗi sai cho thấy tôi còn thiếu hiểu biết về điều gì? Ghi vào sổ tay "bài học kinh nghiệm".</p>
+              </div>
+              <div class="p-3 rounded-lg" style="background:rgba(15,23,42,.03);">
+                <p class="font-semibold mb-1" style="color:var(--accent2);font-size:12px;">Buổi chiều · Tổng kết & Điều chỉnh</p>
+                <p style="color:var(--text);line-height:1.6">Xem lại cả tuần: Tôi đã hiểu sâu thêm điều gì? Điểm mạnh, điểm yếu? Kế hoạch tuần sau cần điều chỉnh gì? <strong>Đừng chỉ theo dõi điểm số</strong> — theo dõi sự trưởng thành về khả năng ngôn ngữ thực tế.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="p-5 rounded-2xl mb-10" style="background:var(--accent-soft);border-left:4px solid var(--accent);">
+          <p class="text-sm font-semibold mb-2" style="color:var(--accent)">Điểm cốt lõi Giai đoạn 2:</p>
+          <p class="text-sm" style="color:var(--text);line-height:1.7">
+            Chuyển từ "biết" sang "dùng". Mục tiêu: <strong>tiếng Anh không còn là môn học, nó trở thành công cụ bạn dùng để suy nghĩ, học hỏi, kết nối với thế giới</strong>. Đừng hỏi "làm sao để được điểm cao", hãy hỏi "làm sao để tôi thực sự thông thạo ngôn ngữ này". Điểm cao sẽ theo sau một cách tự nhiên.
+          </p>
+        </div>
+      </div>
+
+      <!-- PHASE 3 CONTENT -->
+      <div id="phase3" style="display:none;">
+        <div class="rounded-2xl p-6 mb-6" style="background:var(--card);border:1px solid var(--border);">
+          <div class="flex flex-wrap items-start gap-6">
+            <div style="flex:1;min-width:250px;">
+              <span style="display:inline-block;padding:3px 10px;border-radius:12px;background:var(--deep-soft);color:var(--deep);font-size:11px;font-weight:600;margin-bottom:10px;">GIAI ĐOẠN 3 · 12 TUẦN</span>
+              <h2 class="text-xl font-bold mb-3" style="color:var(--text)">Thông thạo & Tinh tế ngôn ngữ</h2>
+              <p class="text-sm" style="color:var(--muted);line-height:1.7">
+                Giai đoạn này, bạn không chỉ "dùng được" mà dùng <strong>tinh tế, chính xác, tự nhiên</strong> như người giáo dục tốt. Bạn học cách lựa chọn từ ngữ phù hợp với sắc thái, ngữ cảnh, đối tượng giao tiếp. IELTS 7.0+ sẽ là kết quả tất yếu.
+              </p>
+            </div>
+            <div class="grid grid-cols-3 gap-4 text-center" style="min-width:300px;">
+              <div class="p-3 rounded-xl" style="background:var(--accent-soft);">
+                <div class="text-2xl font-bold" style="color:var(--accent)">6.5</div>
+                <div class="text-xs" style="color:var(--muted)">Điểm đầu giai đoạn</div>
+              </div>
+              <div class="p-3 rounded-xl" style="background:var(--deep-soft);">
+                <div class="text-2xl font-bold" style="color:var(--deep)">7.0+</div>
+                <div class="text-xs" style="color:var(--muted)">Điểm cuối giai đoạn</div>
+              </div>
+              <div class="p-3 rounded-xl" style="background:var(--accent2-soft);">
+                <div class="text-2xl font-bold" style="color:var(--accent2)">3h+</div>
+                <div class="text-xs" style="color:var(--muted)">Mỗi ngày</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="text-lg font-bold mb-4" style="color:var(--text)">Lịch tuần mẫu · Giai đoạn 3</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+          
+          <div class="day-card rounded-2xl p-5" style="background:var(--card);border:1px solid var(--border);">
+            <div class="flex items-center gap-3 mb-4">
+              <div style="width:36px;height:36px;border-radius:10px;background:var(--deep-soft);display:flex;align-items:center;justify-content:center;color:var(--deep);font-weight:700;font-size:14px;">T2</div>
+              <div>
+                <div class="font-semibold" style="color:var(--text)">Thứ Hai · Nghe tinh tế & Sắc thái</div>
+                <div class="text-xs" style="color:var(--muted)">Hiểu cả những điều tinh tế nhất</div>
+              </div>
+            </div>
+            <div class="space-y-3 text-sm">
+              <div class="p-3 rounded-lg" style="background:rgba(15,23,42,.03);">
+                <p class="font-semibold mb-1" style="color:var(--deep);font-size:12px;">Sáng · 60 phút · Nghe & Phân tích sắc thái</p>
+                <p style="color:var(--text);line-height:1.6">Nghe podcast/phỏng vấn người nổi tiếng tiếng Anh. Phân tích: <em>Người nói dùng từ ngữ thế nào để thể hiện sự lịch sự, sự không đồng ý một cách tế nhị, sự hài hước tinh tế? Tại sao họ chọn từ A mà không phải từ B đồng nghĩa?</em> Đây là tầng ngôn ngữ sâu nhất — sự tinh tế trong dùng từ.</p>
+              </div>
+              <div class="p-3 rounded-lg" style="background:rgba(15,23,42,.03);">
+                <p class="font-semibold mb-1" style="color:var(--accent);font-size:12px;">Chiều · 60 phút · Luyện đề nghe & Phân tích</p>
+                <p style="color:var(--text);line-height:1.6">Luyện full Listening Cambridge đúng thời gian. Sau khi chấm điểm, <strong>nghe lại từng câu sai</strong>: Tại sao tôi nghe nhầm? Có phải do nối từ, âm bị nuốt, hoặc tôi không biết cụm từ đó? Hiểu gốc rễ lỗi sai, không chỉ biết đáp án đúng.</p>
+              </div>
+              <div class="p-3 rounded-lg" style="background:rgba(15,23,42,.03);">
+                <p class="font-semibold mb-1" style="color:var(--accent2);font-size:12px;">Tối · 30 phút · Từ vựng sắc thái</p>
+                <p style="color:var(--text);line-height:1.6">Nghiên cứu sắc thái từ đồng nghĩa. Ví dụ: "thin", "slim", "slender", "skinny", "scrawny" khác nhau ở sắc thái nào (tích cực/tiêu cực/trung tính)? Dùng cho đối tượng nào? Sự tinh tế này tạo nên sự khác biệt giữa band 6.5 và 7.0+.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="day-card rounded-2xl p-5" style="background:var(--card);border:1px solid var(--border);">
+            <div class="flex items-center gap-3 mb-4">
+              <div style="width:36px;height:36px;border-radius:10px;background:var(--deep-soft);display:flex;align-items:center;justify-content:center;color:var(--deep);font-weight:700;font-size:14px;">T3</div>
+              <div>
+                <div class="font-semibold" style="color:var(--text)">Thứ Ba · Đọc học thuật & Tư duy bậc cao</div>
+                <div class="text-xs" style="color:var(--muted)">Đọc để đánh giá và phản biện</div>
+              </div>
+            </div>
+            <div class="space-y-3 text-sm">
+              <div class="p-3 rounded-lg" style="background:rgba(15,23,42,.03);">
+                <p class="font-semibold mb-1" style="color:var(--deep);font-size:12px;">Sáng · 60 phút · Đọc & Phản biện</p>
+                <p style="color:var(--text);line-height:1.6">Đọc bài học thuật hoặc bài bình luận. Không chỉ hiểu nội dung — hãy hỏi: <em>Tôi có đồng ý với tác giả không? Lập luận của ông ấy có điểm yếu nào? Nếu tôi viết phản biện, tôi sẽ nói gì?</em> Đây là tư duy bậc cao mà band 7.0+ đòi hỏi.</p>
+              </div>
+              <div class="p-3 rounded-lg" style="background:rgba(15,23,42,.03);">
+                <p class="font-semibold mb-1" style="color:var(--accent);font-size:12px;">Chiều · 60 phút · Luyện đề đọc & Phân tích</p>
+                <p style="color:var(--text);line-height:1.6">Luyện full Reading Cambridge đúng thời gian. Phân tích lỗi sai: <em>Tôi sai vì không hiểu từ, không hiểu cấu trúc câu, hay hiểu sai ý đồ tác giả?</em> Mỗi lỗi sai là một cơ hội học hỏi sâu sắc về ngôn ngữ.</p>
+              </div>
+              <div class="p-3 rounded-lg" style="background:rgba(15,23,42,.03);">
+                <p class="font-semibold mb-1" style="color:var(--accent2);font-size:12px;">Tối · 30 phút · Cấu trúc câu phức tạp</p>
+                <p style="color:var(--text);line-height:1.6">Phân tích những câu dài, phức tạp trong bài đọc: <em>Tác giả dùng cấu trúc nào để nối nhiều ý trong một câu mà vẫn rõ ràng? Tôi có thể viết câu tương tự về chủ đề khác không?</em> Rèn luyện khả năng diễn đạt ý phức tạp.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="day-card rounded-2xl p-5" style="background:var(--card);border:1px solid var(--border);">
+            <div class="flex items-center gap-3 mb-4">
+              <div style="width:36px;height:36px;border-radius:10px;background:var(--deep-soft);display:flex;align-items:center;justify-content:center;color:var(--deep);font-weight:700;font-size:14px;">T4</div>
+              <div>
+                <div class="font-semibold" style="color:var(--text)">Thứ Tư · Nói lưu loát & Tinh tế</div>
+                <div class="text-xs" style="color:var(--muted)">Nói như người bản xứ giáo dục tốt</div>
+              </div>
+            </div>
+            <div class="space-y-3 text-sm">
+              <div class="p-3 rounded-lg" style="background:rgba(15,23,42,.03);">
+                <p class="font-semibold mb-1" style="color:var(--deep);font-size:12px;">Sáng · 60 phút · Nói sâu & Phát triển ý phức tạp</p>
+                <p style="color:var(--text);line-height:1.6">Luyện Speaking Part 3 (câu hỏi sâu, trừu tượng). Tập: <em>phân tích vấn đề từ nhiều góc độ, đưa ra ví dụ cụ thể, thể hiện quan điểm một cách tế nhị, dùng ngôn ngữ sắc thái</em>. Ghi âm, tự đánh giá: tôi có nói có chiều sâu không?</p>
+              </div>
+              <div class="p-3 rounded-lg" style="background:rgba(15,23,42,.03);">
+                <p class="font-semibold mb-1" style="color:var(--accent);font-size:12px;">Chiều · 60 phút · Nói với người bản xứ / Mock test</p>
+                <p style="color:var(--text);line-height:1.6">Tìm giáo viên người bản xứ hoặc bạn bè để nói chuyện 30-45 phút về các chủ đề sâu sắc. Hoặc làm mock test Speaking. Họ nhận xét về điều gì? <strong>Đừng chỉ hỏi "tôi được mấy band"</strong> — hỏi "ngôn ngữ của tôi có tự nhiên không? Tôi có dùng từ sắc thái không? Tôi có nói logic và có chiều sâu không?"</p>
+              </div>
+              <div class="p-3 rounded-lg" style="background:rgba(15,23,42,.03);">
+                <p class="font-semibold mb-1" style="color:var(--accent2);font-size:12px;">Tối · 30 phút · Cải thiện phát âm & ngữ điệu</p>
+                <p style="color:var(--text);line-height:1.6">Tập trung vào ngữ điệu tiếng Anh: <em>làm thế nào để giọng tôi lên xuống thể hiện cảm xúc, sự nhấn mạnh, sự hỏi hỏi?</em> Tiếng Anh không phẳng như tiếng Việt — ngữ điệu mang nhiều ý nghĩa. Ghi âm và so sánh với người bản xứ.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="day-card rounded-2xl p-5" style="background:var(--card);border:1px solid var(--border);">
+            <div class="flex items-center gap-3 mb-4">
+              <div style="width:36px;height:36px;border-radius:10px;background:var(--deep-soft);display:flex;align-items:center;justify-content:center;color:var(--deep);font-weight:700;font-size:14px;">T5</div>
+              <div>
+                <div class="font-semibold" style="color:var(--text)">Thứ Năm · Viết học thuật & Tinh tế</div>
+                <div class="text-xs" style="color:var(--muted)">Viết rõ ràng, chính xác, có chiều sâu</div>
+              </div>
+            </div>
+            <div class="space-y-3 text-sm">
+              <div class="p-3 rounded-lg" style="background:rgba(15,23,42,.03);">
+                <p class="font-semibold mb-1" style="color:var(--deep);font-size:12px;">Sáng · 60 phút · Viết & Tinh chỉnh</p>
+                <p style="color:var(--text);line-height:1.6">Viết 1 bài Writing Task 2. Sau đó, <strong>tự tinh chỉnh</strong>: làm thế nào để lập luận chặt chẽ hơn? Từ nào có thể thay bằng từ chính xác và sắc thái hơn? Câu nào có thể viết gọn và mạnh mẽ hơn? Viết tốt = viết lại nhiều lần.</p>
+              </div>
+              <div class="p-3 rounded-lg" style="background:rgba(15,23,42,.03);">
+                <p class="font-semibold mb-1" style="color:var(--accent);font-size:12px;">Chiều · 60 phút · Đánh giá & Học từ bài tốt</p>
+                <p style="color:var(--text);line-height:1.6">Gửi bài viết cho người có kinh nghiệm sửa. <strong>Học từ những nhận xét</strong>. Đồng thời, đọc bài band 8-9 và phân tích: <em>Điều gì làm bài này xuất sắc? Lập luận? Từ ngữ? Cấu trúc? Tôi có thể học hỏi điều gì cho bài viết của mình?</em></p>
+              </div>
+              <div class="p-3 rounded-lg" style="background:rgba(15,23,42,.03);">
+                <p class="font-semibold mb-1" style="color:var(--accent2);font-size:12px;">Tối · 30 phút · Viết bài luận ngắn</p>
+                <p style="color:var(--text);line-height:1.6">Viết 1 đoạn văn ngắn (150 từ) về một vấn đề bạn quan tâm (không nhất thiết là đề IELTS). Tập diễn đạt quan điểm cá nhân một cách rõ ràng, có lý lẽ. Mục tiêu: <strong>viết trở thành cách bạn ghi lại suy nghĩ</strong>, không phải chỉ để thi.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="day-card rounded-2xl p-5" style="background:var(--card);border:1px solid var(--border);">
+            <div class="flex items-center gap-3 mb-4">
+              <div style="width:36px;height:36px;border-radius:10px;background:var(--deep-soft);display:flex;align-items:center;justify-content:center;color:var(--deep);font-weight:700;font-size:14px;">T6</div>
+              <div>
+                <div class="font-semibold" style="color:var(--text)">Thứ Sáu · Đắm chìm & Sử dụng thực tế</div>
+                <div class="text-xs" style="color:var(--muted)">Sống trong tiếng Anh</div>
+              </div>
+            </div>
+            <div class="space-y-3 text-sm">
+              <div class="p-3 rounded-lg" style="background:rgba(15,23,42,.03);">
+                <p class="font-semibold mb-1" style="color:var(--deep);font-size:12px;">Sáng · 60 phút · Học nội dung bằng tiếng Anh</p>
+                <p style="color:var(--text);line-height:1.6">Học một điều gì đó <strong>bằng tiếng Anh</strong> chứ không phải học tiếng Anh: xem khóa học Coursera, đọc bài về chuyên môn của bạn, học nấu ăn qua video tiếng Anh. Khi tiếng Anh là công cụ để học thứ khác, bạn học ngôn ngữ một cách tự nhiên và sâu sắc nhất.</p>
+              </div>
+              <div class="p-3 rounded-lg" style="background:rgba(15,23,42,.03);">
+                <p class="font-semibold mb-1" style="color:var(--accent);font-size:12px;">Chiều · 60 phút · Sáng tạo bằng tiếng Anh</p>
+                <p style="color:var(--text);line-height:1.6">Làm điều gì đó sáng tạo bằng tiếng Anh: viết bài thơ ngắn, viết kịch bản hội thoại, tạo bài thuyết trình về chủ đề yêu thích, thậm chí nhật ký video. Khi bạn <strong>tạo ra thứ gì đó bằng tiếng Anh</strong>, bạn thực sự làm chủ nó.</p>
+              </div>
+              <div class="p-3 rounded-lg" style="background:rgba(15,23,42,.03);">
+                <p class="font-semibold mb-1" style="color:var(--accent2);font-size:12px;">Tối · 30 phút · Suy nghĩ bằng tiếng Anh</p>
+                <p style="color:var(--text);line-height:1.6">Tập <strong>suy nghĩ trực tiếp bằng tiếng Anh</strong> trong 30 phút. Không dịch từ tiếng Việt. Khi đi bộ, làm việc nhà, hãy tự nói chuyện với mình trong đầu bằng tiếng Anh về mọi thứ xung quanh. Đây là bước cuối cùng để tiếng Anh trở thành một phần của bạn.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="day-card rounded-2xl p-5" style="background:var(--card);border:1px solid var(--border);">
+            <div class="flex items-center gap-3 mb-4">
+              <div style="width:36px;height:36px;border-radius:10px;background:var(--accent2-soft);display:flex;align-items:center;justify-content:center;color:var(--accent2);font-weight:700;font-size:14px;">T7</div>
+              <div>
+                <div class="font-semibold" style="color:var(--text)">Thứ Bảy · Full Mock Test & Đánh giá</div>
+                <div class="text-xs" style="color:var(--muted)">Kiểm tra toàn diện, chuẩn bị tâm lý</div>
+              </div>
+            </div>
+            <div class="space-y-3 text-sm">
+              <div class="p-3 rounded-lg" style="background:rgba(15,23,42,.03);">
+                <p class="font-semibold mb-1" style="color:var(--deep);font-size:12px;">Buổi sáng · 2h45 phút · Full test Listening + Reading + Writing</p>
+                <p style="color:var(--text);line-height:1.6">Làm đúng quy chế thi thật: không nghỉ giữa các phần, không dùng từ điển, đúng thời gian. Mục tiêu không chỉ xem điểm số — <strong>rèn luyện tâm lý, sự tập trung, quản lý thời gian</strong> trong môi trường áp lực.</p>
+              </div>
+              <div class="p-3 rounded-lg" style="background:rgba(15,23,42,.03);">
+                <p class="font-semibold mb-1" style="color:var(--accent);font-size:12px;">Buổi chiều · Phân tích sâu & Đánh giá tổng thể</p>
+                <p style="color:var(--text);line-height:1.6">Chấm điểm, sau đó dành 1-2 giờ phân tích: <em>Điểm nào còn yếu? Lỗi sai có quy luật không? Tôi cần tập trung cải thiện điều gì trong tuần tới? Tâm lý thi của tôi thế nào?</em> Đừng buồn nếu điểm chưa cao — mỗi mock test là một bài học quý giá.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="p-5 rounded-2xl mb-10" style="background:var(--deep-soft);border-left:4px solid var(--deep);">
+          <p class="text-sm font-semibold mb-2" style="color:var(--deep)">Điểm cốt lõi Giai đoạn 3:</p>
+          <p class="text-sm" style="color:var(--text);line-height:1.7">
+            Từ "dùng được" sang "dùng <strong>tinh tế</strong>". Sự khác biệt giữa band 6.5 và 7.0+ không phải là biết nhiều từ hơn — mà là <strong>chọn đúng từ, đúng sắc thái, đúng ngữ cảnh; diễn đạt ý phức tạp một cách rõ ràng và logic; và có tư duy phản biện</strong>. Cuối lộ trình này, bạn không chỉ có chứng chỉ IELTS 7.0 — bạn thực sự thông thạo tiếng Anh như một công cụ mạnh mẽ cho cuộc sống và sự nghiệp.
+          </p>
+        </div>
+      </div>
+
+      <!-- CHỦ NHẬT - COMMON FOR ALL PHASES -->
+      <div class="rounded-2xl p-6 mb-10" style="background:linear-gradient(135deg,var(--accent-soft),var(--accent2-soft));border:1px solid var(--border);">
+        <div class="flex items-center gap-3 mb-4">
+          <div style="width:40px;height:40px;border-radius:12px;background:#fff;display:flex;align-items:center;justify-content:center;color:var(--accent);font-weight:700;">CN</div>
+          <div>
+            <h3 class="text-lg font-bold" style="color:var(--text)">Chủ Nhật · Nghỉ ngơi & Đắm chìm tự nhiên</h3>
+            <p class="text-xs" style="color:var(--muted)">Áp dụng cho cả 3 giai đoạn</p>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+          <div class="p-4 rounded-xl bg-white">
+            <p class="font-semibold mb-2" style="color:var(--accent)">Buổi sáng · Tự do</p>
+            <p style="color:var(--text);line-height:1.6">Ngủ đủ giấc, vận động, dành thời gian cho gia đình bạn bè. <strong>Không mở sách</strong>. Não bộ cần thời gian để củng cố kiến thức đã học trong tuần.</p>
+          </div>
+          <div class="p-4 rounded-xl bg-white">
+            <p class="font-semibold mb-2" style="color:var(--accent2)">Buổi chiều · Đắm chìm thụ động</p>
+            <p style="color:var(--text);line-height:1.6">Xem phim tiếng Anh, nghe nhạc, đọc truyện tranh tiếng Anh — <strong>nhưng coi đây là giải trí</strong>, không phải học. Tiếng Anh thấm vào một cách tự nhiên khi bạn thư giãn.</p>
+          </div>
+          <div class="p-4 rounded-xl bg-white">
+            <p class="font-semibold mb-2" style="color:var(--deep)">Buổi tối · Chuẩn bị tuần mới</p>
+            <p style="color:var(--text);line-height:1.6">15 phút xem lại mục tiêu tuần tới, chuẩn bị tài liệu. <strong>Đi ngủ sớm</strong>. Sự nhất quán dài hạn quan trọng hơn bất kỳ buổi học khuya nào.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FINAL MESSAGE -->
+      <div class="text-center p-8 rounded-2xl mb-6" style="background:var(--card);border:2px solid var(--accent);">
+        <h3 class="text-xl font-bold mb-3" style="color:var(--text)">Lời cuối cùng</h3>
+        <p class="text-sm mb-4" style="color:var(--muted);line-height:1.8;max-width:600px;margin:0 auto;">
+          Lộ trình này không hứa hẹn "IELTS 7.0 trong 30 ngày" hay các mẹo thần kỳ. Nó hứa hẹn một điều quý giá hơn: <strong>sau 8 tháng, bạn sẽ thực sự thông thạo tiếng Anh</strong> — hiểu sâu, dùng tự nhiên, tinh tế. IELTS 7.0 sẽ chỉ là một sản phẩm phụ, một bằng chứng cho thấy bạn đã làm chủ ngôn ngữ này.
+        </p>
+        <p class="text-base font-semibold" style="color:var(--accent);">
+          Bắt đầu hôm nay. Kiên trì mỗi ngày. Và hãy yêu ngôn ngữ này — nó sẽ mở ra cả một thế giới mới cho bạn.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+function showPhase(num) {
+  // Hide all phases
+  document.getElementById('phase1').style.display = 'none';
+  document.getElementById('phase2').style.display = 'none';
+  document.getElementById('phase3').style.display = 'none';
+  
+  // Remove active class from all tabs
+  document.getElementById('tab1').classList.remove('active');
+  document.getElementById('tab2').classList.remove('active');
+  document.getElementById('tab3').classList.remove('active');
+  document.getElementById('tab1').style.color = 'var(--muted)';
+  document.getElementById('tab2').style.color = 'var(--muted)';
+  document.getElementById('tab3').style.color = 'var(--muted)';
+  
+  // Show selected phase and activate tab
+  document.getElementById('phase' + num).style.display = 'block';
+  var activeTab = document.getElementById('tab' + num);
+  activeTab.classList.add('active');
+  activeTab.style.color = '';
+}
+</script>
+</html>

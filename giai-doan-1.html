@@ -1,0 +1,658 @@
+<html style="margin:0;padding:0;">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+(function(){
+  var s = document.createElement('style');
+  s.textContent = ':root{--bg:#faf9f4;--card:#ffffff;--text:#0f172a;--muted:#64748b;--accent:#297a2e;--accent-soft:rgba(41,122,46,.14);--accent2:#d97706;--accent2-soft:rgba(217,119,6,.14);--border:rgba(15,23,42,.08);--deep:#1e3a5f;--deep-soft:rgba(30,58,95,.1)}';
+  s.textContent += '.week-tab{transition:all .2s ease}.week-tab.active{background:var(--accent);color:#fff}.resource-link{transition:all .15s ease}.resource-link:hover{background:var(--accent-soft);border-color:var(--accent)}.accordion-content{max-height:0;overflow:hidden;transition:max-height .3s ease}.accordion-content.open{max-height:2000px}';
+  document.head.appendChild(s);
+})();
+</script>
+<div style="background-color:transparent;box-sizing:border-box;">
+  <div style="color:var(--text);font-family:'Fredoka',sans-serif;background:var(--bg)">
+    <div class="max-w-5xl mx-auto px-6 py-12">
+
+      <!-- HERO -->
+      <div class="mb-10">
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:16px;">
+          <div style="width:44px;height:44px;border-radius:12px;background:var(--accent-soft);display:flex;align-items:center;justify-content:center;color:var(--accent);flex-shrink:0;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          </div>
+          <div>
+            <p style="font-family:monospace;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted)">GIAI ĐOẠN 1 · CHI TIẾT 8 TUẦN</p>
+            <h1 class="text-3xl font-bold" style="color:var(--text);line-height:1.2">
+              Xây dựng nền tảng <span style="background:linear-gradient(100deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent">sâu sắc</span> · Từ 5.0 lên 5.5
+            </h1>
+          </div>
+        </div>
+        <p class="text-sm mt-4" style="color:var(--muted);line-height:1.7;max-width:700px">
+          Giai đoạn này không chạy theo đề thi hay mẹo. Mục tiêu: <strong>hiểu bản chất ngôn ngữ</strong> — tại sao người Anh dùng cấu trúc này, từ ngữ đó mang sắc thái gì, cách họ tổ chức tư duy như thế nào. Mỗi hoạt động dưới đây đều có link tài liệu cụ thể từ BBC, British Council và các nguồn uy tín.
+        </p>
+      </div>
+
+      <!-- KHO TÀI LIỆU CHÍNH -->
+      <div class="rounded-2xl p-6 mb-8" style="background:var(--card);border:1px solid var(--border);">
+        <h2 class="text-lg font-bold mb-4" style="color:var(--text)">📚 Kho tài liệu chính dùng trong Giai đoạn 1</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <a href="https://www.youtube.com/@bbclearningenglish" target="_blank" class="resource-link flex items-center gap-3 p-3 rounded-xl border" style="border-color:var(--border);background:var(--bg);text-decoration:none;color:inherit;">
+            <div style="width:36px;height:36px;border-radius:8px;background:#dc2626;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:12px;flex-shrink:0;">BBC</div>
+            <div>
+              <div class="font-semibold text-sm">BBC Learning English YouTube</div>
+              <div class="text-xs" style="color:var(--muted)">Video bài giảng ngữ pháp, từ vựng, phát âm chuẩn Anh</div>
+            </div>
+          </a>
+          <a href="https://www.bbc.co.uk/learningenglish/english/features/6-minute-english" target="_blank" class="resource-link flex items-center gap-3 p-3 rounded-xl border" style="border-color:var(--border);background:var(--bg);text-decoration:none;color:inherit;">
+            <div style="width:36px;height:36px;border-radius:8px;background:var(--accent2-soft);display:flex;align-items:center;justify-content:center;color:var(--accent2);font-weight:700;font-size:12px;flex-shrink:0;">6m</div>
+            <div>
+              <div class="font-semibold text-sm">BBC 6 Minute English</div>
+              <div class="text-xs" style="color:var(--muted)">Podcast 6 phút, có transcript + từ vựng, luyện nghe trung cấp</div>
+            </div>
+          </a>
+          <a href="https://learnenglish.britishcouncil.org/free-resources/grammar/a1-a2" target="_blank" class="resource-link flex items-center gap-3 p-3 rounded-xl border" style="border-color:var(--border);background:var(--bg);text-decoration:none;color:inherit;">
+            <div style="width:36px;height:36px;border-radius:8px;background:var(--deep-soft);display:flex;align-items:center;justify-content:center;color:var(--deep);font-weight:700;font-size:12px;flex-shrink:0;">BC</div>
+            <div>
+              <div class="font-semibold text-sm">British Council Grammar A1-A2</div>
+              <div class="text-xs" style="color:var(--muted)">Giải thích ngữ pháp rõ ràng + bài tập tương tác miễn phí</div>
+            </div>
+          </a>
+          <a href="https://www.youtube.com/playlist?list=PLuq95N8SHPcGqiKK5D5gnGR7DZN0I05qs" target="_blank" class="resource-link flex items-center gap-3 p-3 rounded-xl border" style="border-color:var(--border);background:var(--bg);text-decoration:none;color:inherit;">
+            <div style="width:36px;height:36px;border-radius:8px;background:#e11d48;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:12px;flex-shrink:0;">L</div>
+            <div>
+              <div class="font-semibold text-sm">English with Lucy · Grammar Playlist</div>
+              <div class="text-xs" style="color:var(--muted)">Video giải thích ngữ pháp sâu, rõ ràng, giọng Anh chuẩn</div>
+            </div>
+          </a>
+          <a href="https://www.oxfordlearnersdictionaries.com/" target="_blank" class="resource-link flex items-center gap-3 p-3 rounded-xl border" style="border-color:var(--border);background:var(--bg);text-decoration:none;color:inherit;">
+            <div style="width:36px;height:36px;border-radius:8px;background:#7c3aed;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:12px;flex-shrink:0;">O</div>
+            <div>
+              <div class="font-semibold text-sm">Oxford Learner's Dictionary</div>
+              <div class="text-xs" style="color:var(--muted)">Từ điển Anh-Anh, định nghĩa rõ, phát âm, collocation, ví dụ</div>
+            </div>
+          </a>
+          <a href="https://m.freecollocation.com/" target="_blank" class="resource-link flex items-center gap-3 p-3 rounded-xl border" style="border-color:var(--border);background:var(--bg);text-decoration:none;color:inherit;">
+            <div style="width:36px;height:36px;border-radius:8px;background:#0d9488;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:12px;flex-shrink:0;">C</div>
+            <div>
+              <div class="font-semibold text-sm">Oxford Collocation Dictionary (Free)</div>
+              <div class="text-xs" style="color:var(--muted)">Tra cụm từ thường đi kèm — học từ vựng theo cụm tự nhiên</div>
+            </div>
+          </a>
+          <a href="https://www.youtube.com/user/TEDEducation" target="_blank" class="resource-link flex items-center gap-3 p-3 rounded-xl border" style="border-color:var(--border);background:var(--bg);text-decoration:none;color:inherit;">
+            <div style="width:36px;height:36px;border-radius:8px;background:#ea580c;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:12px;flex-shrink:0;">T</div>
+            <div>
+              <div class="font-semibold text-sm">TED-Ed YouTube</div>
+              <div class="text-xs" style="color:var(--muted)">Video hoạt hình ngắn 5 phút, giọng chuẩn, nội dung đa dạng</div>
+            </div>
+          </a>
+          <a href="https://www.youtube.com/user/ieltsliz" target="_blank" class="resource-link flex items-center gap-3 p-3 rounded-xl border" style="border-color:var(--border);background:var(--bg);text-decoration:none;color:inherit;">
+            <div style="width:36px;height:36px;border-radius:8px;background:#2563eb;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:12px;flex-shrink:0;">Liz</div>
+            <div>
+              <div class="font-semibold text-sm">IELTS Liz YouTube</div>
+              <div class="text-xs" style="color:var(--muted)">Giới thiệu cấu trúc đề thi IELTS, mẹo hiểu bản chất (giai đoạn sau)</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- WEEK TABS -->
+      <div class="mb-6">
+        <p class="text-sm font-semibold mb-3" style="color:var(--muted)">Chọn tuần để xem chi tiết:</p>
+        <div class="flex flex-wrap gap-2">
+          <button class="week-tab active px-4 py-2 rounded-lg text-sm font-semibold border" style="border-color:var(--border);" onclick="showWeek(1)">Tuần 1</button>
+          <button class="week-tab px-4 py-2 rounded-lg text-sm font-semibold border" style="border-color:var(--border);color:var(--muted);background:var(--bg);" onclick="showWeek(2)">Tuần 2</button>
+          <button class="week-tab px-4 py-2 rounded-lg text-sm font-semibold border" style="border-color:var(--border);color:var(--muted);background:var(--bg);" onclick="showWeek(3)">Tuần 3</button>
+          <button class="week-tab px-4 py-2 rounded-lg text-sm font-semibold border" style="border-color:var(--border);color:var(--muted);background:var(--bg);" onclick="showWeek(4)">Tuần 4</button>
+          <button class="week-tab px-4 py-2 rounded-lg text-sm font-semibold border" style="border-color:var(--border);color:var(--muted);background:var(--bg);" onclick="showWeek(5)">Tuần 5</button>
+          <button class="week-tab px-4 py-2 rounded-lg text-sm font-semibold border" style="border-color:var(--border);color:var(--muted);background:var(--bg);" onclick="showWeek(6)">Tuần 6</button>
+          <button class="week-tab px-4 py-2 rounded-lg text-sm font-semibold border" style="border-color:var(--border);color:var(--muted);background:var(--bg);" onclick="showWeek(7)">Tuần 7</button>
+          <button class="week-tab px-4 py-2 rounded-lg text-sm font-semibold border" style="border-color:var(--border);color:var(--muted);background:var(--bg);" onclick="showWeek(8)">Tuần 8</button>
+        </div>
+      </div>
+
+      <!-- WEEK 1 CONTENT -->
+      <div id="week1" class="week-content">
+        <div class="rounded-2xl p-6 mb-6" style="background:var(--card);border:1px solid var(--border);">
+          <div class="flex flex-wrap items-start gap-6">
+            <div style="flex:1;min-width:250px;">
+              <span style="display:inline-block;padding:3px 10px;border-radius:12px;background:var(--accent2-soft);color:var(--accent2);font-size:11px;font-weight:600;margin-bottom:10px;">TUẦN 1 · Bắt đầu sâu sắc</span>
+              <h3 class="text-xl font-bold mb-2" style="color:var(--text)">Hiểu về "Thời gian" trong tư duy người Anh</h3>
+              <p class="text-sm" style="color:var(--muted);line-height:1.7">
+                <strong>Chủ đề ngữ pháp:</strong> Present Simple & Present Continuous — không chỉ nhớ công thức, mà hiểu: <em>Tại sao người Anh có 2 thì hiện tại? Thì nào diễn tả "bản chất", thì nào diễn tả "hành động đang diễn ra trong khoảnh khắc"?</em>
+              </p>
+              <p class="text-sm mt-2" style="color:var(--muted);line-height:1.7">
+                <strong>Chủ đề từ vựng:</strong> Cuộc sống hàng ngày (Daily routines) — học theo cụm collocation, không học từ lẻ
+              </p>
+            </div>
+            <div class="grid grid-cols-2 gap-3 text-center" style="min-width:200px;">
+              <div class="p-3 rounded-xl" style="background:var(--accent-soft);">
+                <div class="font-bold" style="color:var(--accent)">Present Simple</div>
+                <div class="text-xs" style="color:var(--muted)">Ngữ pháp chính</div>
+              </div>
+              <div class="p-3 rounded-xl" style="background:var(--accent2-soft);">
+                <div class="font-bold" style="color:var(--accent2)">Daily Life</div>
+                <div class="text-xs" style="color:var(--muted)">Từ vựng</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- DAILY SCHEDULE WEEK 1 -->
+        <div class="space-y-4 mb-8">
+          
+          <!-- MONDAY -->
+          <div class="rounded-2xl p-5" style="background:var(--card);border:1px solid var(--border);">
+            <div class="flex items-center gap-3 mb-4">
+              <div style="width:36px;height:36px;border-radius:10px;background:var(--accent-soft);display:flex;align-items:center;justify-content:center;color:var(--accent);font-weight:700;font-size:14px;">T2</div>
+              <div>
+                <div class="font-semibold" style="color:var(--text)">Thứ Hai · Ngữ pháp sâu: Hiểu bản chất 2 thì hiện tại</div>
+              </div>
+            </div>
+            <div class="space-y-3">
+              <div class="p-4 rounded-xl" style="background:var(--bg);border-left:3px solid var(--accent);">
+                <p class="font-semibold mb-2 text-sm" style="color:var(--accent);">🌅 Sáng · 45 phút · Hiểu "tại sao" có 2 thì hiện tại</p>
+                <ol class="text-sm space-y-2 list-decimal list-inside" style="color:var(--text);line-height:1.7">
+                  <li>Xem video giải thích: <a href="https://www.youtube.com/watch?v=8ZiBpx2eLs8" target="_blank" style="color:var(--accent);text-decoration:underline;">BBC Learning English: Present Simple or Continuous?</a></li>
+                  <li>Đọc giải thích sâu + làm bài tập: <a href="https://learnenglish.britishcouncil.org/free-resources/grammar/a1-a2/present-simple-and-present-continuous" target="_blank" style="color:var(--accent);text-decoration:underline;">British Council: Present Simple & Continuous</a></li>
+                  <li><strong>Hiểu sâu:</strong> Tự viết ra 3 cặp câu minh họa sự khác biệt về ý nghĩa (ví dụ: "I work in banking" = bản chất công việc; "I'm working today" = hôm nay tôi đang làm, có thể không phải ngày thường)</li>
+                </ol>
+              </div>
+              <div class="p-4 rounded-xl" style="background:var(--bg);border-left:3px solid var(--accent2);">
+                <p class="font-semibold mb-2 text-sm" style="color:var(--accent2);">☀️ Trưa · 45 phút · Nghe hiểu: BBC 6 Minute English</p>
+                <ol class="text-sm space-y-2 list-decimal list-inside" style="color:var(--text);line-height:1.7">
+                  <li>Chọn 1 episode mới nhất tại: <a href="https://www.bbc.co.uk/learningenglish/english/features/6-minute-english" target="_blank" style="color:var(--accent2);text-decoration:underline;">BBC 6 Minute English</a></li>
+                  <li><strong>Lần 1:</strong> Nghe không transcript, trả lời câu hỏi lớn: Chủ đề chính là gì? Người nói có cùng quan điểm không?</li>
+                  <li><strong>Lần 2:</strong> Nghe cùng transcript, gạch chân những từ/cụm từ mới</li>
+                  <li><strong>Lần 3:</strong> Nghe không transcript, chú ý ngữ điệu và sự nhấn nhá</li>
+                </ol>
+              </div>
+              <div class="p-4 rounded-xl" style="background:var(--bg);border-left:3px solid var(--deep);">
+                <p class="font-semibold mb-2 text-sm" style="color:var(--deep);">🌙 Tối · 30 phút · Từ vựng theo cụm (Collocation)</p>
+                <ol class="text-sm space-y-2 list-decimal list-inside" style="color:var(--text);line-height:1.7">
+                  <li>Từ đoạn nghe trên, chọn 10 cụm từ (ví dụ: "get up early", "have breakfast", "go to work" — KHÔNG học "get", "up" riêng lẻ)</li>
+                  <li>Tra mỗi cụm từ trên: <a href="https://m.freecollocation.com/" target="_blank" style="color:var(--deep);text-decoration:underline;">Oxford Collocation Dictionary</a> để xem còn có cách kết hợp nào khác không</li>
+                  <li>Tự viết 5 câu về cuộc sống của mình dùng các cụm từ này (dùng cả Present Simple và Continuous)</li>
+                  <li>Ghi vào sổ tay: mỗi cụm từ = 1 dòng, kèm câu ví dụ của BẠN</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+
+          <!-- TUESDAY -->
+          <div class="rounded-2xl p-5" style="background:var(--card);border:1px solid var(--border);">
+            <div class="flex items-center gap-3 mb-4">
+              <div style="width:36px;height:36px;border-radius:10px;background:var(--accent-soft);display:flex;align-items:center;justify-content:center;color:var(--accent);font-weight:700;font-size:14px;">T3</div>
+              <div>
+                <div class="font-semibold" style="color:var(--text)">Thứ Ba · Đọc hiểu & Phân tích cấu trúc câu</div>
+              </div>
+            </div>
+            <div class="space-y-3">
+              <div class="p-4 rounded-xl" style="background:var(--bg);border-left:3px solid var(--accent);">
+                <p class="font-semibold mb-2 text-sm" style="color:var(--accent);">🌅 Sáng · 45 phút · Đọc hiểu sâu</p>
+                <ol class="text-sm space-y-2 list-decimal list-inside" style="color:var(--text);line-height:1.7">
+                  <li>Đọc 1 bài ngắn về chủ đề "Daily life" tại: <a href="https://learnenglish.britishcouncil.org/free-resources/reading-skills" target="_blank" style="color:var(--accent);text-decoration:underline;">British Council Reading A2</a> — chọn bài level A2</li>
+                  <li><strong>Đọc lần 1:</strong> Đọc liền, không tra từ, hiểu ý chính</li>
+                  <li><strong>Đọc lần 2:</strong> Xác định cấu trúc: câu nào dùng Present Simple, câu nào dùng Continuous? <em>Tại sao tác giả chọn thì đó?</em></li>
+                  <li><strong>Đọc lần 3:</strong> Tra từ quan trọng trên <a href="https://www.oxfordlearnersdictionaries.com/" target="_blank" style="color:var(--accent);text-decoration:underline;">Oxford Learner's Dictionary</a> (đọc định nghĩa tiếng Anh, không dịch)</li>
+                </ol>
+              </div>
+              <div class="p-4 rounded-xl" style="background:var(--bg);border-left:3px solid var(--accent2);">
+                <p class="font-semibold mb-2 text-sm" style="color:var(--accent2);">☀️ Trưa · 45 phút · Phân tích "cơ cấu câu"</p>
+                <ol class="text-sm space-y-2 list-decimal list-inside" style="color:var(--text);line-height:1.7">
+                  <li>Lấy 5 câu hay từ bài đọc. Với mỗi câu: gạch chân chủ ngữ, khoanh tròn vị ngữ, xác định thì</li>
+                  <li>Hỏi: <em>Nếu tôi đổi vị trí các từ, câu có còn tự nhiên không? Tại sao người Anh sắp xếp từ theo thứ tự này?</em></li>
+                  <li>Ví dụ: "I usually drink coffee in the morning." → Tại sao "usually" đứng giữa chủ ngữ và vị ngữ? Tại sao không nói "I drink usually coffee..."?</li>
+                  <li>Tra quy tắc về vị trí trạng từ tần suất trên British Council Grammar</li>
+                </ol>
+              </div>
+              <div class="p-4 rounded-xl" style="background:var(--bg);border-left:3px solid var(--deep);">
+                <p class="font-semibold mb-2 text-sm" style="color:var(--deep);">🌙 Tối · 30 phút · Viết tóm tắt = diễn đạt lại</p>
+                <ol class="text-sm space-y-2 list-decimal list-inside" style="color:var(--text);line-height:1.7">
+                  <li>Viết tóm tắt bài đọc <strong>bằng lời của mình</strong> (80-100 từ). KHÔNG chép lại câu gốc</li>
+                  <li>Tập thay đổi cấu trúc: nếu gốc là "Many people start work at 9am", bạn viết "A lot of people begin their working day at 9 o'clock"</li>
+                  <li>Đây là nền tảng của paraphrase — kỹ năng cốt lõi cho IELTS Reading và Writing</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+
+          <!-- WEDNESDAY -->
+          <div class="rounded-2xl p-5" style="background:var(--card);border:1px solid var(--border);">
+            <div class="flex items-center gap-3 mb-4">
+              <div style="width:36px;height:36px;border-radius:10px;background:var(--accent-soft);display:flex;align-items:center;justify-content:center;color:var(--accent);font-weight:700;font-size:14px;">T4</div>
+              <div>
+                <div class="font-semibold" style="color:var(--text)">Thứ Tư · Nói & Phát âm: Cơ miệng quen với tiếng Anh</div>
+              </div>
+            </div>
+            <div class="space-y-3">
+              <div class="p-4 rounded-xl" style="background:var(--bg);border-left:3px solid var(--accent);">
+                <p class="font-semibold mb-2 text-sm" style="color:var(--accent);">🌅 Sáng · 45 phút · Shadowing = nói theo người bản xứ</p>
+                <ol class="text-sm space-y-2 list-decimal list-inside" style="color:var(--text);line-height:1.7">
+                  <li>Dùng lại đoạn BBC 6 Minute English hôm T2</li>
+                  <li>Chơi 1 câu, tạm dừng, nhắc lại <strong>chính xác ngữ điệu, tốc độ, sự nhấn nhá</strong>. Không chỉ nói đúng từ — nói đúng "nhạc" của câu</li>
+                  <li>Xem video về phát âm liên âm (connected speech): <a href="https://www.youtube.com/watch?v=JXH1PGq0Gf0" target="_blank" style="color:var(--accent);text-decoration:underline;">BBC Learning English: Connected Speech</a></li>
+                  <li>Ghi âm mình nói, nghe lại và so sánh với bản gốc: điểm nào khác biệt?</li>
+                </ol>
+              </div>
+              <div class="p-4 rounded-xl" style="background:var(--bg);border-left:3px solid var(--accent2);">
+                <p class="font-semibold mb-2 text-sm" style="color:var(--accent2);">☀️ Trưa · 45 phút · Tự nói về cuộc sống hàng ngày</p>
+                <ol class="text-sm space-y-2 list-decimal list-inside" style="color:var(--text);line-height:1.7">
+                  <li>Chủ đề: "My daily routine". <strong>KHÔNG viết bài trước</strong>, nói trực tiếp 2-3 phút</li>
+                  <li>Ghi âm. Nghe lại và tự đánh giá:
+                    <ul class="list-disc list-inside ml-4 mt-1">
+                      <li>Người nghe có hiểu tôi không?</li>
+                      <li>Tôi có dùng đúng Present Simple cho thói quen, Continuous cho hành động đang diễn ra không?</li>
+                      <li>Từ nào phát âm còn chưa chuẩn?</li>
+                    </ul>
+                  </li>
+                  <li>Nói lại lần 2, cố gắng cải thiện những điểm đã nhận ra</li>
+                </ol>
+              </div>
+              <div class="p-4 rounded-xl" style="background:var(--bg);border-left:3px solid var(--deep);">
+                <p class="font-semibold mb-2 text-sm" style="color:var(--deep);">🌙 Tối · 30 phút · Ôn tập chủ động = dạy lại cho bản thân</p>
+                <ol class="text-sm space-y-2 list-decimal list-inside" style="color:var(--text);line-height:1.7">
+                  <li>Nhìn vào sổ tay từ vựng, <strong>che nghĩa đi</strong>, tự đặt câu với mỗi cụm từ</li>
+                  <li>Tự giải thích cho mình nghe: "Sự khác biệt giữa Present Simple và Continuous là..." — như thể bạn đang dạy cho người khác</li>
+                  <li>Nếu giải thích không được rõ → quay lại xem video bài giảng</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+
+          <!-- THURSDAY -->
+          <div class="rounded-2xl p-5" style="background:var(--card);border:1px solid var(--border);">
+            <div class="flex items-center gap-3 mb-4">
+              <div style="width:36px;height:36px;border-radius:10px;background:var(--accent-soft);display:flex;align-items:center;justify-content:center;color:var(--accent);font-weight:700;font-size:14px;">T5</div>
+              <div>
+                <div class="font-semibold" style="color:var(--text)">Thứ Năm · Viết nhật ký = suy nghĩ bằng tiếng Anh</div>
+              </div>
+            </div>
+            <div class="space-y-3">
+              <div class="p-4 rounded-xl" style="background:var(--bg);border-left:3px solid var(--accent);">
+                <p class="font-semibold mb-2 text-sm" style="color:var(--accent);">🌅 Sáng · 45 phút · Viết nhật ký tiếng Anh</p>
+                <ol class="text-sm space-y-2 list-decimal list-inside" style="color:var(--text);line-height:1.7">
+                  <li>Viết 150-200 từ về ngày hôm qua hoặc một ngày điển hình của bạn</li>
+                  <li><strong>QUAN TRỌNG:</strong> Đừng lo lỗi. Đừng dịch từ tiếng Việt. Cứ viết ra những gì trong đầu bằng tiếng Anh. Nếu không biết từ nào, dùng từ thay thế hoặc diễn đạt vòng vo</li>
+                  <li>Mục tiêu: <strong>diễn đạt suy nghĩ ra tiếng Anh</strong>, không phải viết một bài hoàn hảo</li>
+                  <li>Sau khi viết xong, tự sửa: tìm lỗi ngữ pháp về 2 thì hiện tại, tìm cách dùng cụm từ đã học</li>
+                </ol>
+              </div>
+              <div class="p-4 rounded-xl" style="background:var(--bg);border-left:3px solid var(--accent2);">
+                <p class="font-semibold mb-2 text-sm" style="color:var(--accent2);">☀️ Trưa · 45 phút · Học từ vựng chủ đề: Daily routines</p>
+                <ol class="text-sm space-y-2 list-decimal list-inside" style="color:var(--text);line-height:1.7">
+                  <li>Học 15 cụm từ về chủ đề này. Nguồn: từ BBC 6 Minute English + từ bài đọc + từ tự tra</li>
+                  <li>Ví dụ cụm từ đúng cách học: "wake up", "get dressed", "brush my teeth", "commute to work", "have a quick lunch", "wind down in the evening"...</li>
+                  <li>Với mỗi cụm: tra <a href="https://www.oxfordlearnersdictionaries.com/" target="_blank" style="color:var(--accent2);text-decoration:underline;">Oxford Dictionary</a> xem phát âm, xem thêm ví dụ</li>
+                  <li><strong>Không dịch sang tiếng Việt</strong>. Hiểu nghĩa qua hình ảnh và ví dụ tiếng Anh</li>
+                </ol>
+              </div>
+              <div class="p-4 rounded-xl" style="background:var(--bg);border-left:3px solid var(--deep);">
+                <p class="font-semibold mb-2 text-sm" style="color:var(--deep);">🌙 Tối · 30 phút · Xem TED-Ed = nghe hiểu nội dung thú vị</p>
+                <ol class="text-sm space-y-2 list-decimal list-inside" style="color:var(--text);line-height:1.7">
+                  <li>Chọn 1 video TED-Ed ngắn (5 phút) về chủ đề bạn thích tại: <a href="https://www.youtube.com/user/TEDEducation" target="_blank" style="color:var(--deep);text-decoration:underline;">TED-Ed YouTube</a></li>
+                  <li><strong>Lần 1:</strong> Xem không phụ đề, cố gắng hiểu ý chính</li>
+                  <li><strong>Lần 2:</strong> Xem có phụ đề tiếng Anh</li>
+                  <li><strong>Lần 3:</strong> Xem không phụ đề nữa — bây giờ bạn hiểu nhiều hơn rồi đấy!</li>
+                  <li>Đây là việc "đắm chìm" — ngôn ngữ thấm vào tự nhiên khi bạn tập trung vào nội dung</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+
+          <!-- FRIDAY -->
+          <div class="rounded-2xl p-5" style="background:var(--card);border:1px solid var(--border);">
+            <div class="flex items-center gap-3 mb-4">
+              <div style="width:36px;height:36px;border-radius:10px;background:var(--accent-soft);display:flex;align-items:center;justify-content:center;color:var(--accent);font-weight:700;font-size:14px;">T6</div>
+              <div>
+                <div class="font-semibold" style="color:var(--text)">Thứ Sáu · Nghe & Đọc mở rộng + Tổng kết tuần</div>
+              </div>
+            </div>
+            <div class="space-y-3">
+              <div class="p-4 rounded-xl" style="background:var(--bg);border-left:3px solid var(--accent);">
+                <p class="font-semibold mb-2 text-sm" style="color:var(--accent);">🌅 Sáng · 45 phút · Nghe thêm: BBC The English We Speak</p>
+                <ol class="text-sm space-y-2 list-decimal list-inside" style="color:var(--text);line-height:1.7">
+                  <li>Chọn 1 episode ngắn tại: <a href="https://www.bbc.co.uk/learningenglish/english/features/the-english-we-speak" target="_blank" style="color:var(--accent);text-decoration:underline;">BBC The English We Speak</a> — học 1 thành ngữ/cụm từ thông dụng</li>
+                  <li>Hiểu: khi nào dùng, sắc thái tích cực hay tiêu cực, ví dụ thực tế</li>
+                  <li>Tự tạo 1-2 câu của mình dùng thành ngữ đó</li>
+                </ol>
+              </div>
+              <div class="p-4 rounded-xl" style="background:var(--bg);border-left:3px solid var(--accent2);">
+                <p class="font-semibold mb-2 text-sm" style="color:var(--accent2);">☀️ Trưa · 45 phút · Đọc sách分级 đơn giản</p>
+                <ol class="text-sm space-y-2 list-decimal list-inside" style="color:var(--text);line-height:1.7">
+                  <li>Đọc 1 chương sách Oxford Bookworms Level 2 hoặc đọc tin tức đơn giản tại: <a href="https://learnenglish.britishcouncil.org/free-resources/reading-skills" target="_blank" style="color:var(--accent2);text-decoration:underline;">British Council Reading</a></li>
+                  <li><strong>QUAN TRỌNG:</strong> Đừng tra từ liên tục. Đoán nghĩa qua ngữ cảnh. Tra chỉ những từ xuất hiện nhiều lần và cản trở hiểu nội dung</li>
+                  <li>Đọc để hưởng thụ nội dung — đây là đọc thực tế, không phải đọc để làm bài tập</li>
+                </ol>
+              </div>
+              <div class="p-4 rounded-xl" style="background:var(--bg);border-left:3px solid var(--deep);">
+                <p class="font-semibold mb-2 text-sm" style="color:var(--deep);">🌙 Tối · 30 phút · Tổng kết tuần = nhìn lại sự trưởng thành</p>
+                <ol class="text-sm space-y-2 list-decimal list-inside" style="color:var(--text);line-height:1.7">
+                  <li>Xem lại sổ tay cả tuần. Tự kiểm tra:
+                    <ul class="list-disc list-inside ml-4 mt-1">
+                      <li>Tôi có thực sự hiểu sự khác biệt giữa 2 thì hiện tại không?</li>
+                      <li>Tôi có thể nói tự nhiên bao nhiêu cụm từ mới?</li>
+                      <li>Điểm nào còn mơ hồ cần ôn lại tuần sau?</li>
+                    </ul>
+                  </li>
+                  <li>Ghi lại những gì đã học được vào cuối sổ tay. Nhìn lại sẽ thấy sự tiến bộ rõ rệt!</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+
+          <!-- SATURDAY -->
+          <div class="rounded-2xl p-5" style="background:var(--card);border:1px solid var(--border);">
+            <div class="flex items-center gap-3 mb-4">
+              <div style="width:36px;height:36px;border-radius:10px;background:var(--accent2-soft);display:flex;align-items:center;justify-content:center;color:var(--accent2);font-weight:700;font-size:14px;">T7</div>
+              <div>
+                <div class="font-semibold" style="color:var(--text)">Thứ Bảy · Luyện đề nhẹ nhàng = áp dụng kiến thức</div>
+              </div>
+            </div>
+            <div class="space-y-3">
+              <div class="p-4 rounded-xl" style="background:var(--bg);border-left:3px solid var(--accent2);">
+                <p class="font-semibold mb-2 text-sm" style="color:var(--accent2);">🌅 Buổi sáng · 90 phút · Luyện Listening Section 1-2 + Reading Passage 1</p>
+                <ol class="text-sm space-y-2 list-decimal list-inside" style="color:var(--text);line-height:1.7">
+                  <li>Dùng Cambridge IELTS 11 hoặc 12 (mua sách hoặc tìm tài liệu hợp pháp)</li>
+                  <li>Làm đúng thời gian: Listening ~25 phút, Reading 20 phút cho Passage 1</li>
+                  <li><strong>KHÔNG chạy theo đáp án</strong>. Sau khi làm, dành 30 phút phân tích:
+                    <ul class="list-disc list-inside ml-4 mt-1">
+                      <li>Tại sao tôi chọn đáp án này? Lý luận của tôi có đúng không?</li>
+                      <li>Tại sao đáp án đúng lại đúng? Tôi đã hiểu sai ở đâu?</li>
+                      <li>Lỗi sai cho thấy tôi còn thiếu hiểu biết về điều gì? (từ vựng? ngữ pháp? cách nghe hiểu?)</li>
+                    </ul>
+                  </li>
+                  <li>Ghi lỗi và bài học vào sổ tay</li>
+                </ol>
+              </div>
+              <div class="p-4 rounded-xl" style="background:var(--bg);border-left:3px solid var(--deep);">
+                <p class="font-semibold mb-2 text-sm" style="color:var(--deep);">☀️ Buổi chiều · Tự do đắm chìm</p>
+                <p class="text-sm" style="color:var(--text);line-height:1.7">
+                  Xem 1 bộ phim tiếng Anh có phụ đề tiếng Anh, hoặc nghe album nhạc tiếng Anh và đọc lời bài hát, hoặc chơi game tiếng Anh. <strong>Đừng coi đây là "học" — coi đây là hưởng thụ</strong>. Ngôn ngữ thấm vào một cách tự nhiên khi bạn thư giãn và tập trung vào nội dung.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- WEEK 2-8 CONTENT (summarized but with specific focus) -->
+      <div id="week2" class="week-content" style="display:none;">
+        <div class="rounded-2xl p-6 mb-6" style="background:var(--card);border:1px solid var(--border);">
+          <span style="display:inline-block;padding:3px 10px;border-radius:12px;background:var(--accent2-soft);color:var(--accent2);font-size:11px;font-weight:600;margin-bottom:10px;">TUẦN 2</span>
+          <h3 class="text-xl font-bold mb-2" style="color:var(--text)">Quá khứ & Kể chuyện</h3>
+          <p class="text-sm mb-4" style="color:var(--muted);line-height:1.7">
+            <strong>Ngữ pháp:</strong> Past Simple & Past Continuous — hiểu: <em>Tại sao cần 2 thì quá khứ? Thì nào kể "câu chuyện chính", thì nào diễn tả "bối cảnh"?</em><br/>
+            <strong>Từ vựng:</strong> Kể về quá khứ, kinh nghiệm cá nhân, sự kiện quan trọng
+          </p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+            <a href="https://learnenglish.britishcouncil.org/free-resources/grammar/a1-a2/past-simple-and-past-continuous" target="_blank" class="resource-link p-3 rounded-xl border text-sm" style="border-color:var(--border);background:var(--bg);text-decoration:none;color:inherit;">
+              <strong style="color:var(--deep);">British Council:</strong> Past Simple & Past Continuous + bài tập
+            </a>
+            <a href="https://www.youtube.com/watch?v=HLy0H4G11v0" target="_blank" class="resource-link p-3 rounded-xl border text-sm" style="border-color:var(--border);background:var(--bg);text-decoration:none;color:inherit;">
+              <strong style="color:var(--deep);">BBC Learning English:</strong> Video giải thích Past Simple vs Continuous
+            </a>
+          </div>
+          <p class="text-xs mt-4 p-3 rounded-lg" style="background:var(--accent-soft);color:var(--text);line-height:1.6">
+            <strong>Cách học bản chất:</strong> Khi học Past Continuous, hãy hiểu nó như "bức nền" của câu chuyện quá khứ. Ví dụ: "Tôi đang tắm (bối cảnh - Continuous) thì điện thoại reo (sự kiện chính - Simple)". Người Anh dùng 2 thì này để tạo chiều sâu cho câu chuyện, không phải ngẫu nhiên.
+          </p>
+        </div>
+        <div class="p-5 rounded-2xl text-center mb-8" style="background:var(--card);border:1px dashed var(--border);">
+          <p class="text-sm" style="color:var(--muted);line-height:1.7">
+            Lịch từng ngày tương tự Tuần 1, chỉ thay đổi chủ đề ngữ pháp và từ vựng.<br/>
+            <strong>Hoạt động nổi bật tuần này:</strong> Viết một đoạn ngắn kể về một kỷ niệm đáng nhớ trong quá khứ, dùng cả Past Simple và Continuous để tạo bối cảnh.
+          </p>
+        </div>
+      </div>
+
+      <div id="week3" class="week-content" style="display:none;">
+        <div class="rounded-2xl p-6 mb-6" style="background:var(--card);border:1px solid var(--border);">
+          <span style="display:inline-block;padding:3px 10px;border-radius:12px;background:var(--accent2-soft);color:var(--accent2);font-size:11px;font-weight:600;margin-bottom:10px;">TUẦN 3</span>
+          <h3 class="text-xl font-bold mb-2" style="color:var(--text)">Tương lai & Kế hoạch, Dự đoán</h3>
+          <p class="text-sm mb-4" style="color:var(--muted);line-height:1.7">
+            <strong>Ngữ pháp:</strong> will / going to / Present Continuous cho tương lai — hiểu: <em>Tại sao tiếng Anh có nhiều cách nói về tương lai? Sự khác biệt về "mức độ chắc chắn" và "đã lên kế hoạch chưa"</em><br/>
+            <strong>Từ vựng:</strong> Kế hoạch tương lai, mục tiêu, dự đoán về tương lai
+          </p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+            <a href="https://learnenglish.britishcouncil.org/free-resources/grammar/a1-a2/future-forms" target="_blank" class="resource-link p-3 rounded-xl border text-sm" style="border-color:var(--border);background:var(--bg);text-decoration:none;color:inherit;">
+              <strong style="color:var(--deep);">British Council:</strong> Future forms (will, going to, present continuous)
+            </a>
+            <a href="https://www.youtube.com/watch?v=2SYJ00Z8W00" target="_blank" class="resource-link p-3 rounded-xl border text-sm" style="border-color:var(--border);background:var(--bg);text-decoration:none;color:inherit;">
+              <strong style="color:var(--deep);">English with Lucy:</strong> Will vs Going to - sự khác biệt thực tế
+            </a>
+          </div>
+          <p class="text-xs mt-4 p-3 rounded-lg" style="background:var(--accent-soft);color:var(--text);line-height:1.6">
+            <strong>Cách học bản chất:</strong> "going to" = đã có ý định, bằng chứng hiện tại cho thấy tương lai ("Look at those clouds! It's going to rain"). "will" = quyết định tức thời hoặc dự đoán không có bằng chứng cụ thể. Present Continuous cho tương lai = kế hoạch đã sắp xếp chắc chắn ("I'm meeting my friend tomorrow"). Đây không phải quy tắc tùy tiện — nó phản ánh cách người Anh "cảm nhận" sự chắc chắn của tương lai.
+          </p>
+        </div>
+        <div class="p-5 rounded-2xl text-center mb-8" style="background:var(--card);border:1px dashed var(--border);">
+          <p class="text-sm" style="color:var(--muted);line-height:1.7">
+            <strong>Hoạt động nổi bật tuần này:</strong> Viết về kế hoạch 5 năm tới của bạn. Dùng "going to" cho những kế hoạch đã rõ ràng, "will" cho những dự đoán và hy vọng, Present Continuous cho những việc đã sắp xếp trong thời gian tới.
+          </p>
+        </div>
+      </div>
+
+      <div id="week4" class="week-content" style="display:none;">
+        <div class="rounded-2xl p-6 mb-6" style="background:var(--card);border:1px solid var(--border);">
+          <span style="display:inline-block;padding:3px 10px;border-radius:12px;background:var(--accent2-soft);color:var(--accent2);font-size:11px;font-weight:600;margin-bottom:10px;">TUẦN 4</span>
+          <h3 class="text-xl font-bold mb-2" style="color:var(--text)">Câu so sánh & Đánh giá</h3>
+          <p class="text-sm mb-4" style="color:var(--muted);line-height:1.7">
+            <strong>Ngữ pháp:</strong> Comparative & Superlative adjectives/adverbs — hiểu: <em>Cách người Anh tổ chức tư duy so sánh, quy tắc thêm "-er/-est" hay dùng "more/most" có logic nào không?</em><br/>
+            <strong>Từ vựng:</strong> Tính từ mô tả, đánh giá, so sánh
+          </p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+            <a href="https://learnenglish.britishcouncil.org/free-resources/grammar/a1-a2/comparatives-and-superlatives" target="_blank" class="resource-link p-3 rounded-xl border text-sm" style="border-color:var(--border);background:var(--bg);text-decoration:none;color:inherit;">
+              <strong style="color:var(--deep);">British Council:</strong> Comparatives & Superlatives
+            </a>
+            <a href="https://www.youtube.com/watch?v=7nY2f7q9QfY" target="_blank" class="resource-link p-3 rounded-xl border text-sm" style="border-color:var(--border);background:var(--bg);text-decoration:none;color:inherit;">
+              <strong style="color:var(--deep);">BBC Learning English:</strong> Video so sánh
+            </a>
+          </div>
+          <p class="text-xs mt-4 p-3 rounded-lg" style="background:var(--accent-soft);color:var(--text);line-height:1.6">
+            <strong>Cách học bản chất:</strong> Tính từ ngắn (1 âm tiết) → "-er/-est"; tính từ dài (2+ âm tiết) → "more/most". Đây là quy tắc về "nhịp điệu ngôn ngữ": người Anh không muốn nói "beautifuler" vì quá nhiều âm tiết nối nhau, nghe nặng nề. Họ chọn "more beautiful" để lời nói lưu loát, dễ nghe hơn. Ngữ pháp không phải luôn "logic toán học" — đôi khi nó logic về "âm nhạc" của ngôn ngữ!
+          </p>
+        </div>
+        <div class="p-5 rounded-2xl text-center mb-8" style="background:var(--card);border:1px dashed var(--border);">
+          <p class="text-sm" style="color:var(--muted);line-height:1.7">
+            <strong>Hoạt động nổi bật tuần này:</strong> Viết đoạn văn so sánh hai thành phố bạn biết, hoặc hai bộ phim bạn xem, hoặc hai người bạn thân. Dùng đủ các dạng so sánh, và giải thích lý do bạn đánh giá như vậy.
+          </p>
+        </div>
+      </div>
+
+      <div id="week5" class="week-content" style="display:none;">
+        <div class="rounded-2xl p-6 mb-6" style="background:var(--card);border:1px solid var(--border);">
+          <span style="display:inline-block;padding:3px 10px;border-radius:12px;background:var(--accent-soft);color:var(--accent);font-size:11px;font-weight:600;margin-bottom:10px;">TUẦN 5</span>
+          <h3 class="text-xl font-bold mb-2" style="color:var(--text)">Mạo từ & Sự "đã biết/chưa biết"</h3>
+          <p class="text-sm mb-4" style="color:var(--muted);line-height:1.7">
+            <strong>Ngữ pháp:</strong> a/an/the & no article — đây là điểm người Việt hay sai nhất. Hiểu bản chất: <em>"a/an" = người nghe chưa biết cái này; "the" = người nghe đã biết rồi; không có mạo từ = nói về khái niệm chung</em><br/>
+            <strong>Từ vựng:</strong> Danh từ đếm được/không đếm được
+          </p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+            <a href="https://learnenglish.britishcouncil.org/free-resources/grammar/a1-a2/articles" target="_blank" class="resource-link p-3 rounded-xl border text-sm" style="border-color:var(--border);background:var(--bg);text-decoration:none;color:inherit;">
+              <strong style="color:var(--deep);">British Council:</strong> Articles (a/an/the)
+            </a>
+            <a href="https://www.youtube.com/watch?v=BZ8n0h0lG30" target="_blank" class="resource-link p-3 rounded-xl border text-sm" style="border-color:var(--border);background:var(--bg);text-decoration:none;color:inherit;">
+              <strong style="color:var(--deep);">English with Lucy:</strong> 10 lỗi mạo từ phổ biến nhất
+            </a>
+          </div>
+          <p class="text-xs mt-4 p-3 rounded-lg" style="background:var(--accent-soft);color:var(--text);line-height:1.6">
+            <strong>Cách học bản chất:</strong> Mạo từ không phải là "quy tắc vô nghĩa" — nó là <strong>cách người Anh báo hiệu cho người nghe: "bạn có biết cái này chưa?"</strong>. Ví dụ: "I saw <strong>a</strong> dog yesterday" = tôi nói về một con chó bạn chưa biết. "The dog was brown" = bây giờ bạn đã biết rồi, tôi dùng "the". "I love <strong>dogs</strong>" = tôi nói về loài chó nói chung, không phải con cụ thể nào. Hiểu được điều này = bạn hiểu được một phần "tư duy giao tiếp" của người Anh.
+          </p>
+        </div>
+        <div class="p-5 rounded-2xl text-center mb-8" style="background:var(--card);border:1px dashed var(--border);">
+          <p class="text-sm" style="color:var(--muted);line-height:1.7">
+            <strong>Hoạt động nổi bật tuần này:</strong> Khi đọc bất kỳ đoạn văn nào, gạch chân tất cả các mạo từ và tự hỏi: "Tại sao ở đây dùng a/an/the/không có gì?". Luyện tập này mỗi ngày, sau 1-2 tuần bạn sẽ bắt đầu "cảm nhận" được mạo từ tự nhiên.
+          </p>
+        </div>
+      </div>
+
+      <div id="week6" class="week-content" style="display:none;">
+        <div class="rounded-2xl p-6 mb-6" style="background:var(--card);border:1px solid var(--border);">
+          <span style="display:inline-block;padding:3px 10px;border-radius:12px;background:var(--accent-soft);color:var(--accent);font-size:11px;font-weight:600;margin-bottom:10px;">TUẦN 6</span>
+          <h3 class="text-xl font-bold mb-2" style="color:var(--text)">Động từ khuyết thiếu & Sắc thái thái độ</h3>
+          <p class="text-sm mb-4" style="color:var(--muted);line-height:1.7">
+            <strong>Ngữ pháp:</strong> Modal verbs (can, could, must, have to, should, may, might) — hiểu: <em>Mỗi động từ này thể hiện sắc thái thái độ khác nhau: chắc chắn, có thể, nên làm, bắt buộc, xin phép...</em><br/>
+            <strong>Từ vựng:</strong> Biểu đạt ý kiến, đề xuất, xin phép, đưa ra lời khuyên
+          </p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+            <a href="https://learnenglish.britishcouncil.org/free-resources/grammar/b1-b2/modal-verbs-permission-obligation-advice" target="_blank" class="resource-link p-3 rounded-xl border text-sm" style="border-color:var(--border);background:var(--bg);text-decoration:none;color:inherit;">
+              <strong style="color:var(--deep);">British Council:</strong> Modal verbs - permission, obligation, advice
+            </a>
+            <a href="https://www.youtube.com/watch?v=0-3eGj0vGk8" target="_blank" class="resource-link p-3 rounded-xl border text-sm" style="border-color:var(--border);background:var(--bg);text-decoration:none;color:inherit;">
+              <strong style="color:var(--deep);">BBC Learning English:</strong> Modal verbs of possibility
+            </a>
+          </div>
+          <p class="text-xs mt-4 p-3 rounded-lg" style="background:var(--accent-soft);color:var(--text);line-height:1.6">
+            <strong>Cách học bản chất:</strong> Động từ khuyết thiếu không chỉ là "thể hiện khả năng" — chúng thể hiện <strong>thái độ và mối quan hệ giữa người nói và người nghe</strong>. Ví dụ: "Could you open the door?" lịch sự hơn "Can you open the door?". "You should study" = lời khuyên nhẹ nhàng. "You must study" = bắt buộc, mạnh mẽ. "You have to study" = quy tắc bên ngoài (thầy cô bảo vậy). Hiểu sắc thái này = bạn biết cách nói chuyện phù hợp với từng người, từng hoàn cảnh — đây là sự khác biệt giữa "biết tiếng Anh" và "thông thạo tiếng Anh".
+          </p>
+        </div>
+        <div class="p-5 rounded-2xl text-center mb-8" style="background:var(--card);border:1px dashed var(--border);">
+          <p class="text-sm" style="color:var(--muted);line-height:1.7">
+            <strong>Hoạt động nổi bật tuần này:</strong> Viết 10 câu đưa ra lời khuyên cho chính mình 1 năm trước, dùng các modal verbs khác nhau để thể hiện sắc thái khác nhau (nên làm, phải làm, có thể làm, không nên làm...).
+          </p>
+        </div>
+      </div>
+
+      <div id="week7" class="week-content" style="display:none;">
+        <div class="rounded-2xl p-6 mb-6" style="background:var(--card);border:1px solid var(--border);">
+          <span style="display:inline-block;padding:3px 10px;border-radius:12px;background:var(--accent-soft);color:var(--accent);font-size:11px;font-weight:600;margin-bottom:10px;">TUẦN 7</span>
+          <h3 class="text-xl font-bold mb-2" style="color:var(--text)">Giới từ & Mối quan hệ không gian, thời gian</h3>
+          <p class="text-sm mb-4" style="color:var(--muted);line-height:1.7">
+            <strong>Ngữ pháp:</strong> Prepositions of time & place (in/on/at, by/with/for...) — hiểu: <em>Giới từ không phải là "cụm từ cố định phải học thuộc" — nó phản ánh cách người Anh nhìn nhận mối quan hệ không gian và thời gian</em><br/>
+            <strong>Từ vựng:</strong> Cụm từ có giới từ (prepositional phrases)
+          </p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+            <a href="https://learnenglish.britishcouncil.org/free-resources/grammar/a1-a2/prepositions-time-place" target="_blank" class="resource-link p-3 rounded-xl border text-sm" style="border-color:var(--border);background:var(--bg);text-decoration:none;color:inherit;">
+              <strong style="color:var(--deep);">British Council:</strong> Prepositions of time and place
+            </a>
+            <a href="https://www.youtube.com/watch?v=Xv87qWfG2s0" target="_blank" class="resource-link p-3 rounded-xl border text-sm" style="border-color:var(--border);background:var(--bg);text-decoration:none;color:inherit;">
+              <strong style="color:var(--deep);">BBC Learning English:</strong> In/On/At - cách dùng chính xác
+            </a>
+          </div>
+          <p class="text-xs mt-4 p-3 rounded-lg" style="background:var(--accent-soft);color:var(--text);line-height:1.6">
+            <strong>Cách học bản chất:</strong> Giới từ phản ánh cách người Anh "hình dung" không gian và thời gian. "in" = bên trong một không gian/thời gian lớn (in the room, in May, in 2026). "on" = trên một bề mặt/ngày cụ thể (on the table, on Monday, on 5th September). "at" = tại một điểm chính xác (at the door, at 5pm, at Christmas). Đây không phải quy tắc ngẫu nhiên — nó xuất phát từ hình dung không gian cụ thể, sau đó mở rộng ra thời gian. Hiểu được logic hình dung này = bạn không cần học thuộc từng cụm từ, bạn có thể "đoán" đúng phần lớn trường hợp.
+          </p>
+        </div>
+        <div class="p-5 rounded-2xl text-center mb-8" style="background:var(--card);border:1px dashed var(--border);">
+          <p class="text-sm" style="color:var(--muted);line-height:1.7">
+            <strong>Hoạt động nổi bật tuần này:</strong> Mô tả căn phòng của bạn bằng tiếng Anh, dùng nhiều giới từ nơi chốn nhất có thể. Sau đó mô tả một ngày điển hình của bạn, dùng nhiều giới từ thời gian.
+          </p>
+        </div>
+      </div>
+
+      <div id="week8" class="week-content" style="display:none;">
+        <div class="rounded-2xl p-6 mb-6" style="background:var(--card);border:1px solid var(--border);">
+          <span style="display:inline-block;padding:3px 10px;border-radius:12px;background:var(--deep-soft);color:var(--deep);font-size:11px;font-weight:600;margin-bottom:10px;">TUẦN 8 · TỔNG KẾT GIAI ĐOẠN 1</span>
+          <h3 class="text-xl font-bold mb-2" style="color:var(--text)">Câu hỏi & Mệnh đề quan hệ</h3>
+          <p class="text-sm mb-4" style="color:var(--muted);line-height:1.7">
+            <strong>Ngữ pháp:</strong> Question forms & Relative clauses (who/which/that) — hiểu: <em>Cách người Anh đặt câu hỏi khác tiếng Việt như thế nào? Mệnh đề quan hệ giúp họ nối ý tưởng ra sao?</em><br/>
+            <strong>Hoạt động chính:</strong> Tổng kết toàn bộ kiến thức 8 tuần, kiểm tra tiến độ
+          </p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+            <a href="https://learnenglish.britishcouncil.org/free-resources/grammar/a1-a2/question-forms" target="_blank" class="resource-link p-3 rounded-xl border text-sm" style="border-color:var(--border);background:var(--bg);text-decoration:none;color:inherit;">
+              <strong style="color:var(--deep);">British Council:</strong> Question forms
+            </a>
+            <a href="https://learnenglish.britishcouncil.org/free-resources/grammar/b1-b2/relative-clauses" target="_blank" class="resource-link p-3 rounded-xl border text-sm" style="border-color:var(--border);background:var(--bg);text-decoration:none;color:inherit;">
+              <strong style="color:var(--deep);">British Council:</strong> Relative clauses (bắt đầu cho B1)
+            </a>
+          </div>
+          <p class="text-xs mt-4 p-3 rounded-lg" style="background:var(--deep-soft);color:var(--text);line-height:1.6">
+            <strong>Cách học bản chất:</strong> Trong tiếng Việt, chúng ta chỉ cần thêm "có phải... không?" hoặc "?" vào cuối câu là được. Trong tiếng Anh, họ phải đảo ngữ chủ ngữ và trợ động từ. Tại sao? Có thể vì người Anh muốn "báo hiệu" ngay từ đầu câu rằng đây là câu hỏi, để người nghe chuẩn bị trả lời. Đây là một ví dụ về cách cấu trúc ngôn ngữ phản ánh cách giao tiếp. Hiểu được những khác biệt tư duy này = bạn không còn "dịch từ tiếng Việt" nữa, bạn bắt đầu "nghĩ tiếng Anh".
+          </p>
+        </div>
+
+        <!-- WEEK 8 ASSESSMENT -->
+        <div class="rounded-2xl p-6 mb-8" style="background:var(--card);border:2px solid var(--accent);">
+          <h3 class="text-lg font-bold mb-4" style="color:var(--accent);">✅ Kiểm tra cuối Giai đoạn 1</h3>
+          <p class="text-sm mb-4" style="color:var(--text);line-height:1.7">
+            Làm bài kiểm tra này để xem bạn đã sẵn sàng chuyển sang Giai đoạn 2 chưa. <strong>Đừng chỉ xem điểm số</strong> — xem bạn còn thiếu hiểu biết ở đâu.
+          </p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="p-4 rounded-xl" style="background:var(--bg);">
+              <p class="font-semibold text-sm mb-2" style="color:var(--text);">📝 Kiểm tra ngữ pháp & từ vựng</p>
+              <ul class="text-sm space-y-1.5" style="color:var(--muted);line-height:1.6">
+                <li>→ Làm bài tập tổng hợp trên British Council Grammar A1-A2</li>
+                <li>→ Tự viết 10 câu dùng mỗi chủ đề ngữ pháp đã học</li>
+                <li>→ Kiểm tra: có thể tự giải thích "tại sao" dùng cấu trúc đó không?</li>
+              </ul>
+            </div>
+            <div class="p-4 rounded-xl" style="background:var(--bg);">
+              <p class="font-semibold text-sm mb-2" style="color:var(--text);">🎧 Kiểm tra kỹ năng</p>
+              <ul class="text-sm space-y-1.5" style="color:var(--muted);line-height:1.6">
+                <li>→ Luyện 1 full Listening + Reading Cambridge 11 Test 1</li>
+                <li>→ Nói 3 phút về bản thân, ghi âm và tự đánh giá</li>
+                <li>→ Viết 150 từ về một chủ đề quen thuộc</li>
+              </ul>
+            </div>
+          </div>
+          <div class="mt-4 p-4 rounded-xl" style="background:var(--accent-soft);">
+            <p class="text-sm font-semibold mb-1" style="color:var(--accent);">🎯 Tiêu chuẩn chuyển sang Giai đoạn 2:</p>
+            <p class="text-sm" style="color:var(--text);line-height:1.7">
+              Bạn không cần phải hoàn hảo. Bạn chỉ cần: (1) Hiểu <strong>bản chất</strong> của các chủ đề ngữ pháp chính, (2) Có thể dùng <strong>tự nhiên</strong> khoảng 500-600 từ/cụm từ thông dụng, (3) Nghe hiểu được ý chính của đoạn hội thoại/bài nói trung cấp, (4) Đọc hiểu được nội dung cơ bản của bài văn A2-B1, (5) Viết và nói được để người khác hiểu, dù còn lỗi.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SUNDAY COMMON -->
+      <div class="rounded-2xl p-6 mb-10" style="background:linear-gradient(135deg,var(--accent-soft),var(--accent2-soft));border:1px solid var(--border);">
+        <h3 class="text-lg font-bold mb-4" style="color:var(--text)">☀️ Chủ Nhật · Nghỉ ngơi & Đắm chìm tự nhiên</h3>
+        <p class="text-sm mb-4" style="color:var(--text);line-height:1.7">
+          <strong>Áp dụng cho cả 8 tuần:</strong> Chủ Nhật là ngày <strong>không học sách</strong>. Não bộ cần thời gian để củng cố kiến thức đã học trong tuần.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+          <div class="p-4 rounded-xl bg-white">
+            <p class="font-semibold mb-2" style="color:var(--accent);">Buổi sáng</p>
+            <p style="color:var(--text);line-height:1.6">Ngủ đủ giấc, vận động, dành thời gian cho gia đình bạn bè. <strong>Đừng mở sách tiếng Anh</strong>.</p>
+          </div>
+          <div class="p-4 rounded-xl bg-white">
+            <p class="font-semibold mb-2" style="color:var(--accent2);">Buổi chiều</p>
+            <p style="color:var(--text);line-height:1.6">Xem phim tiếng Anh (phụ đề Anh), nghe nhạc, đọc truyện tranh tiếng Anh — <strong>coi đây là giải trí</strong>, không phải học.</p>
+          </div>
+          <div class="p-4 rounded-xl bg-white">
+            <p class="font-semibold mb-2" style="color:var(--deep);">Buổi tối</p>
+            <p style="color:var(--text);line-height:1.6">15 phút xem lại mục tiêu tuần tới. <strong>Đi ngủ sớm</strong>. Sự nhất quán dài hạn quan trọng hơn bất kỳ buổi học khuya nào.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FINAL MESSAGE -->
+      <div class="text-center p-8 rounded-2xl mb-6" style="background:var(--card);border:2px solid var(--accent);">
+        <h3 class="text-xl font-bold mb-3" style="color:var(--text)">💡 Lời nhắc quan trọng nhất của Giai đoạn 1</h3>
+        <p class="text-sm mb-4" style="color:var(--muted);line-height:1.8;max-width:600px;margin:0 auto;">
+          Mỗi lần ngồi học, hãy hỏi mình câu này: <strong>"Tôi có thực sự hiểu 'tại sao' không?"</strong><br/>
+          Nếu chỉ nhớ "quy tắc là như vậy" → bạn đang học vẹt, sẽ quên nhanh và dùng sai khi áp dụng thực tế.<br/>
+          Nếu hiểu "tại sao người Anh nói như vậy, nó phản ánh cách họ nhìn nhận thế giới như thế nào" → bạn đang học <strong>bản chất ngôn ngữ</strong>, kiến thức này sẽ ở lại với bạn mãi mãi.
+        </p>
+        <p class="text-base font-semibold" style="color:var(--accent);">
+          Sau 8 tuần, bạn sẽ không chỉ "biết nhiều ngữ pháp và từ vựng hơn" — bạn sẽ bắt đầu <strong>cảm nhận được tiếng Anh</strong>.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+function showWeek(num) {
+  // Hide all weeks
+  for(var i = 1; i <= 8; i++) {
+    document.getElementById('week' + i).style.display = 'none';
+  }
+  
+  // Remove active class from all tabs
+  var tabs = document.querySelectorAll('.week-tab');
+  tabs.forEach(function(tab) {
+    tab.classList.remove('active');
+    tab.style.color = 'var(--muted)';
+    tab.style.background = 'var(--bg)';
+  });
+  
+  // Show selected week and activate tab
+  document.getElementById('week' + num).style.display = 'block';
+  var activeTab = tabs[num - 1];
+  activeTab.classList.add('active');
+  activeTab.style.color = '';
+  activeTab.style.background = '';
+}
+</script>
+</html>

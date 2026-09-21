@@ -1,0 +1,405 @@
+<html style="margin:0;padding:0;">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+<script>
+(function(){
+  var s = document.createElement('style');
+  s.textContent = ':root{--bg:#faf9f4;--card:#ffffff;--text:#0f172a;--muted:#64748b;--accent:#297a2e;--accent-soft:rgba(41,122,46,.14);--accent2:#d97706;--accent2-soft:rgba(217,119,6,.14);--border:rgba(15,23,42,.08)}.reveal{opacity:0;transform:translateY(20px);animation:fadeUp .6s ease forwards}.reveal:nth-child(2){animation-delay:.1s}.reveal:nth-child(3){animation-delay:.2s}.reveal:nth-child(4){animation-delay:.3s}.reveal:nth-child(5){animation-delay:.4s}.reveal:nth-child(6){animation-delay:.5s}@keyframes fadeUp{to{opacity:1;transform:translateY(0)}}.metric-card{transition:transform .2s ease,box-shadow .2s ease}.metric-card:hover{transform:translateY(-3px);box-shadow:0 8px 30px rgba(0,0,0,.08)}.phase-card{transition:transform .2s ease,border-color .2s ease}.phase-card:hover{transform:translateY(-2px);border-color:var(--accent)}.skill-bar{transition:width .8s ease}';
+  document.head.appendChild(s);
+})();
+</script>
+<div style="background-color:transparent;box-sizing:border-box;">
+  <div style="color:var(--text);font-family:'Fredoka',sans-serif;background:radial-gradient(800px 400px at 20% -10%, var(--accent-soft), transparent 70%), var(--bg)">
+    <div class="max-w-5xl mx-auto px-6 py-12">
+
+      <!-- HERO SECTION -->
+      <div class="reveal mb-14">
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:16px;">
+          <div style="width:44px;height:44px;border-radius:12px;background:var(--accent-soft);display:flex;align-items:center;justify-content:center;color:var(--accent);flex-shrink:0;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          </div>
+          <div>
+            <p style="font-family:monospace;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted)">Lộ trình học IELTS</p>
+            <h1 class="text-4xl font-bold" style="color:var(--text);letter-spacing:-0.02em;line-height:1.15">
+              Từ <span style="color:var(--accent2)">5.0</span> lên <span style="background:linear-gradient(100deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent">7.0 IELTS</span>
+            </h1>
+          </div>
+        </div>
+        <p style="color:var(--muted);max-width:600px;line-height:1.7" class="text-base mt-3">
+          Lộ trình 8 tháng được thiết kế khoa học, tập trung vào cả 4 kỹ năng với mục tiêu đạt Band 7.0 - yêu cầu đầu vào của hầu hết các trường đại học quốc tế.
+        </p>
+      </div>
+
+      <!-- METRIC CARDS -->
+      <div class="reveal flex flex-wrap gap-4 mb-14">
+        <div class="metric-card backdrop-blur rounded-2xl p-5" style="flex:1 1 180px;background:var(--card);border:1px solid var(--border);box-shadow:0 1px 3px rgba(0,0,0,.06)">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+            <div style="width:32px;height:32px;border-radius:8px;background:var(--accent-soft);display:flex;align-items:center;justify-content:center;color:var(--accent);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            </div>
+            <div style="color:var(--muted)" class="text-xs uppercase tracking-wide font-medium">Thời gian</div>
+          </div>
+          <div style="color:var(--text)" class="text-3xl font-bold">8 tháng</div>
+          <div class="text-xs mt-1 font-medium" style="color:var(--muted)">32 tuần học tập</div>
+        </div>
+        <div class="metric-card backdrop-blur rounded-2xl p-5" style="flex:1 1 180px;background:var(--card);border:1px solid var(--border);box-shadow:0 1px 3px rgba(0,0,0,.06)">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+            <div style="width:32px;height:32px;border-radius:8px;background:var(--accent-soft);display:flex;align-items:center;justify-content:center;color:var(--accent);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+            </div>
+            <div style="color:var(--muted)" class="text-xs uppercase tracking-wide font-medium">Giờ học/ngày</div>
+          </div>
+          <div style="color:var(--text)" class="text-3xl font-bold">2.5-3h</div>
+          <div class="text-xs mt-1 font-medium" style="color:var(--muted)">Kiên trì hàng ngày</div>
+        </div>
+        <div class="metric-card backdrop-blur rounded-2xl p-5" style="flex:1 1 180px;background:var(--card);border:1px solid var(--border);box-shadow:0 1px 3px rgba(0,0,0,.06)">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+            <div style="width:32px;height:32px;border-radius:8px;background:var(--accent2-soft);display:flex;align-items:center;justify-content:center;color:var(--accent2);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12l2 2 4-4"/></svg>
+            </div>
+            <div style="color:var(--muted)" class="text-xs uppercase tracking-wide font-medium">Điểm hiện tại</div>
+          </div>
+          <div style="color:var(--accent2)" class="text-3xl font-bold">5.0</div>
+          <div class="text-xs mt-1 font-medium" style="color:var(--muted)">Trình độ trung bình</div>
+        </div>
+        <div class="metric-card backdrop-blur rounded-2xl p-5" style="flex:1 1 180px;background:var(--card);border:1px solid var(--border);box-shadow:0 1px 3px rgba(0,0,0,.06)">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+            <div style="width:32px;height:32px;border-radius:8px;background:var(--accent-soft);display:flex;align-items:center;justify-content:center;color:var(--accent);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+            </div>
+            <div style="color:var(--muted)" class="text-xs uppercase tracking-wide font-medium">Mục tiêu</div>
+          </div>
+          <div style="color:var(--accent)" class="text-3xl font-bold">7.0</div>
+          <div class="text-xs mt-1 font-medium" style="color:var(--muted)">Trình độ giỏi</div>
+        </div>
+      </div>
+
+      <!-- PROGRESS CHART -->
+      <div class="reveal rounded-2xl p-8 mb-8" style="background:var(--card);border:1px solid var(--border);box-shadow:0 1px 3px rgba(0,0,0,.06)">
+        <h2 class="text-xl font-semibold mb-2" style="color:var(--text)">Lộ trình tiến độ dự kiến</h2>
+        <p class="text-sm mb-6" style="color:var(--muted)">Mức điểm IELTS dự kiến qua từng tháng (tính trung bình cả 4 kỹ năng)</p>
+        <div id="progressChart" style="height:320px;width:100%"></div>
+        <script>
+        (function init(n){
+          try {
+            var el=document.getElementById('progressChart'); if(!el)return;
+            if(typeof echarts==='undefined'){
+              if(n<40){setTimeout(function(){init(n+1)},250);return;}
+              el.textContent='Chart library failed to load';return;
+            }
+            var c = echarts.init(el);
+            var st=getComputedStyle(document.documentElement);
+            var accent=st.getPropertyValue('--accent').trim()||'#297a2e';
+            var accent2=st.getPropertyValue('--accent2').trim()||'#d97706';
+            var muted=st.getPropertyValue('--muted').trim()||'#64748b';
+            var card=st.getPropertyValue('--card').trim()||'#ffffff';
+            var text=st.getPropertyValue('--text').trim()||'#0f172a';
+            var border=st.getPropertyValue('--border').trim()||'rgba(15,23,42,.08)';
+            var grad={type:'linear',x:0,y:0,x2:0,y2:1,colorStops:[{offset:0,color:accent+'80'},{offset:1,color:accent+'10'}]};
+            c.setOption({
+              backgroundColor:'transparent',
+              tooltip:{trigger:'axis',backgroundColor:card,borderColor:border,textStyle:{color:text},
+                formatter:function(p){return 'Tháng '+p[0].axisValue+'<br/><b>Điểm dự kiến: '+p[0].value+'</b>'}},
+              grid:{left:'3%',right:'4%',bottom:'3%',top:'10%',containLabel:true},
+              xAxis:{type:'category',data:['0','1','2','3','4','5','6','7','8'],
+                axisLabel:{color:muted,formatter:function(v){return v==='0'?'Bắt đầu':'T'+v}},
+                axisTick:{show:false},axisLine:{lineStyle:{color:border}}},
+              yAxis:{type:'value',min:4.5,max:7.5,interval:0.5,
+                axisLabel:{color:muted,formatter:'{value}'},
+                splitLine:{lineStyle:{color:border}}},
+              series:[{
+                type:'line',data:[5.0,5.2,5.4,5.7,6.0,6.3,6.6,6.8,7.0],
+                smooth:true,symbol:'circle',symbolSize:8,
+                lineStyle:{color:accent,width:3},
+                itemStyle:{color:accent,borderColor:card,borderWidth:2},
+                areaStyle:{color:grad},
+                markLine:{silent:true,symbol:'none',lineStyle:{color:accent2,type:'dashed',width:2},
+                  data:[{yAxis:7.0,label:{formatter:'Mục tiêu 7.0',color:accent2,position:'end'}}]}
+              }]
+            });
+            window.addEventListener('resize',function(){c.resize()});
+          } catch(e){console.error(e)}
+        })(0);
+        </script>
+      </div>
+
+      <!-- 3 PHASES -->
+      <div class="reveal mb-8">
+        <h2 class="text-xl font-semibold mb-6" style="color:var(--text)">3 Giai đoạn chính</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+          
+          <!-- Phase 1 -->
+          <div class="phase-card rounded-2xl p-6" style="background:var(--card);border:2px solid var(--border);border-top:4px solid var(--accent2);">
+            <div style="display:inline-block;padding:4px 12px;border-radius:20px;background:var(--accent2-soft);color:var(--accent2);font-size:12px;font-weight:600;margin-bottom:12px;">
+              Giai đoạn 1 · Tuần 1-8
+            </div>
+            <h3 class="text-lg font-bold mb-2" style="color:var(--text)">Xây dựng nền tảng</h3>
+            <p class="text-sm mb-4" style="color:var(--muted);line-height:1.6">Củng cố ngữ pháp cốt lõi, mở rộng từ vựng chủ đề, làm quen với các dạng bài cơ bản.</p>
+            <ul class="text-sm space-y-2" style="color:var(--text)">
+              <li style="display:flex;gap:8px;align-items:flex-start"><span style="color:var(--accent2);font-weight:700">●</span><span>Ngữ pháp: 10 chủ đề chính (thì, câu so sánh, mệnh đề quan hệ...)</span></li>
+              <li style="display:flex;gap:8px;align-items:flex-start"><span style="color:var(--accent2);font-weight:700">●</span><span>Từ vựng: 500 từ thông dụng + 10 chủ đề IELTS</span></li>
+              <li style="display:flex;gap:8px;align-items:flex-start"><span style="color:var(--accent2);font-weight:700">●</span><span>Nghe: Cambridge 11-12, Section 1-2</span></li>
+              <li style="display:flex;gap:8px;align-items:flex-start"><span style="color:var(--accent2);font-weight:700">●</span><span>Đọc: Skimming & Scanning, True/False/Not Given</span></li>
+            </ul>
+            <div class="mt-4 pt-4" style="border-top:1px solid var(--border)">
+              <span class="text-xs font-medium" style="color:var(--accent2)">Mục tiêu cuối giai đoạn: 5.5</span>
+            </div>
+          </div>
+
+          <!-- Phase 2 -->
+          <div class="phase-card rounded-2xl p-6" style="background:var(--card);border:2px solid var(--border);border-top:4px solid var(--accent);">
+            <div style="display:inline-block;padding:4px 12px;border-radius:20px;background:var(--accent-soft);color:var(--accent);font-size:12px;font-weight:600;margin-bottom:12px;">
+              Giai đoạn 2 · Tuần 9-20
+            </div>
+            <h3 class="text-lg font-bold mb-2" style="color:var(--text)">Nâng cao kỹ năng</h3>
+            <p class="text-sm mb-4" style="color:var(--muted);line-height:1.6">Luyện sâu các dạng bài khó, bắt đầu viết và nói thường xuyên, học chiến thuật làm bài.</p>
+            <ul class="text-sm space-y-2" style="color:var(--text)">
+              <li style="display:flex;gap:8px;align-items:flex-start"><span style="color:var(--accent);font-weight:700">●</span><span>Viết: Task 1 & Task 2, cấu trúc bài, từ nối</span></li>
+              <li style="display:flex;gap:8px;align-items:flex-start"><span style="color:var(--accent);font-weight:700">●</span><span>Nói: Part 1-2-3, phát âm, nối ý, tự tin giao tiếp</span></li>
+              <li style="display:flex;gap:8px;align-items:flex-start"><span style="color:var(--accent);font-weight:700">●</span><span>Nghe: Cambridge 13-15, Section 3-4</span></li>
+              <li style="display:flex;gap:8px;align-items:flex-start"><span style="color:var(--accent);font-weight:700">●</span><span>Đọc: Matching Heading, Which Paragraph, Sentence Completion</span></li>
+            </ul>
+            <div class="mt-4 pt-4" style="border-top:1px solid var(--border)">
+              <span class="text-xs font-medium" style="color:var(--accent)">Mục tiêu cuối giai đoạn: 6.5</span>
+            </div>
+          </div>
+
+          <!-- Phase 3 -->
+          <div class="phase-card rounded-2xl p-6" style="background:var(--card);border:2px solid var(--border);border-top:4px solid #7c3aed;">
+            <div style="display:inline-block;padding:4px 12px;border-radius:20px;background:rgba(124,58,237,.12);color:#7c3aed;font-size:12px;font-weight:600;margin-bottom:12px;">
+              Giai đoạn 3 · Tuần 21-32
+            </div>
+            <h3 class="text-lg font-bold mb-2" style="color:var(--text)">Tinh chỉnh & Luyện đề</h3>
+            <p class="text-sm mb-4" style="color:var(--muted);line-height:1.6">Luyện đề thật theo thời gian, sửa lỗi thường gặp, tối ưu chiến thuật, xây dựng tâm lý thi.</p>
+            <ul class="text-sm space-y-2" style="color:var(--text)">
+              <li style="display:flex;gap:8px;align-items:flex-start"><span style="color:#7c3aed;font-weight:700">●</span><span>Luyện full test Cambridge 16-18, đúng thời gian</span></li>
+              <li style="display:flex;gap:8px;align-items:flex-start"><span style="color:#7c3aed;font-weight:700">●</span><span>Phân tích lỗi sai, tạo sổ tay lỗi cá nhân</span></li>
+              <li style="display:flex;gap:8px;align-items:flex-start"><span style="color:#7c3aed;font-weight:700">●</span><span>Viết 2 bài/ngày, nói 30 phút/ngày với native/AI</span></li>
+              <li style="display:flex;gap:8px;align-items:flex-start"><span style="color:#7c3aed;font-weight:700">●</span><span>Luyện mock test 1-2 lần trước ngày thi thật</span></li>
+            </ul>
+            <div class="mt-4 pt-4" style="border-top:1px solid var(--border)">
+              <span class="text-xs font-medium" style="color:#7c3aed">Mục tiêu cuối giai đoạn: 7.0+</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- WEEKLY SCHEDULE & SKILL ALLOCATION -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+        
+        <!-- Weekly Allocation -->
+        <div class="reveal rounded-2xl p-8" style="background:var(--card);border:1px solid var(--border);box-shadow:0 1px 3px rgba(0,0,0,.06)">
+          <h2 class="text-xl font-semibold mb-6" style="color:var(--text)">Phân bổ thời gian hàng tuần</h2>
+          <div class="space-y-5">
+            <div>
+              <div style="display:flex;justify-content:space-between;margin-bottom:6px;">
+                <span class="text-sm font-medium" style="color:var(--text)">Nghe (Listening)</span>
+                <span class="text-sm font-bold" style="color:var(--accent)">5 giờ</span>
+              </div>
+              <div style="height:10px;background:rgba(128,128,128,.08);border-radius:6px;overflow:hidden;">
+                <div class="skill-bar" style="width:24%;height:100%;background:linear-gradient(90deg,var(--accent),var(--accent)cc);border-radius:6px;"></div>
+              </div>
+            </div>
+            <div>
+              <div style="display:flex;justify-content:space-between;margin-bottom:6px;">
+                <span class="text-sm font-medium" style="color:var(--text)">Đọc (Reading)</span>
+                <span class="text-sm font-bold" style="color:var(--accent)">5 giờ</span>
+              </div>
+              <div style="height:10px;background:rgba(128,128,128,.08);border-radius:6px;overflow:hidden;">
+                <div class="skill-bar" style="width:24%;height:100%;background:linear-gradient(90deg,var(--accent),var(--accent)cc);border-radius:6px;"></div>
+              </div>
+            </div>
+            <div>
+              <div style="display:flex;justify-content:space-between;margin-bottom:6px;">
+                <span class="text-sm font-medium" style="color:var(--text)">Viết (Writing)</span>
+                <span class="text-sm font-bold" style="color:var(--accent2)">4 giờ</span>
+              </div>
+              <div style="height:10px;background:rgba(128,128,128,.08);border-radius:6px;overflow:hidden;">
+                <div class="skill-bar" style="width:19%;height:100%;background:linear-gradient(90deg,var(--accent2),var(--accent2)cc);border-radius:6px;"></div>
+              </div>
+            </div>
+            <div>
+              <div style="display:flex;justify-content:space-between;margin-bottom:6px;">
+                <span class="text-sm font-medium" style="color:var(--text)">Nói (Speaking)</span>
+                <span class="text-sm font-bold" style="color:var(--accent2)">4 giờ</span>
+              </div>
+              <div style="height:10px;background:rgba(128,128,128,.08);border-radius:6px;overflow:hidden;">
+                <div class="skill-bar" style="width:19%;height:100%;background:linear-gradient(90deg,var(--accent2),var(--accent2)cc);border-radius:6px;"></div>
+              </div>
+            </div>
+            <div>
+              <div style="display:flex;justify-content:space-between;margin-bottom:6px;">
+                <span class="text-sm font-medium" style="color:var(--text)">Từ vựng & Ngữ pháp</span>
+                <span class="text-sm font-bold" style="color:#7c3aed">3.5 giờ</span>
+              </div>
+              <div style="height:10px;background:rgba(128,128,128,.08);border-radius:6px;overflow:hidden;">
+                <div class="skill-bar" style="width:17%;height:100%;background:linear-gradient(90deg,#7c3aed,#7c3aedcc);border-radius:6px;"></div>
+              </div>
+            </div>
+          </div>
+          <div class="mt-6 pt-5 text-center" style="border-top:1px solid var(--border)">
+            <span class="text-sm" style="color:var(--muted)">Tổng cộng: </span>
+            <span class="text-lg font-bold" style="color:var(--text)">21.5 giờ/tuần</span>
+          </div>
+        </div>
+
+        <!-- Daily Schedule -->
+        <div class="reveal rounded-2xl p-8" style="background:var(--card);border:1px solid var(--border);box-shadow:0 1px 3px rgba(0,0,0,.06)">
+          <h2 class="text-xl font-semibold mb-6" style="color:var(--text)">Lịch học mẫu trong ngày</h2>
+          <div class="space-y-3">
+            <div class="flex items-center gap-4 p-3 rounded-xl" style="background:var(--accent-soft);">
+              <div style="width:60px;font-family:monospace;font-size:12px;color:var(--accent);font-weight:600;">Sáng</div>
+              <div style="flex:1;">
+                <div class="text-sm font-semibold" style="color:var(--text)">Từ vựng + Nghe</div>
+                <div class="text-xs" style="color:var(--muted)">45 phút: Học 20 từ mới + nghe 1 Section Cambridge</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-4 p-3 rounded-xl" style="background:rgba(124,58,237,.08);">
+              <div style="width:60px;font-family:monospace;font-size:12px;color:#7c3aed;font-weight:600;">Trưa</div>
+              <div style="flex:1;">
+                <div class="text-sm font-semibold" style="color:var(--text)">Đọc hiểu</div>
+                <div class="text-xs" style="color:var(--muted)">45 phút: Luyện 1 Passage Reading + phân tích lỗi</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-4 p-3 rounded-xl" style="background:var(--accent2-soft);">
+              <div style="width:60px;font-family:monospace;font-size:12px;color:var(--accent2);font-weight:600;">Chiều</div>
+              <div style="flex:1;">
+                <div class="text-sm font-semibold" style="color:var(--text)">Viết hoặc Nói</div>
+                <div class="text-xs" style="color:var(--muted)">45 phút: Ngày chẵn viết, ngày lẻ nói (giọng đọc/đối thoại)</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-4 p-3 rounded-xl" style="background:rgba(15,23,42,.04);">
+              <div style="width:60px;font-family:monospace;font-size:12px;color:var(--muted);font-weight:600;">Tối</div>
+              <div style="flex:1;">
+                <div class="text-sm font-semibold" style="color:var(--text)">Ôn tập + Ngữ pháp</div>
+                <div class="text-xs" style="color:var(--muted)">30 phút: Ôn từ cũ + 1 chủ đề ngữ pháp nhỏ</div>
+              </div>
+            </div>
+          </div>
+          <div class="mt-5 p-4 rounded-xl" style="border-left:3px solid var(--accent);background:var(--accent-soft);">
+            <p class="text-xs" style="color:var(--text);line-height:1.6">
+              <strong>Lưu ý:</strong> Chủ nhật là ngày nghỉ ngơi hoặc luyện full test (2h45m) + xem phim/nghe nhạc tiếng Anh để thư giãn.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- MATERIALS & TIPS -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+        
+        <!-- Recommended Materials -->
+        <div class="reveal rounded-2xl p-8" style="background:var(--card);border:1px solid var(--border);box-shadow:0 1px 3px rgba(0,0,0,.06)">
+          <h2 class="text-xl font-semibold mb-6" style="color:var(--text)">Tài liệu khuyến nghị</h2>
+          <div class="space-y-4">
+            <div class="p-4 rounded-xl" style="border:1px solid var(--border);">
+              <div class="flex items-center gap-3 mb-2">
+                <div style="width:32px;height:32px;border-radius:8px;background:var(--accent-soft);display:flex;align-items:center;justify-content:center;color:var(--accent);flex-shrink:0;">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>
+                </div>
+                <span class="font-semibold text-sm" style="color:var(--text)">Cambridge IELTS 11-18</span>
+              </div>
+              <p class="text-xs" style="color:var(--muted);line-height:1.5">Đề thi thật, tài liệu quan trọng nhất. Luyện từ cuốn cũ đến mới, giữ cuốn 17-18 cho giai đoạn cuối.</p>
+            </div>
+            <div class="p-4 rounded-xl" style="border:1px solid var(--border);">
+              <div class="flex items-center gap-3 mb-2">
+                <div style="width:32px;height:32px;border-radius:8px;background:var(--accent2-soft);display:flex;align-items:center;justify-content:center;color:var(--accent2);flex-shrink:0;">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                </div>
+                <span class="font-semibold text-sm" style="color:var(--text)">Vocabulary for IELTS (Pauline Cullen)</span>
+              </div>
+              <p class="text-xs" style="color:var(--muted);line-height:1.5">Học từ vựng theo chủ đề, cách dùng chính xác trong ngữ cảnh IELTS.</p>
+            </div>
+            <div class="p-4 rounded-xl" style="border:1px solid var(--border);">
+              <div class="flex items-center gap-3 mb-2">
+                <div style="width:32px;height:32px;border-radius:8px;background:rgba(124,58,237,.12);display:flex;align-items:center;justify-content:center;color:#7c3aed;flex-shrink:0;">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                </div>
+                <span class="font-semibold text-sm" style="color:var(--text)">Simon IELTS Blog / Liz IELTS</span>
+              </div>
+              <p class="text-xs" style="color:var(--muted);line-height:1.5">Miễn phí, bài học rõ ràng, cấu trúc bài viết và nói hiệu quả.</p>
+            </div>
+            <div class="p-4 rounded-xl" style="border:1px solid var(--border);">
+              <div class="flex items-center gap-3 mb-2">
+                <div style="width:32px;height:32px;border-radius:8px;background:rgba(13,148,136,.12);display:flex;align-items:center;justify-content:center;color:#0d9488;flex-shrink:0;">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 11a7 7 0 0 1-7 7m0 0a7 7 0 0 1-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 0 1-3-3V5a3 3 0 1 1 6 0v6a3 3 0 0 1-3 3z"/></svg>
+                </div>
+                <span class="font-semibold text-sm" style="color:var(--text)">BBC 6 Minute English / TED Talks</span>
+              </div>
+              <p class="text-xs" style="color:var(--muted);line-height:1.5">Luyện nghe giọng Anh chuẩn, mở rộng vốn từ và kiến thức chủ đề.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Key Tips -->
+        <div class="reveal rounded-2xl p-8" style="background:var(--card);border:1px solid var(--border);box-shadow:0 1px 3px rgba(0,0,0,.06)">
+          <h2 class="text-xl font-semibold mb-6" style="color:var(--text)">7 Mẹo vàng để thành công</h2>
+          <div class="space-y-4">
+            <div class="flex gap-4 items-start">
+              <div style="width:28px;height:28px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0;">1</div>
+              <div>
+                <p class="text-sm font-semibold" style="color:var(--text)">Kiên trì hơn thông minh</p>
+                <p class="text-xs mt-1" style="color:var(--muted);line-height:1.5">Học 2.5h mỗi ngày tốt hơn học 10h vào cuối tuần. Tính nhất quán là chìa khóa.</p>
+              </div>
+            </div>
+            <div class="flex gap-4 items-start">
+              <div style="width:28px;height:28px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0;">2</div>
+              <div>
+                <p class="text-sm font-semibold" style="color:var(--text)">Tạo sổ tay lỗi cá nhân</p>
+                <p class="text-xs mt-1" style="color:var(--muted);line-height:1.5">Ghi lại mọi lỗi sai (ngữ pháp, phát âm, từ vựng) và ôn tập hàng tuần.</p>
+              </div>
+            </div>
+            <div class="flex gap-4 items-start">
+              <div style="width:28px;height:28px;border-radius:50%;background:var(--accent2);color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0;">3</div>
+              <div>
+                <p class="text-sm font-semibold" style="color:var(--text)">Học từ vựng theo cụm</p>
+                <p class="text-xs mt-1" style="color:var(--muted);line-height:1.5">Không học từ lẻ, học cả cụm từ/collocation để dùng tự nhiên trong viết và nói.</p>
+              </div>
+            </div>
+            <div class="flex gap-4 items-start">
+              <div style="width:28px;height:28px;border-radius:50%;background:var(--accent2);color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0;">4</div>
+              <div>
+                <p class="text-sm font-semibold" style="color:var(--text)">Bắt chước người bản xứ</p>
+                <p class="text-xs mt-1" style="color:var(--muted);line-height:1.5">Shadowing (nghe và nhắc lại ngay) để cải thiện phát âm và ngữ điệu.</p>
+              </div>
+            </div>
+            <div class="flex gap-4 items-start">
+              <div style="width:28px;height:28px;border-radius:50%;background:#7c3aed;color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0;">5</div>
+              <div>
+                <p class="text-sm font-semibold" style="color:var(--text)">Đúng thời gian từ đầu</p>
+                <p class="text-xs mt-1" style="color:var(--muted);line-height:1.5">Tập luyện với đồng hồ bấm giờ ngay từ giai đoạn 2 để quen áp lực thi thật.</p>
+              </div>
+            </div>
+            <div class="flex gap-4 items-start">
+              <div style="width:28px;height:28px;border-radius:50%;background:#7c3aed;color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0;">6</div>
+              <div>
+                <p class="text-sm font-semibold" style="color:var(--text)">Tìm người sửa bài</p>
+                <p class="text-xs mt-1" style="color:var(--muted);line-height:1.5">Writing và Speaking cần người khác nhận xét. Dùng AI, bạn bè, hoặc thu thầy cô.</p>
+              </div>
+            </div>
+            <div class="flex gap-4 items-start">
+              <div style="width:28px;height:28px;border-radius:50%;background:#0d9488;color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0;">7</div>
+              <div>
+                <p class="text-sm font-semibold" style="color:var(--text)">Đặt mục tiêu nhỏ mỗi tuần</p>
+                <p class="text-xs mt-1" style="color:var(--muted);line-height:1.5">Thay vì chỉ nhìn 7.0, đặt mục tiêu tuần này: "Làm đúng 8/10 câu T/F/NG" để giữ động lực.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Footer -->
+      <div class="mt-16 pt-6 text-center" style="border-top:1px solid var(--border)">
+        <p class="text-xs" style="color:var(--muted);line-height:1.6">
+          Lộ trình này là tham khảo — điều chỉnh tốc độ dựa trên tiến độ thực tế của bạn.<br/>
+          Điều quan trọng nhất là <strong style="color:var(--accent)">bắt đầu ngay hôm nay</strong> và không bao giờ từ bỏ giữa chừng.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</div>
+</html>

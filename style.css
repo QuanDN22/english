@@ -129,3 +129,5 @@ input {
 
 #shuffle { display: block; margin: 0 auto; }
 #card-pos { text-align: center; }
+
+a.button { display: inline-block; text-decoration: none; }

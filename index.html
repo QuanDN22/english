@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>English Notebook</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>English Notebook</h1>
+    <nav>
+      <button class="tab active" data-tab="words">Từ vựng</button>
+      <button class="tab" data-tab="cards">Flashcard</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Tab: danh sách từ vựng -->
+    <section id="words" class="panel active">
+      <form id="word-form">
+        <input id="f-word" placeholder="Từ tiếng Anh (vd: resilient)" required>
+        <input id="f-meaning" placeholder="Nghĩa (vd: kiên cường)" required>
+        <input id="f-example" placeholder="Ví dụ (không bắt buộc)">
+        <button type="submit">Thêm</button>
+      </form>
+
+      <input id="search" type="search" placeholder="Tìm từ...">
+      <p id="count" class="muted"></p>
+      <ul id="word-list"></ul>
+
+      <div class="tools">
+        <button id="export">Xuất file JSON</button>
+        <label class="button">
+          Nhập file JSON
+          <input id="import" type="file" accept="application/json" hidden>
+        </label>
+      </div>
+    </section>
+
+    <!-- Tab: flashcard -->
+    <section id="cards" class="panel">
+      <p id="card-empty" class="muted">Chưa có từ nào. Hãy thêm từ ở tab "Từ vựng".</p>
+      <div id="card-area" hidden>
+        <div id="card" title="Bấm để lật thẻ">
+          <div id="card-front"></div>
+          <div id="card-back" hidden></div>
+        </div>
+        <div class="card-actions">
+          <button id="prev">← Trước</button>
+          <button id="flip">Lật thẻ</button>
+          <button id="next">Tiếp →</button>
+        </div>
+        <button id="shuffle" class="secondary">Xáo trộn</button>
+        <p id="card-pos" class="muted"></p>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

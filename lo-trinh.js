@@ -414,7 +414,6 @@ const blockOf = (t) =>
   t.t.startsWith("Sáng") ? "sang" : t.t.startsWith("Chiều") ? "chieu" : t.t.startsWith("Tối") ? "toi" : "khac";
 
 // ---------- Hiển thị: phần tử cơ bản ----------
-const SHORT_DAYS = ["T2", "T3", "T4", "T5", "T6", "T7", "CN"];
 const $ = (sel) => document.querySelector(sel);
 const el = (tag, cls, text) => {
   const e = document.createElement(tag);
@@ -425,7 +424,7 @@ const el = (tag, cls, text) => {
 
 let viewWeek = 0;
 let viewDay = 0;
-let scrollToDay = false; // bấm một ngày ở dải 7 ngày → cuộn tới chi tiết ngày đó
+let scrollToDay = false; // mở từ link "Xem ngày mai" → cuộn tới chi tiết ngày đó
 
 function linkList(keys) {
   const ul = el("ul", "links");
@@ -526,42 +525,33 @@ function setupCard(title) {
   return card;
 }
 
-// Dải 7 ngày của một tuần: nhìn là biết tuần này đã học những ngày nào.
-function weekStrip(weekNo, highlightDay) {
-  const strip = el("div", "week-strip");
-  const pos = planPosition();
-  for (let d = 0; d < 7; d++) {
-    const p = dayProgress(weekNo, d);
-    const date = dateOf(weekNo, d);
-    const isToday = pos && pos.week === weekNo && pos.day === d;
-    const isFuture = pos && (weekNo > pos.week || (weekNo === pos.week && d > pos.day));
-    let cls = "strip-day";
-    if (p.total && p.checked === p.total) cls += " is-done";
-    else if (p.checked || p.minDone) cls += " is-partial";
-    if (isToday) cls += " is-today";
-    if (isFuture) cls += " is-future";
-    if (highlightDay === d) cls += " is-view";
-    const b = el("button", cls);
-    b.type = "button";
-    b.append(el("span", "strip-name", SHORT_DAYS[d]), el("span", "strip-date", date ? fmtDate(date) : ""));
-    b.title = `${DAY_NAMES[d]}: ${p.checked}/${p.total} việc` + (p.minDone ? " · đã làm bản tối thiểu" : "");
-    b.addEventListener("click", () => {
-      viewWeek = weekNo;
-      viewDay = d;
-      scrollToDay = true;
-      if (location.hash === "#week") renderWeek();
-      else location.hash = "week";
-    });
-    strip.append(b);
-  }
-  return strip;
-}
-
 function stat(value, label) {
   const s = el("div", "stat");
   s.append(el("span", "stat-value", value), el("span", "stat-label", label));
   return s;
 }
+
+// Mở mục Lộ trình ở đúng tuần/ngày (dùng cho "Xem cả tuần", "Xem ngày mai").
+function openDay(weekNo, d, scroll) {
+  viewWeek = weekNo;
+  viewDay = d;
+  scrollToDay = scroll;
+  if (location.hash === "#week") renderWeek();
+  else location.hash = "week";
+}
+function dayLink(text, weekNo, d, scroll) {
+  const a = el("a", "more-link", text);
+  a.href = "#week";
+  a.addEventListener("click", (e) => {
+    e.preventDefault();
+    openDay(weekNo, d, scroll);
+  });
+  return a;
+}
+const rangeOf = (weekNo) => {
+  const a = dateOf(weekNo, 0), b = dateOf(weekNo, 6);
+  return a ? `${fmtDate(a)} – ${fmtDate(b)}` : "";
+};
 
 // ---------- Hôm nay ----------
 function renderToday() {
@@ -589,12 +579,11 @@ function renderToday() {
   const stats = el("div", "stats");
   const s1 = stat(`${p.checked}/${p.total}`, "việc hôm nay");
   s1.append(bar(p));
-  stats.append(s1, stat(p.left ? fmtMinutes(p.left) : "Xong", p.left ? "còn lại" : "hôm nay"), stat(`🔥 ${s.streak}`, "ngày liên tiếp"));
+  stats.append(s1, stat(p.left ? fmtMinutes(p.left) : "Xong", p.left ? "còn lại" : "hôm nay"));
   head.append(titles, stats);
   if (!s.doneToday && s.missedYesterday) {
     head.append(el("p", "warn", "Hôm qua bạn đã nghỉ. Hôm nay đừng nghỉ lần thứ hai: làm bản tối thiểu 15 phút cũng được."));
   }
-  head.append(weekStrip(pos.week, null));
   root.append(head);
 
   const grid = el("div", "today-grid");
@@ -612,10 +601,7 @@ function renderToday() {
   const wp = weekProgress(pos.week);
   const prog = el("div", "progress");
   prog.append(bar(wp), el("span", "muted", `${pct(wp)}%`));
-  const more = el("a", "", "Xem cả tuần →");
-  more.href = "#week";
-  more.addEventListener("click", () => { viewWeek = pos.week; viewDay = pos.day; });
-  wk.append(prog, more);
+  wk.append(prog, dayLink("Xem cả tuần →", pos.week, pos.day, false));
   rail.append(wk);
 
   if (w.col) {
@@ -638,7 +624,7 @@ function renderToday() {
     c.append(el("p", "eyebrow", `Ngày mai · ${DAY_NAMES[nd]}`));
     const ul = el("ul", "steps compact");
     tasksFor(nw, nd).filter(counted).forEach((t) => ul.append(el("li", "", t.h)));
-    c.append(ul);
+    c.append(ul, dayLink("Xem chi tiết ngày mai →", nw, nd, true));
     rail.append(c);
   }
 
@@ -646,80 +632,115 @@ function renderToday() {
   root.append(grid);
 }
 
-// ---------- Lộ trình (theo tuần) ----------
-function renderTimeline() {
-  const box = $("#timeline");
+// ---------- Lộ trình: khung chọn tuần (phải) ----------
+function arrow(text, label, disabled, onClick) {
+  const b = el("button", "arrow", text);
+  b.type = "button";
+  b.setAttribute("aria-label", label);
+  b.title = label;
+  b.disabled = disabled;
+  b.addEventListener("click", onClick);
+  return b;
+}
+
+function renderPicker() {
+  const box = $("#week-picker");
   box.innerHTML = "";
   const pos = planPosition();
-  const all = planProgress();
-  const top = el("div", "tl-top");
-  top.append(el("span", "", pos && pos.week >= 0 && pos.week < WEEKS.length ? `Đang ở tuần ${pos.week}/32` : "Chưa bắt đầu"), el("span", "muted", `Cả lộ trình: ${pct(all)}%`));
-  box.append(top);
+  const current = pos && pos.week >= 0 && pos.week < WEEKS.length ? pos.week : null;
+  const w = WEEKS[viewWeek];
+  const go = (n) => {
+    viewWeek = n;
+    viewDay = current === n ? pos.day : 0;
+    renderWeek();
+  };
 
+  const card = el("div", "card picker-card");
+  // ← Tuần n →
+  const navRow = el("div", "picker-nav");
+  const label = el("div", "picker-label");
+  label.append(
+    el("span", "picker-week", `Tuần ${w.n}`),
+    el("span", "picker-title", w.title), // chỉ hiện trên màn hình hẹp, nơi phần đầu tuần nằm ở cuối trang
+    el("span", "picker-range", [rangeOf(viewWeek), PHASES[w.phase].split(" · ")[0]].filter(Boolean).join(" · ")),
+  );
+  navRow.append(
+    arrow("←", "Tuần trước", viewWeek === 0, () => go(viewWeek - 1)),
+    label,
+    arrow("→", "Tuần sau", viewWeek === WEEKS.length - 1, () => go(viewWeek + 1)),
+  );
+  card.append(navRow);
+
+  // 33 ô: toàn cảnh lộ trình, màu theo giai đoạn, đầy dần theo tiến độ; bấm để nhảy tuần
   const cells = el("div", "tl");
-  WEEKS.forEach((w) => {
-    let cls = `tl-cell phase-${w.phase}`;
-    if (pos && pos.week === w.n) cls += " is-current";
-    if (viewWeek === w.n) cls += " is-view";
+  WEEKS.forEach((x) => {
+    let cls = `tl-cell phase-${x.phase}`;
+    if (current === x.n) cls += " is-current";
+    if (viewWeek === x.n) cls += " is-view";
     const b = el("button", cls);
     b.type = "button";
-    b.style.setProperty("--fill", pct(weekProgress(w.n)) + "%");
-    b.title = `Tuần ${w.n} · ${w.title}`;
+    b.style.setProperty("--fill", pct(weekProgress(x.n)) + "%");
+    b.title = `Tuần ${x.n} · ${x.title}`;
     b.setAttribute("aria-label", b.title);
-    b.addEventListener("click", () => {
-      viewWeek = w.n;
-      viewDay = pos && pos.week === w.n ? pos.day : 0;
-      renderWeek();
-    });
+    b.addEventListener("click", () => go(x.n));
     cells.append(b);
   });
-  box.append(cells);
+  card.append(cells);
 
+  const foot = el("div", "picker-foot");
   const legend = el("div", "tl-legend");
   [0, 1, 2, 3].forEach((ph) => {
     const item = el("span", `legend-item phase-${ph}`);
-    item.append(el("i"), document.createTextNode(ph === 0 ? "Chuẩn bị" : `Giai đoạn ${ph}`));
+    item.append(el("i"), document.createTextNode(ph === 0 ? "Chuẩn bị" : `GĐ ${ph}`));
     legend.append(item);
   });
-  box.append(legend);
+  foot.append(legend, el("span", "muted", `Cả lộ trình ${pct(planProgress())}%`));
+  card.append(foot);
+  if (current !== null && current !== viewWeek) {
+    const back = el("button", "link-btn", `Về tuần hiện tại (Tuần ${current})`);
+    back.type = "button";
+    back.addEventListener("click", () => go(current));
+    card.append(back);
+  }
+  box.append(card);
+
+  // Thứ Hai … Chủ Nhật
+  const list = el("div", "day-list");
+  list.setAttribute("role", "tablist");
+  list.setAttribute("aria-label", "Ngày trong tuần");
+  for (let d = 0; d < 7; d++) {
+    const p = dayProgress(viewWeek, d);
+    const date = dateOf(viewWeek, d);
+    let cls = "day-btn";
+    if (d === viewDay) cls += " active";
+    if (p.total && p.checked === p.total) cls += " is-done";
+    if (current === viewWeek && pos.day === d) cls += " is-today";
+    const b = el("button", cls);
+    b.type = "button";
+    b.setAttribute("role", "tab");
+    b.setAttribute("aria-selected", String(d === viewDay));
+    b.append(
+      el("span", "day-name", DAY_NAMES[d]),
+      el("span", "day-meta", (date ? fmtDate(date) + " · " : "") + `${p.checked}/${p.total}`),
+      bar(p),
+    );
+    b.addEventListener("click", () => { viewDay = d; renderWeek(); });
+    list.append(b);
+  }
+  box.append(list);
+  return list;
 }
 
+// ---------- Lộ trình: nội dung tuần & ngày (trái) ----------
 function renderWeek() {
-  renderTimeline();
+  const list = renderPicker();
   const root = $("#week-body");
   root.innerHTML = "";
   const w = WEEKS[viewWeek];
 
   const head = el("div", "card week-head");
-  const navRow = el("div", "week-nav");
-  const prev = el("button", "", "←");
-  prev.type = "button";
-  prev.setAttribute("aria-label", "Tuần trước");
-  prev.disabled = viewWeek === 0;
-  prev.addEventListener("click", () => { viewWeek--; viewDay = 0; renderWeek(); });
-  const sel = el("select");
-  sel.setAttribute("aria-label", "Chọn tuần");
-  WEEKS.forEach((x) => {
-    const o = el("option", "", `Tuần ${x.n} · ${x.title}`);
-    o.value = String(x.n);
-    sel.append(o);
-  });
-  sel.value = String(viewWeek);
-  sel.addEventListener("change", () => { viewWeek = Number(sel.value); viewDay = 0; renderWeek(); });
-  const next = el("button", "", "→");
-  next.type = "button";
-  next.setAttribute("aria-label", "Tuần sau");
-  next.disabled = viewWeek === WEEKS.length - 1;
-  next.addEventListener("click", () => { viewWeek++; viewDay = 0; renderWeek(); });
-  navRow.append(prev, sel, next);
-  head.append(navRow);
-
-  const info = el("div", "week-info");
-  const left = el("div");
-  left.append(el("p", "eyebrow", `${PHASES[w.phase]} · Tuần ${w.n}`), el("h2", "", w.title));
-  if (w.note) left.append(el("p", "", w.note));
-  if (w.gNote && w.n !== 0) left.append(el("p", "note", w.gNote));
-  info.append(left);
+  head.append(el("p", "eyebrow", `${PHASES[w.phase]} · Tuần ${w.n}`), el("h1", "", w.title));
+  if (w.note) head.append(el("p", "", w.note));
   if (w.n > 0 && w.n < 32) {
     const dl = el("dl", "facts");
     const add = (k, v) => { if (v) dl.append(el("dt", "", k), el("dd", "", v)); };
@@ -728,37 +749,19 @@ function renderWeek() {
     add("Cụm từ", w.col.join(" · "));
     if (w.t2) add("Task 2", w.t2.type);
     add("Thứ Bảy", w.sat);
-    info.append(dl);
+    head.append(dl);
   }
-  head.append(info);
+  if (w.gNote && w.n !== 0) {
+    const det = el("details", "gnote");
+    det.open = window.innerWidth >= 1100;
+    det.append(el("summary", "", "Ghi chú ngữ pháp"), el("p", "note", w.gNote));
+    head.append(det);
+  }
   const wp = weekProgress(viewWeek);
   const prog = el("div", "progress");
   prog.append(bar(wp), el("span", "muted", `${wp.checked}/${wp.total} việc · ${pct(wp)}%`));
   head.append(prog);
-  root.append(head);
 
-  // Danh sách ngày (trái) · chi tiết ngày đang chọn (phải)
-  const split = el("div", "week-split");
-  const list = el("div", "day-list");
-  list.setAttribute("role", "tablist");
-  const pos = planPosition();
-  for (let d = 0; d < 7; d++) {
-    const p = dayProgress(viewWeek, d);
-    const date = dateOf(viewWeek, d);
-    let cls = "day-btn";
-    if (d === viewDay) cls += " active";
-    if (p.total && p.checked === p.total) cls += " is-done";
-    if (pos && pos.week === viewWeek && pos.day === d) cls += " is-today";
-    const b = el("button", cls);
-    b.type = "button";
-    b.setAttribute("role", "tab");
-    b.setAttribute("aria-selected", String(d === viewDay));
-    const name = el("span", "day-name", DAY_NAMES[d]);
-    const meta = el("span", "day-meta", (date ? fmtDate(date) + " · " : "") + `${p.checked}/${p.total}`);
-    b.append(name, meta, bar(p));
-    b.addEventListener("click", () => { viewDay = d; renderWeek(); });
-    list.append(b);
-  }
   const detail = el("div", "day-detail");
   const date = dateOf(viewWeek, viewDay);
   const dh = el("div", "day-detail-head");
@@ -767,15 +770,15 @@ function renderWeek() {
   if (total) dh.append(el("span", "muted", "Tổng " + fmtMinutes(total)));
   detail.append(dh);
   renderBlocks(detail, tasksFor(viewWeek, viewDay));
-  split.append(list, detail);
-  root.append(split);
 
-  // Điện thoại: danh sách ngày cuộn ngang, đưa ngày đang chọn vào tầm nhìn.
+  root.append(head, detail);
+
+  // Màn hình hẹp: danh sách ngày cuộn ngang, đưa ngày đang chọn vào tầm nhìn.
   const active = list.querySelector(".active");
   if (active && list.scrollWidth > list.clientWidth) list.scrollLeft = active.offsetLeft - list.offsetLeft - 8;
   if (scrollToDay) {
     scrollToDay = false;
-    split.scrollIntoView({ block: "start" });
+    detail.scrollIntoView({ block: "start" });
   }
 }
 
@@ -863,6 +866,7 @@ function renderAll() {
   renderWeek();
   renderSide();
   renderLibrary();
+  if (typeof renderSideFooter === "function") renderSideFooter(); // ngày bắt đầu ở cuối sidebar (nav.js)
 }
 
 (function init() {

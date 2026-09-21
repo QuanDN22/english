@@ -2,89 +2,83 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="robots" content="noindex, nofollow">
   <title>Lộ trình IELTS</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="lo-trinh.css">
 </head>
 <body>
-  <header>
-    <p class="crumb"><a href="index.html">← English Notebook</a></p>
-    <h1>Lộ trình IELTS 5.0 → 7.0</h1>
-    <p class="muted">33 tuần (tuần 0 + 32 tuần) · Thứ Hai–Sáu 2 giờ, thứ Bảy 2,5–4 giờ, Chủ nhật 20 phút</p>
-    <div class="start-row">
-      <label for="start-date">Ngày bắt đầu (tự lùi về thứ Hai của tuần đó)</label>
-      <div class="start-inputs">
-        <input id="start-date" type="date">
-        <button id="save-start" type="button">Lưu</button>
-      </div>
-    </div>
-    <div id="status" class="status"></div>
-    <nav>
-      <button class="tab active" data-tab="today">Hôm nay</button>
-      <button class="tab" data-tab="week">Theo tuần</button>
-      <button class="tab" data-tab="lib">Tài liệu</button>
-      <button class="tab" data-tab="about">Ghi chú</button>
-    </nav>
-  </header>
+  <aside id="sidebar" class="sidebar">
+    <div id="side-extra" class="side-extra"></div>
+  </aside>
 
-  <main>
-    <section id="today" class="panel active">
+  <main class="content">
+    <!-- Hôm nay -->
+    <section id="today" class="panel">
       <div id="today-body"></div>
     </section>
 
+    <!-- Lộ trình -->
     <section id="week" class="panel">
-      <div class="week-nav">
-        <button id="prev-week" type="button" aria-label="Tuần trước">←</button>
-        <select id="week-select" aria-label="Chọn tuần"></select>
-        <button id="next-week" type="button" aria-label="Tuần sau">→</button>
+      <div class="page-head">
+        <p class="eyebrow">IELTS 5.0 → 7.0</p>
+        <h1>Lộ trình 33 tuần</h1>
       </div>
+      <div id="timeline" class="card timeline"></div>
       <div id="week-body"></div>
     </section>
 
+    <!-- Tài liệu -->
     <section id="lib" class="panel">
-      <div id="lib-body"></div>
-    </section>
-
-    <section id="about" class="panel">
-      <div class="card">
-        <h2>Cách dùng</h2>
-        <ul class="steps">
-          <li>Chọn ngày bắt đầu. Tab <b>Hôm nay</b> sẽ tự hiện đúng việc của ngày, kèm link tài liệu đã chọn sẵn.</li>
-          <li>Làm xong việc nào thì đánh dấu việc đó. Ngày nào có ít nhất một việc được đánh dấu thì tính vào chuỗi ngày học.</li>
-          <li>Ngày bận: chỉ cần làm <b>bản tối thiểu 15 phút</b>. Được nghỉ 1 ngày, nhưng không nghỉ 2 ngày liên tiếp.</li>
-          <li>Tiến độ lưu trong trình duyệt của máy đang dùng. Dùng cùng một trình duyệt để không mất dấu.</li>
-        </ul>
+      <div class="page-head">
+        <p class="eyebrow">IELTS 5.0 → 7.0</p>
+        <h1>Tài liệu & cài đặt</h1>
       </div>
+      <div id="lib-body" class="lib-grid"></div>
 
-      <div class="card">
-        <h2>Thời lượng có đủ không?</h2>
-        <p>Mỗi tuần khoảng 13–15 giờ, tổng cộng khoảng 440 giờ cho 33 tuần. Ước tính thường gặp là khoảng 200 giờ học có hướng dẫn cho mỗi band. Vì vậy 440 giờ đủ cho 2 band, nhưng không có dư. Nếu bỏ nhiều buổi, hãy lùi ngày thi thêm 1–2 tháng thay vì học dồn.</p>
-      </div>
+      <h2 class="section-title">Ghi chú</h2>
+      <div class="lib-grid">
+        <div class="card">
+          <h2>Cách dùng</h2>
+          <ul class="steps">
+            <li>Chọn ngày bắt đầu ở thẻ Cài đặt. Mục <b>Hôm nay</b> sẽ tự hiện đúng việc của ngày, kèm link tài liệu đã chọn sẵn.</li>
+            <li>Làm xong việc nào thì đánh dấu việc đó. Ngày nào có ít nhất một việc được đánh dấu thì tính vào chuỗi ngày học.</li>
+            <li>Ngày bận: chỉ cần làm <b>bản tối thiểu 15 phút</b>. Được nghỉ 1 ngày, nhưng không nghỉ 2 ngày liên tiếp.</li>
+            <li>Tiến độ lưu trong trình duyệt của máy đang dùng. Dùng cùng một trình duyệt để không mất dấu.</li>
+          </ul>
+        </div>
 
-      <div class="card">
-        <h2>Những gì đã sửa so với 5 file lộ trình cũ</h2>
-        <p class="muted">Kiểm tra ngày 21/09/2026.</p>
-        <ul class="steps">
-          <li><b>Link video không tồn tại.</b> Cả 12 link video YouTube trong bản cũ đều không mở được, vì ID video không có thật. Bản mới chỉ dùng video đã kiểm tra tồn tại.</li>
-          <li><b>Link British Council hỏng.</b> Trong 23 link: 12 link trả về lỗi 404 do British Council đã đổi cấu trúc trang, 2 link tự chuyển sang một bài không liên quan, 1 link chỉ là trang bình luận. Bản mới dùng đường dẫn hiện tại, mỗi bài đều có bài tập.</li>
-          <li><b>Link ghi sai nguồn.</b> "BBC Grammar Reference" thực ra là một trang không thuộc BBC. BBC News Review và English in a Minute trỏ vào bản tiếng Trung. Link cleft sentences trỏ vào một blog tiếng Thổ Nhĩ Kỳ. Playlist "English with Lucy" do người khác lập, không phải kênh chính thức.</li>
-          <li><b>Nguồn không còn dùng được miễn phí.</b> Blog IELTS Simon đã đóng và chuyển sang trang thành viên trả phí. The Economist có tường phí. Bản mới thay bằng IELTS Liz, tài liệu chính thức của ielts.org và The Conversation.</li>
-          <li><b>Chưa cụ thể.</b> Bản cũ ghi "chọn 1 episode mới nhất", "chọn 1 video TED-Ed", nên mỗi ngày vẫn phải tự đi tìm. Bản mới gán sẵn cho từng tuần 1 tập 6 Minute English, 1 bài đọc, 1 bài nghe, 1 video, 8 cụm từ, đề Speaking và đề Writing.</li>
-          <li><b>Thiếu kiểm tra đầu vào.</b> Bản mới có Tuần 0 thi thử bằng bài thi làm quen chính thức. Điểm được so lại ở tuần 8, 20 và 32.</li>
-          <li><b>Chưa tính thi trên máy.</b> Từ 30/03/2025, IELTS ở Việt Nam chỉ còn thi trên máy tính. Vì vậy mọi bài Writing trong bản mới đều gõ trên máy, và có tổng duyệt trên giao diện thi thật.</li>
-          <li><b>Thiếu Writing Task 1.</b> Bản cũ gần như không có Task 1 cho đến tuần 29. Bản mới có Task 1 mỗi tuần từ tuần 9, lần lượt đủ các dạng: bar, line, pie, table, process, map.</li>
-          <li><b>Thời lượng không khớp.</b> Bản cũ ghi 2,5–3 giờ/ngày nhưng bảng tổng lại ra 21,5 giờ/tuần. Giai đoạn 3 còn yêu cầu "viết 2 bài/ngày". Bản mới tính giờ từng việc, cộng lại đúng 2 giờ mỗi buổi tối trong tuần.</li>
-          <li><b>Thiếu cơ chế chữa bài.</b> Bản mới có câu lệnh chữa bài bằng AI viết sẵn, sổ lỗi với các cột cố định, và flashcard ôn hằng ngày.</li>
-          <li><b>Sách cũ.</b> Bản cũ dùng Cambridge 11–18. Bản mới dùng Cambridge 15–20 (cuốn 20 xuất bản tháng 7/2025) và phân sẵn từng test cho từng thứ Bảy, không test nào bị dùng lại.</li>
-          <li>Sửa lỗi nhỏ: một cụm chữ Hán ("sách分级") lẫn vào văn bản.</li>
-        </ul>
-        <p><b>Giữ nguyên từ bản cũ:</b> ba giai đoạn 8–12–12 tuần, thứ tự các chủ đề ngữ pháp, cách học hiểu "vì sao", Chủ nhật nghỉ, và sổ lỗi.</p>
+        <div class="card">
+          <h2>Thời lượng có đủ không?</h2>
+          <p>Thứ Hai–Sáu 2 giờ, thứ Bảy 2,5–4 giờ, Chủ nhật 20 phút. Tổng khoảng 13–15 giờ mỗi tuần, khoảng 440 giờ cho 33 tuần.</p>
+          <p>Ước tính thường gặp là khoảng 200 giờ học có hướng dẫn cho mỗi band. Vì vậy 440 giờ đủ cho 2 band, nhưng không có dư. Nếu bỏ nhiều buổi, hãy lùi ngày thi thêm 1–2 tháng thay vì học dồn.</p>
+        </div>
+
+        <div class="card span-2">
+          <h2>Những gì đã sửa so với 5 file lộ trình cũ</h2>
+          <p class="muted">Kiểm tra ngày 21/09/2026.</p>
+          <ul class="steps">
+            <li><b>Link video không tồn tại.</b> Cả 12 link video YouTube trong bản cũ đều không mở được, vì ID video không có thật. Bản mới chỉ dùng video đã kiểm tra tồn tại.</li>
+            <li><b>Link British Council hỏng.</b> Trong 23 link: 12 link trả về lỗi 404 do British Council đã đổi cấu trúc trang, 2 link tự chuyển sang một bài không liên quan, 1 link chỉ là trang bình luận. Bản mới dùng đường dẫn hiện tại, mỗi bài đều có bài tập.</li>
+            <li><b>Link ghi sai nguồn.</b> "BBC Grammar Reference" thực ra là một trang không thuộc BBC. BBC News Review và English in a Minute trỏ vào bản tiếng Trung. Link cleft sentences trỏ vào một blog tiếng Thổ Nhĩ Kỳ. Playlist "English with Lucy" do người khác lập, không phải kênh chính thức.</li>
+            <li><b>Nguồn không còn dùng được miễn phí.</b> Blog IELTS Simon đã đóng và chuyển sang trang thành viên trả phí. The Economist có tường phí. Bản mới thay bằng IELTS Liz, tài liệu chính thức của ielts.org và The Conversation.</li>
+            <li><b>Chưa cụ thể.</b> Bản cũ ghi "chọn 1 episode mới nhất", "chọn 1 video TED-Ed", nên mỗi ngày vẫn phải tự đi tìm. Bản mới gán sẵn cho từng tuần 1 tập 6 Minute English, 1 bài đọc, 1 bài nghe, 1 video, 8 cụm từ, đề Speaking và đề Writing.</li>
+            <li><b>Thiếu kiểm tra đầu vào.</b> Bản mới có Tuần 0 thi thử bằng bài thi làm quen chính thức. Điểm được so lại ở tuần 8, 20 và 32.</li>
+            <li><b>Chưa tính thi trên máy.</b> Từ 30/03/2025, IELTS ở Việt Nam chỉ còn thi trên máy tính. Vì vậy mọi bài Writing trong bản mới đều gõ trên máy, và có tổng duyệt trên giao diện thi thật.</li>
+            <li><b>Thiếu Writing Task 1.</b> Bản cũ gần như không có Task 1 cho đến tuần 29. Bản mới có Task 1 mỗi tuần từ tuần 9, lần lượt đủ các dạng: bar, line, pie, table, process, map.</li>
+            <li><b>Thời lượng không khớp.</b> Bản cũ ghi 2,5–3 giờ/ngày nhưng bảng tổng lại ra 21,5 giờ/tuần. Giai đoạn 3 còn yêu cầu "viết 2 bài/ngày". Bản mới tính giờ từng việc, cộng lại đúng 2 giờ mỗi buổi tối trong tuần.</li>
+            <li><b>Thiếu cơ chế chữa bài.</b> Bản mới có câu lệnh chữa bài bằng AI viết sẵn, sổ lỗi với các cột cố định, và flashcard ôn hằng ngày.</li>
+            <li><b>Sách cũ.</b> Bản cũ dùng Cambridge 11–18. Bản mới dùng Cambridge 15–20 (cuốn 20 xuất bản tháng 7/2025) và phân sẵn từng test cho từng thứ Bảy, không test nào bị dùng lại.</li>
+            <li>Sửa lỗi nhỏ: một cụm chữ Hán ("sách分级") lẫn vào văn bản.</li>
+          </ul>
+          <p><b>Giữ nguyên từ bản cũ:</b> ba giai đoạn 8–12–12 tuần, thứ tự các chủ đề ngữ pháp, cách học hiểu "vì sao", Chủ nhật nghỉ, và sổ lỗi.</p>
+        </div>
       </div>
     </section>
   </main>
 
+  <script src="nav.js"></script>
   <script src="lo-trinh-data.js"></script>
   <script src="lo-trinh.js"></script>
 </body>

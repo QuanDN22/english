@@ -21,17 +21,6 @@ function save() {
   }
 }
 
-// ---------- Tabs ----------
-document.querySelectorAll(".tab").forEach((btn) => {
-  btn.addEventListener("click", () => {
-    document.querySelectorAll(".tab").forEach((b) => b.classList.remove("active"));
-    document.querySelectorAll(".panel").forEach((p) => p.classList.remove("active"));
-    btn.classList.add("active");
-    document.getElementById(btn.dataset.tab).classList.add("active");
-    if (btn.dataset.tab === "cards") startCards();
-  });
-});
-
 // ---------- Danh sách từ ----------
 const form = document.getElementById("word-form");
 const list = document.getElementById("word-list");
@@ -190,3 +179,7 @@ document.addEventListener("keydown", (e) => {
 });
 
 renderList();
+// Điều hướng theo #words / #cards (nav.js)
+mountNav("words", (id) => {
+  if (id === "cards") startCards();
+});

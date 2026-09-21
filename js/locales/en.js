@@ -1,0 +1,332 @@
+// English UI strings. Any key missing here falls back to js/locales/vi.js.
+I18N.register("en", "English", {
+  // ---------- General & navigation ----------
+  "app.name": "English Notebook",
+  "nav.aria": "Main navigation",
+  "nav.today": "Today",
+  "nav.week": "Plan",
+  "nav.words": "Words",
+  "nav.cards": "Flashcards",
+  "nav.lib": "Resources",
+  "nav.settings": "Settings",
+  "side.collapse": "Collapse sidebar",
+  "side.expand": "Expand sidebar",
+  "side.start": "Start date",
+  "side.startNone": "Not set",
+  "side.startValue": "{date}",
+  "side.editStart": "Change start date",
+  "side.streak": "day streak",
+  "side.week": "Week {n}/32 · {phase}",
+  "side.outside": "Outside the plan dates",
+  "side.pickStart": "Pick a start date →",
+
+  // ---------- Dates & times ----------
+  days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+  "fmt.min": "{n} min",
+  "fmt.h": "{h} h",
+  "fmt.hmin": "{h} h {n} min",
+
+  // ---------- Phases ----------
+  "phase.0": "Preparation",
+  "phase.1": "Phase 1 · Foundations (5.0 → 5.5)",
+  "phase.2": "Phase 2 · Application (5.5 → 6.5)",
+  "phase.3": "Phase 3 · Refinement (6.5 → 7.0)",
+  "phaseShort.0": "Preparation",
+  "phaseShort.1": "Phase 1",
+  "phaseShort.2": "Phase 2",
+  "phaseShort.3": "Phase 3",
+  "legend.0": "Prep",
+  "legend.1": "Phase 1",
+  "legend.2": "Phase 2",
+  "legend.3": "Phase 3",
+
+  // ---------- Time blocks & labels ----------
+  "block.am": "Morning",
+  "block.pm": "Afternoon",
+  "block.eve": "Evening",
+  "block.other": "Other",
+  "block.busyTitle": "Too busy today?",
+  "time.am": "Morning",
+  "time.pm": "Afternoon",
+  "time.eve": "Evening",
+  "tag.optional": "Optional",
+  "tag.todo": "To do",
+  "tag.allDay": "All day",
+  "tag.busy": "Busy day",
+
+  // ---------- Today ----------
+  "today.eyebrow": "IELTS 5.0 → 7.0",
+  "today.pickStart": "Pick a start date for your plan",
+  "today.notStarted": "Your plan starts on Monday {date}. Meanwhile, you can preview Week 0 under Plan.",
+  "today.finished": "You have completed all 33 weeks. Good luck in your exam!",
+  "today.tasks": "tasks today",
+  "today.left": "left",
+  "today.done": "Done",
+  "today.doneLabel": "for today",
+  "today.missed": "You skipped yesterday. Don't skip twice in a row: even the 15-minute minimum counts.",
+  "today.thisWeek": "This week",
+  "today.seeWeek": "See the whole week →",
+  "today.phrases": "Phrases of the week",
+  "today.saturday": "This Saturday",
+  "today.tomorrow": "Tomorrow · {day}",
+  "today.seeTomorrow": "See tomorrow in detail →",
+  "facts.grammar": "Grammar",
+  "facts.topic": "Topic",
+  "facts.phrases": "Phrases",
+  "facts.task2": "Task 2",
+  "facts.saturday": "Saturday",
+
+  // ---------- Plan ----------
+  "week.aria": "Choose a week and day",
+  "week.eyebrow": "{phase} · Week {n}",
+  "week.label": "Week {n}",
+  "week.prev": "Previous week",
+  "week.next": "Next week",
+  "week.back": "Back to this week (Week {n})",
+  "week.planPct": "Whole plan {p}%",
+  "week.cellTitle": "Week {n} · {title}",
+  "week.days": "Days of the week",
+  "week.today": "today",
+  "week.gnote": "Grammar notes",
+  "week.progress": "{c}/{t} tasks · {p}%",
+  "week.total": "Total {d}",
+
+  // ---------- Tests & essay types ----------
+  "sat.fullLR": "Cambridge IELTS {b} · Test {t} — full Listening + full Reading, under exam conditions",
+  "sat.full": "Cambridge IELTS {b} · Test {t} — full test: Listening + Reading + Writing",
+  "sat.rest": "Rest — no test",
+  "t1.rewrite": "Rewrite Writing Task 1 from Cambridge {b} · Test {t} (your week {w} Saturday test) using the feedback",
+  "t2.direct": "Direct questions (two questions)",
+
+  // ---------- Shared tasks ----------
+  "task.flash": { h: "Review flashcards", s: ["Open Flashcards (or Anki) and review every card that is due.", "Add the new phrases from yesterday."] },
+  "task.busy": { h: "Minimum version (replaces the whole day)", s: ["Review flashcards for 5 minutes.", "Re-listen to this week's 6 Minute English episode for 10 minutes.", "Rule: you may skip one day, never two in a row."] },
+  "task.dictation": { h: "Dictation", s: ["Listen to {a}–{z} of this week's 6 Minute English episode. Pause after each sentence and write it down word for word.", "Check against the transcript on the BBC page. Underline what you misheard — usually -s/-ed endings, articles and linking words."] },
+  "task.shadow6": { h: "Shadowing", s: ["Take the part you wrote down on Monday/Tuesday. Play one sentence → pause → repeat it with the same rhythm, stress and linking.", "Finally, record the whole part and compare it with the original."] },
+  "task.review": { h: "Weekly review", s: ["Record 2 minutes explaining this week's grammar as if teaching someone. If you can't, rewatch the video.", "Cover the meanings and review all of this week's phrases. Mark any you forgot.", "Note in your log: 3 things that went well, 1 thing you will do differently next week."] },
+  "task.fixMistakes": { h: "Review your answers", s: ["Mark Listening and Reading with the answer key at the back of the book and convert to a band using its table.", "For EVERY wrong answer: find the sentence with the answer in the transcript or passage, and underline the paraphrased part.", "Add to your error log: question number · error type (unknown word / missed paraphrase / spelling / ran out of time / lost focus) · lesson.", "Re-listen to the parts you got wrong with the transcript, twice."] },
+  "task.fun": { h: "English for fun", s: ["Watch a film or series with English subtitles. No notes — it doesn't count as study."] },
+  "task.sunFlash": { h: "Review flashcards", s: ["Review every card that is due. This keeps your streak going."] },
+  "task.sunPreview": { h: "Preview next week", s: ["Open next week under Plan and skim the materials.", "Put your study times for the week into your phone calendar."] },
+  "task.sunFun": { h: "English for fun", s: ["Watch films, series or YouTube with English subtitles. No notes — it doesn't count as study."] },
+  "task.rest": { h: "Rest", s: ["No study. Light exercise and plenty of sleep."] },
+  "task.grammar": { h: "Grammar: {grammar}", s: ["{gNote}", "Watch the video, then read the British Council page and do all of its exercises.", "{last}"] },
+  "task.grammarReview": { h: "Grammar: {grammar}", s: ["{gNote}", "Open your error log, pick the 3 grammar topics you get wrong most, and redo the British Council exercises from those weeks."] },
+  "last.p1": "Write 5 sentences about yourself using this structure and add them to your notebook.",
+  "last.p2": "Write 5 sentences about this week's topic using this structure.",
+  "last.p3": "Write 3 sentences using this structure on this week's Task 2 topic, to reuse on Thursday.",
+  "speak.p1": "Part 1: answer each question in 20–30 seconds and record the whole set: {q}",
+  "speak.p2": "Part 2: prepare for 1 minute (keywords only), then speak for 2 minutes without stopping: {q}",
+  "speak.p3": "Part 3: answer each question in 45–60 seconds using opinion → reason → example: {q}",
+  "speak.redo": "Listen back, note 3 problems (this week's grammar, pronunciation, hesitation), then answer again.",
+  "more.p1Review": "Get ready for Saturday: Cambridge book, headphones, timer.",
+  "more.p3Review": "Open your error log: which error type came up most this week?",
+  "more.p3Mock": "Score yourself on the 4 criteria using the band descriptors and write the estimated band in your log.",
+
+  // ---------- Phase 1 ----------
+  "task.p1.vocab": { h: "Vocabulary: {topic}", s: ["Learn the words in the VOCABULARY section at the bottom of this week's 6 Minute English page.", "This week's 8 phrases: {col}", "Add 10 cards under Words: the phrase on the front, the meaning plus your own example sentence on the back."] },
+  "task.p1.listenAll": { h: "Listen to the whole 6 Minute English episode", s: ["First time without the transcript: answer the quiz question from the start of the episode.", "Second time with the transcript, reading along."] },
+  "task.p1.read": { h: "Reading", s: ["Do the Preparation task, read the text once without a dictionary, then do the scored tasks on the page.", "Only then look up the words that blocked your understanding (8 at most)."] },
+  "task.p1.analyse": { h: "Sentence analysis", s: ["Copy 5 sentences from the text: underline the subject and main verb, and note why that tense or structure is used."] },
+  "task.p1.summary": { h: "Summary in your own words", s: ["Write an 80–100 word summary of the text without copying sentences. This is paraphrasing practice — the basis of Reading and Writing."] },
+  "task.p1.pron": { h: "Pronunciation", s: ["Watch the video and repeat each example."] },
+  "task.p1.shadow": { h: "Shadowing", s: ["Pick 1 minute of the 6 Minute English transcript. Play one sentence → pause → repeat it with the same rhythm and stress.", "Record the final attempt and compare it with the original."] },
+  "task.p1.speak": { h: "Speaking", s: [] },
+  "task.p1.grammarRedo": { h: "Grammar review", s: ["Redo Monday's British Council exercises without looking at the answers."] },
+  "task.p1.journal": { h: "Journal writing", s: ["{journal}", "Write directly in English — don't translate from Vietnamese. If you don't know a word, explain around it."] },
+  "task.p1.fix": { h: "Correct your writing", s: ["Reread using a checklist: verb tenses, articles, -s/-ed endings, linking words.", "Paste your text into an AI with the correction prompt (under Resources). Ask it to point out errors, not rewrite the text.", "Add the 3 most important errors to your error log."] },
+  "task.p1.useCol": { h: "Use this week's phrases", s: ["Cover the meanings and make new sentences with the 8 phrases: {col}", "Read each sentence aloud."] },
+  "task.p1.relisten": { h: "Re-listen to the episode", s: ["Listen to the whole 6 Minute English episode again without the transcript. How much more do you understand than on Monday?"] },
+  "task.p1.listenMore": { h: "Extra listening", s: ["Do the Preparation task, listen and do the scored tasks. Open the transcript only when you have finished."] },
+  "task.p1.ted": { h: "TED-Ed", s: ["Watch 3 times: no subtitles → English subtitles → no subtitles.", "Add 3 useful phrases to your flashcards."] },
+  "task.p1.finalTest": { h: "End-of-phase test", s: ["{sat}", "Listening: hear it once only, 30 minutes + 2 minutes to check (as in the computer test). Reading: 60 minutes, no dictionary."] },
+  "task.p1.compare": { h: "Compare with Week 0", s: ["Write today's scores next to your Week 0 mock scores. An improvement of 0.5 band or more means you are on track."] },
+  "task.p1.skillVid": { h: "Skills video", s: ["Watch the video and note 3 tips to use in today's test."] },
+  "task.p1.test": { h: "Practice test", s: ["{sat}", "Hear the Listening once, as in the real test. Give yourself 20 minutes for Reading Passage 1."] },
+  "task.p1.relistenT": { h: "Re-listen with the transcript", s: ["Listen to Parts 1–2 again while reading the transcript at the back of the book."] },
+
+  // ---------- Phase 2 ----------
+  "task.p2.vocab": { h: "Vocabulary: {topic}", s: ["Learn the VOCABULARY section of the 6 Minute English episode.", "This week's 8 phrases: {col}", "Add 10 academic words from the OPAL list (Written, in order from the top).", "Make flashcards for all of them."] },
+  "task.p2.listenAll": { h: "Listen to the whole 6 Minute English episode", s: ["First without the transcript, then with it."] },
+  "task.p2.read": { h: "Reading (timed)", s: ["Read the text in 8 minutes, then do the scored tasks.", "Copy 3 paraphrase pairs (words in the question ↔ words in the text)."] },
+  "task.p2.rskill": { h: "Reading skills", s: ["Watch the video and write the steps for this question type in 3–4 lines, to use on Saturday."] },
+  "task.p2.t1": { h: "Writing Task 1", s: ["Watch the video or read the model first (10 minutes).", "Write {cam}. 20 minutes, at least 150 words, typed on a computer.", "Compare with the model answer at the back of the book: does your overview state the main trends? Did you include comparisons with figures?"] },
+  "task.p2.t1rewrite": { h: "Writing Task 1", s: ["{cam}. 20 minutes, typed on a computer.", "Compare with your earlier version: do the errors in your error log still appear?"] },
+  "task.p2.pron": { h: "Pronunciation", s: ["Watch Tim's lesson and repeat the examples."] },
+  "task.p2.speakVid": { h: "Speaking video", s: ["Watch the video and pick 1 thing to apply today."] },
+  "task.p2.speak": { h: "Speaking Parts 1–2–3", s: [] },
+  "task.p2.redoP2": { h: "Repeat Part 2", s: ["Do Part 2 a third time, recording it and writing out the transcript.", "Paste the transcript into an AI with the Speaking prompt (under Resources)."] },
+  "task.p2.model": { h: "Read a model essay of the same type", s: ["This week's essay type: {type}. Read the model essay, noticing the introduction and each paragraph's topic sentence."] },
+  "task.p2.t2": { h: "Writing Task 2 (timed)", s: ["Task: {prompt}", "5 minutes planning → 35 minutes writing, at least 250 words. Type it — in Vietnam IELTS is now computer-only."] },
+  "task.p2.t2fix": { h: "Get feedback", s: ["Paste your essay into an AI with the Writing prompt (under Resources).", "Check the feedback against the band descriptors, especially Task Response."] },
+  "task.p2.t2rewrite": { h: "Rewrite & log errors", s: ["Rewrite your weakest body paragraph.", "Add 3 errors to your error log."] },
+  "task.p2.listenMore": { h: "Extra listening", s: ["Do the scored tasks, then open the transcript."] },
+  "task.p2.ted": { h: "TED-Ed", s: ["Watch twice: no subtitles → English subtitles.", "Summarise it aloud in 1 minute and record yourself."] },
+  "task.p2.fullTest": { h: "Full mock test", s: ["{sat}", "Listening 30 minutes + 2 minutes to check → Reading 60 minutes → Writing 60 minutes (Task 1 20 minutes, Task 2 40 minutes). No breaks, no dictionary."] },
+  "task.p2.fixW": { h: "Writing feedback", s: ["Paste both answers into an AI with the Writing prompt.", "Add 3 errors to your error log."] },
+  "task.p2.lrTest": { h: "Mock Listening + Reading", s: ["{sat}", "Listening 30 minutes + 2 minutes to check → Reading 60 minutes."] },
+  "task.p2.satVid": { h: "Listening skills video", s: ["Watch the video and note 3 tips."] },
+  "task.p2.test": { h: "Practice test", s: ["{sat}", "Hear the Listening once, as in the test. Give yourself 40 minutes for the 2 Reading passages."] },
+  "task.p2.relistenT": { h: "Re-listen with the transcript", s: ["Listen to Parts 3–4 again with the transcript at the back of the book."] },
+
+  // ---------- Phase 3 ----------
+  "task.p3.shadow": { h: "Shadowing", s: ["Shadow {a}–{z} of last week's video (you already know the content), with English subtitles on.", "Copy the stress and intonation, not just the words."] },
+  "task.p3.listen": { h: "C1 listening", s: ["Do the scored tasks, then listen again with the transcript."] },
+  "task.p3.vocab": { h: "Vocabulary: {topic}", s: ["This week's 8 phrases: {col}", "Add words from this week's 6 Minute English episode (listen on the go).", "Make flashcards."] },
+  "task.p3.read": { h: "C1 reading (timed)", s: ["First read in 10 minutes, then do the scored tasks.", "Reread, underlining long sentences and splitting them into clauses."] },
+  "task.p3.paraphrase": { h: "Paraphrasing", s: ["Pick 5 sentences from the text and rewrite each in 2 ways: change the word class (noun ↔ verb) and change the structure (active ↔ passive, clause ↔ phrase)."] },
+  "task.p3.opal": { h: "Academic words", s: ["Learn the next 10 OPAL words and make sentences on this week's topic."] },
+  "task.p3.mock": { h: "Speaking mock (self-test)", s: [] },
+  "task.p3.intonation": { h: "Intonation & linking", s: ["Watch the first 2 videos and practise each example.", "Mark the words to stress in your Part 2 answer, then say it again."] },
+  "task.p3.pronShadow": { h: "Pronunciation through shadowing", s: ["Pick 3 sentences from today's recording that sounded unnatural. Find similar sentences in last week's TED talk and shadow them."] },
+  "task.p3.redo": { h: "Speak again", s: ["Redo Part 2 and your weakest Part 3 answer."] },
+  "task.p3.t1rewrite": { h: "Rewrite Task 1", s: ["Rewrite last Saturday's Writing Task 1 using the feedback, in 20 minutes."] },
+  "task.p3.t2": { h: "Writing Task 2 (timed)", s: ["Type: {type}", "Task: {prompt}", "5 minutes planning → 35 minutes writing, typed. Use 1–2 of this week's structures if they fit naturally."] },
+  "task.p3.fix": { h: "Get feedback", s: ["Get AI feedback with the Writing prompt and check it against the band descriptors.", "Rewrite 1 paragraph and add 3 errors to your log."] },
+  "task.p3.ted": { h: "TED talk", s: ["First watch without subtitles: summarise the main idea in 3 sentences.", "Second watch with English subtitles: note 10 expressions you can use in Speaking Part 3."] },
+  "task.p3.fullTest": { h: "Full mock test", s: ["{sat}", "Listening 30 minutes + 2 minutes to check → Reading 60 minutes → Writing 60 minutes. No breaks, no dictionary, Writing typed."] },
+  "task.p3.fixW": { h: "Writing feedback", s: ["Get AI feedback on both answers. Next Thursday you will rewrite Task 1."] },
+  "task.p3.partner": { h: "Speaking with a real person", s: ["Ask a friend, colleague or tutor to run all 3 parts, and record it."] },
+
+  // ---------- Week 0 ----------
+  "task.w0.format": { h: "Understand the test", s: ["Read the format of all 4 skills: number of questions, timing, question types.", "In Vietnam, since 30/03/2025 IELTS is only taken on computer, so every Writing task in this plan is typed."] },
+  "task.w0.tools": { h: "Set up your tools", s: ["Open Words / Flashcards (or install Anki) for flashcards.", "Create an error log (Google Sheets or a notebook) with columns: Date · Skill · Wrong sentence · Error type · Correction · Lesson."] },
+  "task.w0.habit": { h: "Anchor the habit", s: ["Write 2 sentences and stick them on your desk: 'After I [make my morning coffee], I will review flashcards for 10 minutes at [my desk].' and 'After I [have dinner], I will study for 90 minutes at [...]'.", "Set recurring reminders on your phone."] },
+  "task.w0.env": { h: "Design your environment", s: ["Switch your phone's language to English.", "Move social media apps off your home screen. Pin this site to your home screen."] },
+  "task.w0.lr": { h: "Baseline test: Listening + Reading", s: ["Take the official familiarisation test (Academic) on computer. You get Listening and Reading scores straight away.", "Write the scores down — you will compare against them in weeks 8, 20 and 32."] },
+  "task.w0.w": { h: "Baseline test: Writing", s: ["Do the Writing section of the familiarisation test (Task 1 20 minutes + Task 2 40 minutes), typed. Save your answers."] },
+  "task.w0.s": { h: "Baseline test: Speaking", s: ["Open the official Speaking sample tasks, ask and answer all 3 parts yourself, and record everything.", "Keep the recording to compare in weeks 8, 20 and 32."] },
+  "task.w0.self": { h: "Assess your Writing & Speaking", s: ["Read the band descriptors. Paste your Writing into an AI with the correction prompt (under Resources).", "Read the sample answers with examiner comments to see how bands 5, 6 and 7 differ."] },
+  "task.w0.diff": { h: "What separates band 6 from band 7", s: ["Read the IELTS article on the difference between bands 6 and 7. Note 3 things you need to achieve."] },
+  "task.w0.scores": { h: "Record your baseline", s: ["Write down 4 scores: Listening, Reading, Writing (estimate), Speaking (estimate).", "Your weakest skill gets an extra 15 minutes of review every Saturday."] },
+  "task.w0.books": { h: "Buy the books", s: ["Cambridge IELTS 15 Academic (from week 1) and 16 Academic (from week 5). Buy the rest as listed under Resources."] },
+  "task.w0.start": { h: "Start your streak", s: ["Add your first 10 flashcards: words you don't know from the Oxford 3000 (levels A2–B1)."] },
+
+  // ---------- Week 32 ----------
+  "task.w32.top10": { h: "Your 10 most important errors", s: ["Read through your whole error log, pick the 10 errors you repeat most, and write the correct sentences on one page. This is the page to reread before the exam."] },
+  "task.w32.p2": { h: "Speaking Part 2", s: ["Pick 3 Part 2 topics from earlier weeks and speak for 2 minutes on each, recording yourself."] },
+  "task.w32.rehearsal": { h: "Dress rehearsal on the real interface", s: ["Retake the official familiarisation test: Listening + Reading + Writing, timed, no breaks.", "The goal is to get used to the computer tools (marking, highlighting, word count), not the score."] },
+  "task.w32.fix": { h: "Review the rehearsal", s: ["Only look for your 10 most important errors. Note any new ones, but don't study anything new."] },
+  "task.w32.mock": { h: "Speaking mock", s: ["Use the official sample tasks and do all 3 parts, recorded. Compare with your Week 0 recording."] },
+  "task.w32.light": { h: "Light study", s: ["Listen to this week's 6 Minute English episode.", "Watch 2 short TED talks about perseverance."] },
+  "task.w32.t2": { h: "One last Task 2", s: ["Task: {prompt}"] },
+  "task.w32.logistics": { h: "Prepare for exam day", s: ["Check the ID you registered with, the test centre, arrival time and how to get there.", "Go to bed early."] },
+  "task.w32.sunday": { h: "Reread your 10-errors page", s: ["The exam is next week. Reread your 10 most important errors, then rest."] },
+
+  // ---------- Resources ----------
+  "lib.eyebrow": "IELTS 5.0 → 7.0",
+  "lib.title": "Resources",
+  "lib.books": "Books to buy",
+  "lib.booksNote": "Buy them as you need them. Each book includes audio and answer keys.",
+  "lib.bookItem": "Cambridge IELTS {b} Academic{extra} — from week {w}",
+  "lib.book20": " (published July 2025)",
+  "lib.promptW": "AI prompt for Writing feedback",
+  "lib.promptS": "AI prompt for Speaking feedback",
+  "lib.promptNote": "AI band scores are only estimates. Use AI mainly to find errors, and have a teacher mark your work every 1–2 months to cross-check.",
+  "lib.copy": "Copy",
+  "lib.copied": "Copied",
+  "lib.copyFail": "Select the text and copy it manually",
+  "lib.group.tools": "Getting started & tools",
+  "lib.group.official": "Official IELTS materials",
+  "lib.group.practice": "Free practice & model answers",
+  "lib.group.extra": "Extra listening & reading",
+  "lib.notes": "Notes",
+  "prompt.writing": `You are an experienced IELTS Writing examiner. Assess my Academic Writing Task [1/2] response using the official public band descriptors (Task Achievement/Response, Coherence and Cohesion, Lexical Resource, Grammatical Range and Accuracy).
+1. Give an estimated band for each criterion, with one sentence of evidence quoted from my text.
+2. List my 5 most important errors (grammar, word choice, collocation). For each: my sentence → corrected sentence → a short reason.
+3. Rewrite ONE body paragraph at band 7, keeping my ideas. Do not rewrite the whole essay.
+The task was: [paste the task]
+My response: [paste your answer]`,
+  "prompt.speaking": `You are an IELTS Speaking examiner. Below is a transcript of my answer to Part [1/2/3]. Using the public band descriptors, give an estimated band for Fluency & Coherence, Lexical Resource and Grammatical Range & Accuracy (you cannot judge pronunciation from text). Then list 5 sentences I should say differently, with a more natural band-7 version of each.
+Question: [paste the question]
+My answer (transcript): [paste the transcript]`,
+
+  "res.kind.lesson": "lesson + exercises",
+  "res.kind.model": "model text + exercises",
+  "res.kind.videoEx": "video + exercises",
+  "res.kind.six": "6-min audio + transcript + vocabulary",
+  "res.kind.pdf": "PDF",
+  "res.kind.article": "article",
+  "res.kind.self": "This site · stored in your browser",
+  "res.kind.anki": "Free on desktop & Android",
+  "res.kind.dict": "English–English dictionary with audio",
+  "res.kind.colloc": "Look up words that go together",
+  "res.kind.ox3000": "Core word lists by level",
+  "res.kind.opal": "Academic words & phrases for Writing",
+  "res.kind.famTest": "British Council · free, Listening & Reading scored",
+  "res.kind.sampleQ": "ielts.org · audio, transcripts, answers",
+  "res.kind.speakSample": "ielts.org · PDF, 7 pages",
+  "res.kind.tews": "BBC · 3 min per episode",
+  "res.kind.conversation": "Free · Passage 3-style reading",
+  // English titles come from plan-data.js, so no res.title.* overrides are needed here.
+
+  // ---------- Notes (bottom of Resources) ----------
+  "about.use.title": "How to use this site",
+  "about.use.html": `<ul class="steps">
+    <li>Pick a start date under <b>Settings</b>. <b>Today</b> then shows exactly what to do each day, with the materials already linked.</li>
+    <li>Tick each task when you finish it. Any day with at least one ticked task counts towards your streak.</li>
+    <li>Busy day? Just do the <b>15-minute minimum</b>. You may skip one day, but never two in a row.</li>
+    <li>Progress is stored in this browser on this device. Use the same browser to keep your history.</li>
+  </ul>`,
+  "about.time.title": "Is the time enough?",
+  "about.time.html": `<p>Monday–Friday 2 hours, Saturday 2.5–4 hours, Sunday 20 minutes. That is about 13–15 hours a week, roughly 440 hours over 33 weeks.</p>
+  <p>A common estimate is about 200 guided learning hours per band, so 440 hours is enough for 2 bands but leaves no slack. If you miss many sessions, push your exam back 1–2 months rather than cramming.</p>`,
+  "about.fixes.title": "What changed from the 5 original plan files",
+  "about.fixes.html": `<p class="muted">Checked on 21/09/2026. The 5 original files are kept in the <code>archive/</code> folder.</p>
+  <ul class="steps">
+    <li><b>Video links that don't exist.</b> All 12 YouTube video links in the old plan were broken because the video IDs were made up. The new plan only uses videos verified to exist.</li>
+    <li><b>Broken British Council links.</b> Of 23 links, 12 returned 404 because British Council restructured its site, 2 redirected to unrelated lessons, and 1 was only a comments page. The new plan uses current URLs, each with exercises.</li>
+    <li><b>Mislabelled sources.</b> "BBC Grammar Reference" was actually a non-BBC site. BBC News Review and English in a Minute pointed to the Chinese edition. The cleft sentences link pointed to a Turkish blog. The "English with Lucy" playlist was made by someone else, not the official channel.</li>
+    <li><b>Sources no longer free.</b> The IELTS Simon blog has closed and moved to a paid members' site. The Economist is paywalled. The new plan uses IELTS Liz, official ielts.org materials and The Conversation instead.</li>
+    <li><b>Not specific enough.</b> The old plan said "pick the latest episode" or "pick a TED-Ed video", so you still had to search every day. The new plan assigns each week 1 six-minute episode, 1 reading, 1 listening, 1 video, 8 phrases, and Speaking and Writing tasks.</li>
+    <li><b>No baseline test.</b> The new plan starts with a Week 0 mock using the official familiarisation test, with scores compared again in weeks 8, 20 and 32.</li>
+    <li><b>Computer-based test ignored.</b> Since 30/03/2025 IELTS in Vietnam is computer-only, so all Writing in the new plan is typed, with a dress rehearsal on the real test interface.</li>
+    <li><b>Missing Writing Task 1.</b> The old plan had almost no Task 1 until week 29. The new plan has Task 1 every week from week 9, covering bar, line, pie, table, process and map.</li>
+    <li><b>Inconsistent hours.</b> The old plan said 2.5–3 hours a day, but its weekly table added up to 21.5 hours, and phase 3 asked for "2 essays a day". The new plan times every task, adding up to exactly 2 hours each weekday.</li>
+    <li><b>No feedback system.</b> The new plan has ready-made AI feedback prompts, an error log with fixed columns, and daily flashcard review.</li>
+    <li><b>Old books.</b> The old plan used Cambridge 11–18. The new plan uses Cambridge 15–20 (book 20 was published in July 2025) and assigns a specific test to each Saturday, never reusing one.</li>
+    <li>Minor fix: a stray Chinese phrase ("sách分级") in the text.</li>
+  </ul>
+  <p><b>Kept from the old plan:</b> the 8–12–12 week phases, the order of grammar topics, the focus on understanding "why", Sunday rest, and the error log.</p>`,
+
+  // ---------- Settings ----------
+  "settings.title": "Settings",
+  "settings.lang": "Language",
+  "settings.langNote": "Changing the language reloads the page. Your progress and words are not affected.",
+  "settings.theme": "Appearance",
+  "settings.theme.light": "Light",
+  "settings.theme.dark": "Dark",
+  "settings.theme.system": "System",
+  "settings.themeNote": "\"System\" follows your device's light/dark setting.",
+  "settings.start": "Plan start date",
+  "settings.startNote": "The plan always starts on a Monday. If you pick another day, it moves back to the Monday of that week.",
+  "settings.save": "Save",
+
+  // ---------- Words & flashcards ----------
+  "words.eyebrow": "English Notebook",
+  "words.title": "Words",
+  "words.add": "Add a word",
+  "words.word": "English word (e.g. resilient)",
+  "words.meaning": "Meaning (e.g. kiên cường)",
+  "words.example": "Example (optional)",
+  "words.submit": "Add",
+  "words.backup": "Backup",
+  "words.backupNote": "Words are stored only in this browser. Export a file to move them to another device.",
+  "words.export": "Export JSON",
+  "words.import": "Import JSON",
+  "words.search": "Search words...",
+  "words.count": "{n} words",
+  "words.delete": "Delete",
+  "words.confirmDelete": "Delete \"{word}\"?",
+  "words.imported": "Import complete.",
+  "words.badFile": "Invalid file.",
+  "words.saveFail": "Couldn't save data in this browser.",
+  "cards.title": "Flashcards",
+  "cards.hint": "Click the card to flip · ← → to move · Space to flip",
+  "cards.empty": "No words yet. Add some under Words.",
+  "cards.flipTitle": "Click to flip",
+  "cards.prev": "← Previous",
+  "cards.flip": "Flip",
+  "cards.next": "Next →",
+  "cards.shuffle": "Shuffle",
+});

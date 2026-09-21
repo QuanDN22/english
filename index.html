@@ -5,34 +5,58 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="robots" content="noindex, nofollow">
   <title>English Notebook</title>
-  <link rel="stylesheet" href="style.css">
+  <!-- Áp giao diện đã chọn trước khi vẽ trang, để không bị nháy sáng/tối -->
+  <script>
+    try {
+      var p = JSON.parse(localStorage.getItem("prefs") || "{}");
+      if (p.theme === "light" || p.theme === "dark") document.documentElement.setAttribute("data-theme", p.theme);
+      if (p.lang) document.documentElement.lang = p.lang;
+    } catch (e) {}
+  </script>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/plan.css">
 </head>
 <body>
-  <aside id="sidebar" class="sidebar"></aside>
+  <aside id="sidebar" class="sidebar">
+    <div id="side-extra" class="side-extra"></div>
+  </aside>
 
   <main class="content">
+    <!-- Hôm nay -->
+    <section id="today" class="panel">
+      <div id="today-body"></div>
+    </section>
+
+    <!-- Lộ trình -->
+    <section id="week" class="panel">
+      <div class="week-layout">
+        <aside id="week-picker" class="week-picker" data-i18n-attr="aria-label:week.aria"></aside>
+        <div id="week-body" class="week-main"></div>
+      </div>
+    </section>
+
     <!-- Từ vựng -->
     <section id="words" class="panel">
       <div class="page-head">
-        <p class="eyebrow">English Notebook</p>
-        <h1>Từ vựng</h1>
+        <p class="eyebrow" data-i18n="words.eyebrow"></p>
+        <h1 data-i18n="words.title"></h1>
       </div>
       <div class="words-layout">
         <div class="words-side">
           <form id="word-form" class="card">
-            <h2>Thêm từ</h2>
-            <input id="f-word" placeholder="Từ tiếng Anh (vd: resilient)" required>
-            <input id="f-meaning" placeholder="Nghĩa (vd: kiên cường)" required>
-            <input id="f-example" placeholder="Ví dụ (không bắt buộc)">
-            <button type="submit">Thêm</button>
+            <h2 data-i18n="words.add"></h2>
+            <input id="f-word" required data-i18n-attr="placeholder:words.word">
+            <input id="f-meaning" required data-i18n-attr="placeholder:words.meaning">
+            <input id="f-example" data-i18n-attr="placeholder:words.example">
+            <button type="submit" data-i18n="words.submit"></button>
           </form>
           <div class="card">
-            <h2>Sao lưu</h2>
-            <p class="muted">Từ vựng chỉ lưu trong trình duyệt này. Xuất file để chuyển sang máy khác.</p>
+            <h2 data-i18n="words.backup"></h2>
+            <p class="muted" data-i18n="words.backupNote"></p>
             <div class="tools">
-              <button id="export" type="button">Xuất file JSON</button>
+              <button id="export" type="button" data-i18n="words.export"></button>
               <label class="button">
-                Nhập file JSON
+                <span data-i18n="words.import"></span>
                 <input id="import" type="file" accept="application/json" hidden>
               </label>
             </div>
@@ -40,7 +64,7 @@
         </div>
         <div>
           <div class="list-head">
-            <input id="search" type="search" placeholder="Tìm từ...">
+            <input id="search" type="search" data-i18n-attr="placeholder:words.search">
             <span id="count" class="muted"></span>
           </div>
           <ul id="word-list"></ul>
@@ -51,30 +75,86 @@
     <!-- Flashcard -->
     <section id="cards" class="panel">
       <div class="page-head">
-        <p class="eyebrow">English Notebook</p>
-        <h1>Flashcard</h1>
-        <p class="muted">Bấm vào thẻ để lật · phím ← → để chuyển thẻ · phím cách để lật</p>
+        <p class="eyebrow" data-i18n="words.eyebrow"></p>
+        <h1 data-i18n="cards.title"></h1>
+        <p class="muted" data-i18n="cards.hint"></p>
       </div>
       <div class="flash-wrap">
-        <p id="card-empty" class="muted">Chưa có từ nào. Hãy thêm từ ở mục Từ vựng.</p>
+        <p id="card-empty" class="muted" data-i18n="cards.empty"></p>
         <div id="card-area" hidden>
-          <div id="card" title="Bấm để lật thẻ">
+          <div id="card" data-i18n-attr="title:cards.flipTitle">
             <div id="card-front"></div>
             <div id="card-back" hidden></div>
           </div>
           <div class="card-actions">
-            <button id="prev" type="button">← Trước</button>
-            <button id="flip" type="button">Lật thẻ</button>
-            <button id="next" type="button">Tiếp →</button>
+            <button id="prev" type="button" data-i18n="cards.prev"></button>
+            <button id="flip" type="button" data-i18n="cards.flip"></button>
+            <button id="next" type="button" data-i18n="cards.next"></button>
           </div>
-          <button id="shuffle" type="button">Xáo trộn</button>
+          <button id="shuffle" type="button" data-i18n="cards.shuffle"></button>
           <p id="card-pos" class="muted"></p>
         </div>
       </div>
     </section>
+
+    <!-- Tài liệu -->
+    <section id="lib" class="panel">
+      <div class="page-head">
+        <p class="eyebrow" data-i18n="lib.eyebrow"></p>
+        <h1 data-i18n="lib.title"></h1>
+      </div>
+      <div id="lib-body" class="lib-grid"></div>
+
+      <h2 class="section-title" data-i18n="lib.notes"></h2>
+      <div class="lib-grid">
+        <div class="card">
+          <h2 data-i18n="about.use.title"></h2>
+          <div data-i18n-html="about.use.html"></div>
+        </div>
+        <div class="card">
+          <h2 data-i18n="about.time.title"></h2>
+          <div data-i18n-html="about.time.html"></div>
+        </div>
+        <div class="card span-2">
+          <h2 data-i18n="about.fixes.title"></h2>
+          <div data-i18n-html="about.fixes.html"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cài đặt -->
+    <section id="settings" class="panel">
+      <div class="page-head">
+        <h1 data-i18n="settings.title"></h1>
+      </div>
+      <div class="settings-grid">
+        <div class="card">
+          <h2 data-i18n="settings.lang"></h2>
+          <div id="lang-options" class="segmented" role="radiogroup" data-i18n-attr="aria-label:settings.lang"></div>
+          <p class="muted" data-i18n="settings.langNote"></p>
+        </div>
+        <div class="card">
+          <h2 data-i18n="settings.theme"></h2>
+          <div id="theme-options" class="segmented" role="radiogroup" data-i18n-attr="aria-label:settings.theme"></div>
+          <p class="muted" data-i18n="settings.themeNote"></p>
+        </div>
+        <div id="settings-plan"></div>
+      </div>
+    </section>
   </main>
 
-  <script src="nav.js"></script>
-  <script src="app.js"></script>
+  <!-- Đa ngôn ngữ: lõi → chuỗi giao diện → nội dung lộ trình. Thêm ngôn ngữ = thêm 2 file + 2 dòng dưới đây. -->
+  <script src="js/i18n.js"></script>
+  <script src="js/locales/vi.js"></script>
+  <script src="js/locales/en.js"></script>
+  <script src="js/content/vi.js"></script>
+  <script src="js/content/en.js"></script>
+  <!-- Ứng dụng -->
+  <script src="js/plan-data.js"></script>
+  <script src="js/plan.js"></script>
+  <script src="js/notebook.js"></script>
+  <script src="js/settings.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/app.js"></script>
 </body>
 </html>

@@ -201,7 +201,7 @@
 .day-meta { font-size: 0.8rem; color: var(--muted); }
 .day-btn.active { border-color: var(--accent); background: var(--accent-soft); }
 .day-btn.is-done .day-meta { color: var(--ok); }
-.day-btn.is-today .day-name::after { content: " · hôm nay"; font-weight: 400; color: var(--accent); font-size: 0.8rem; }
+.day-today { font-weight: 400; color: var(--accent); font-size: 0.8rem; }
 @media (min-width: 1100px) {
   .day-list { flex-direction: column; overflow: visible; padding: 0; }
   .day-btn { min-width: 0; grid-template-columns: minmax(0, 1fr) auto; align-items: baseline; column-gap: 8px; }

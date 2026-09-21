@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Kiểm tra mọi link trong lo-trinh-data.js còn mở được không.
+"""Kiểm tra mọi link trong js/plan-data.js còn mở được không.
 
-Chạy:  python3 check-links.py
+Chạy:  python3 tools/check-links.py
 - Video YouTube: kiểm tra qua oEmbed (video bị xóa/riêng tư sẽ báo lỗi).
 - Trang web: kiểm tra mã HTTP.
 - British Council chặn công cụ tự động, nên các link đó được liệt kê riêng để mở tay vài cái.
@@ -20,7 +20,7 @@ BBC = "https://www.bbc.co.uk/learningenglish/english/features/"
 
 
 def urls_from_data():
-    src = Path(__file__).with_name("lo-trinh-data.js").read_text(encoding="utf-8")
+    src = (Path(__file__).resolve().parent.parent / "js" / "plan-data.js").read_text(encoding="utf-8")
     found = set(re.findall(r'"(https?://[^"]+)"', src))
     found |= {"https://www.youtube.com/watch?v=" + i for i in re.findall(r'yt\("([\w-]{11})"', src)}
     found |= {BC + p for p in re.findall(r'bc\("([^"]+)"', src)}

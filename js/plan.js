@@ -74,8 +74,18 @@ const t2Type = (w) => (w.t2 ? t("t2." + w.t2.type) : "");
 function task(b, m, key, params = {}, l, extra = {}) {
   const tx = t("task." + key, params);
   const body = tx && typeof tx === "object" ? tx : { h: String(tx), s: [] };
-  return { b, m, h: body.h, s: (body.s || []).concat(extra.more || []), l, tag: extra.tag, opt: extra.opt, min: extra.min };
+  return { k: key, b, m, h: body.h, s: (body.s || []).concat(extra.more || []), l, tag: extra.tag, opt: extra.opt, min: extra.min };
 }
+
+// Việc chưa xong của những ngày trước trong tuần:
+// - bỏ qua việc luyện hằng ngày (gắn với đúng ngày đó, làm bù không có ích)
+// - gắn nhãn ưu tiên cho đề thi, Writing, Speaking
+const ROUTINE = new Set(["flash", "dictation", "shadow6", "p3.shadow", "p1.relisten", "p1.relistenT", "p2.relistenT", "sunFlash", "sunPreview"]);
+const PRIORITY = new Set([
+  "p1.test", "p1.finalTest", "p2.test", "p2.lrTest", "p2.fullTest", "p3.fullTest", "w0.lr", "w0.w", "w0.s", "w32.rehearsal",
+  "p1.journal", "p2.t1", "p2.t1rewrite", "p2.t2", "p3.t1rewrite", "p3.t2",
+  "p1.speak", "p2.speak", "p3.mock",
+]);
 const SEGMENTS = [["0:00", "1:30"], ["1:30", "3:00"], ["3:00", "4:30"], ["4:30", "6:00"]];
 const TED_SEGMENTS = [["0:00", "1:00"], ["1:00", "2:00"], ["2:00", "3:00"], ["3:00", "4:00"], ["4:00", "5:00"]];
 
@@ -305,6 +315,16 @@ function dayProgress(weekNo, d) {
     left: main.filter((tk) => !done[tk.id]).reduce((sum, tk) => sum + minutesOf(tk), 0),
   };
 }
+// Việc chính chưa xong từ thứ Hai tới hôm qua (chỉ tuần hiện tại: sang tuần mới là bắt đầu lại).
+function backlogOf(pos) {
+  const days = [];
+  for (let d = 0; d < pos.day; d++) {
+    const items = tasksFor(pos.week, d).filter((tk) => counted(tk) && !done[tk.id] && !ROUTINE.has(tk.k));
+    if (items.length) days.push({ d, items });
+  }
+  const all = days.flatMap((x) => x.items);
+  return { days, count: all.length, minutes: all.reduce((sum, tk) => sum + minutesOf(tk), 0) };
+}
 function weekProgress(weekNo) {
   let total = 0, checked = 0;
   for (let d = 0; d < 7; d++) {
@@ -510,6 +530,48 @@ function factsList(pairs) {
   return dl;
 }
 
+// Phần "Chưa xong từ đầu tuần" trong thẻ Tuần này
+const BACKLOG_LIMIT = 6;
+function backlogSection(pos, bl) {
+  const sec = el("div", "backlog");
+  sec.id = "backlog";
+  if (!bl.count) {
+    sec.append(el("p", "backlog-clear", "✓ " + t("backlog.clear")));
+    return sec;
+  }
+  const head = el("div", "backlog-head");
+  head.append(el("h4", "", t("backlog.title")), el("span", "muted", t("backlog.meta", { n: bl.count, d: fmtMinutes(bl.minutes) })));
+  sec.append(head);
+
+  let shown = 0;
+  for (const { d, items } of bl.days) {
+    if (shown >= BACKLOG_LIMIT) break;
+    const dayRow = el("div", "backlog-day");
+    const date = dateOf(pos.week, d);
+    dayRow.append(el("span", "", dayName(d) + (date ? " · " + fmtDate(date) : "")), dayLink(t("backlog.open"), pos.week, d, true));
+    sec.append(dayRow);
+    for (const tk of items) {
+      if (shown >= BACKLOG_LIMIT) break;
+      shown++;
+      const row = el("label", "backlog-item");
+      const cb = el("input");
+      cb.type = "checkbox";
+      cb.dataset.id = tk.id;
+      cb.addEventListener("change", () => toggleTask(tk.id, cb.checked));
+      const title = el("span", "backlog-title", tk.h);
+      if (PRIORITY.has(tk.k)) title.prepend(el("span", "chip-priority", t("backlog.priority")));
+      row.append(cb, title, el("span", "muted", tk.m ? fmtMinutes(tk.m) : ""));
+      sec.append(row);
+    }
+  }
+  if (bl.count > shown) {
+    const firstHidden = bl.days.find(({ items }, i) => bl.days.slice(0, i + 1).reduce((n, x) => n + x.items.length, 0) > shown);
+    sec.append(dayLink(t("backlog.more", { n: bl.count - shown }), pos.week, firstHidden ? firstHidden.d : 0, true));
+  }
+  sec.append(el("p", "backlog-tip", t("backlog.tip")));
+  return sec;
+}
+
 // ---------- Hôm nay ----------
 function renderToday() {
   const root = $("#today-body");
@@ -543,6 +605,18 @@ function renderToday() {
   stats.append(s1, stat(p.left ? fmtMinutes(p.left) : t("today.done"), p.left ? t("today.left") : t("today.doneLabel")));
   head.append(titles, stats);
   if (!s.doneToday && s.missedYesterday) head.append(el("p", "warn", t("today.missed")));
+  // Dòng tóm tắt việc tồn: trên điện thoại thẻ Tuần này nằm cuối trang, nên nhắc ở đây để không bị bỏ sót
+  const bl = backlogOf(pos);
+  if (bl.count) {
+    const note = el("a", "backlog-note", t("backlog.summary", { n: bl.count, d: fmtMinutes(bl.minutes) }));
+    note.href = "#today";
+    note.addEventListener("click", (e) => {
+      e.preventDefault();
+      const target = $("#backlog");
+      if (target) target.scrollIntoView({ behavior: "smooth", block: "center" });
+    });
+    head.append(note);
+  }
   root.append(head);
 
   const grid = el("div", "today-grid");
@@ -556,7 +630,9 @@ function renderToday() {
   const wp = weekProgress(pos.week);
   const prog = el("div", "progress");
   prog.append(bar(wp), el("span", "muted", `${pct(wp)}%`));
-  wk.append(prog, dayLink(t("today.seeWeek"), pos.week, pos.day, false));
+  wk.append(prog);
+  if (pos.day > 0) wk.append(backlogSection(pos, bl)); // thứ Hai chưa có ngày nào trước đó
+  wk.append(dayLink(t("today.seeWeek"), pos.week, pos.day, false));
   rail.append(wk);
 
   if (w.col) {

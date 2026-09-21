@@ -103,6 +103,56 @@
   .today-rail { position: sticky; top: 32px; }
 }
 
+/* Việc chưa xong từ đầu tuần (trong thẻ Tuần này) */
+.backlog-note {
+  justify-self: start;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+.backlog-note:hover { text-decoration: underline; }
+@media (min-width: 900px) { .today-head .backlog-note { grid-column: 1 / -1; } }
+
+.backlog { margin: 12px 0 4px; padding-top: 12px; border-top: 1px solid var(--border); }
+.backlog-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 2px 8px; }
+.backlog-head h4 { margin: 0; font-size: 0.9rem; }
+.backlog-head .muted { font-size: 0.8rem; white-space: nowrap; }
+.backlog-day {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin: 10px 0 2px;
+  font-size: 0.78rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.backlog-day a { text-transform: none; letter-spacing: 0; font-size: 0.8rem; }
+.backlog-item {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: 8px;
+  padding: 4px 0;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+.backlog-item input { width: 16px; height: 16px; margin: 0; align-self: center; accent-color: var(--ok); }
+.backlog-item .muted { font-size: 0.8rem; white-space: nowrap; }
+.chip-priority {
+  display: inline-block;
+  margin-right: 6px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: var(--warn-bg);
+  color: var(--warn-text);
+  font-size: 0.72rem;
+  font-weight: 600;
+  vertical-align: 1px;
+}
+.backlog-clear { margin: 0; color: var(--ok); font-size: 0.9rem; }
+.backlog-tip { margin: 10px 0 0; font-size: 0.8rem; color: var(--muted); }
+.backlog + .more-link, .backlog-tip + .more-link { margin-top: 12px; }
+
 .chips { display: flex; flex-wrap: wrap; gap: 6px; }
 .chip {
   padding: 3px 10px;
